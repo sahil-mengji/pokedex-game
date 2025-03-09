@@ -4,24 +4,24 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const typeColors = {
-  normal: "bg-gray-400",
-  fire: "bg-orange-500",
-  water: "bg-blue-500",
-  grass: "bg-green-500",
-  electric: "bg-yellow-400",
-  ice: "bg-blue-300",
-  fighting: "bg-red-600",
-  poison: "bg-purple-500",
-  ground: "bg-yellow-700",
-  flying: "bg-indigo-400",
-  psychic: "bg-pink-500",
-  bug: "bg-green-600",
-  rock: "bg-gray-600",
-  ghost: "bg-purple-700",
-  dragon: "bg-indigo-700",
-  dark: "bg-gray-800",
-  steel: "bg-gray-500",
-  fairy: "bg-pink-300",
+  normal: "from-gray-300 to-gray-400",
+  fire: "from-orange-300 to-orange-400",
+  water: "from-blue-300 to-blue-400",
+  grass: "from-green-300 to-green-400",
+  electric: "from-yellow-200 to-yellow-400",
+  ice: "from-blue-200 to-blue-300",
+  fighting: "from-red-300 to-red-400",
+  poison: "from-purple-300 to-purple-400",
+  ground: "from-yellow-400 to-yellow-500",
+  flying: "from-indigo-300 to-indigo-400",
+  psychic: "from-pink-300 to-pink-400",
+  bug: "from-green-400 to-green-500",
+  rock: "from-gray-400 to-gray-500",
+  ghost: "from-purple-400 to-purple-500",
+  dragon: "from-indigo-400 to-indigo-500",
+  dark: "from-gray-600 to-gray-700",
+  steel: "from-gray-400 to-gray-500",
+  fairy: "from-pink-200 to-pink-300",
 };
 
 const Pokedex = () => {
@@ -86,25 +86,41 @@ const Pokedex = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {filteredList.slice(0, visibleCount).map((pokemon) => (
           <Link key={pokemon.id} to={`/pokedex/${pokemon.id}`}>
-            <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-lg cursor-pointer">
-              <img src={pokemon.image} alt={pokemon.name} className="w-full" />
-              <h2 className="text-lg font-semibold text-center capitalize mt-2">
-                {pokemon.name}
-              </h2>
-              <div className="flex justify-center mt-1">
-                {pokemon.types.map((type, index) => (
-                  <span
-                    key={index}
-                    className={`px-2 py-1 text-xs text-white rounded mx-1 ${
-                      typeColors[type] || "bg-gray-500"
-                    }`}
-                  >
-                    {type}
-                  </span>
-                ))}
-              </div>
+          <div
+            className={`relative p-4 rounded-xl shadow-md hover:shadow-lg cursor-pointer 
+              bg-gradient-to-r ${
+                pokemon.types.length > 1
+                  ? `${typeColors[pokemon.types[0]]} ${typeColors[pokemon.types[1]]}`
+                  : typeColors[pokemon.types[0]]
+              } bg-opacity-80`}
+          >
+            {/* Pokémon ID on the Top-Left */}
+            <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded">
+              #{pokemon.id.toString().padStart(4, "0")}
+            </span>
+        
+            {/* Pokémon Image */}
+            <img src={pokemon.image} alt={pokemon.name} className="w-full" />
+        
+            {/* Pokémon Name */}
+            <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900">
+              {pokemon.name}
+            </h2>
+        
+            {/* Pokémon Types */}
+            <div className="flex justify-center mt-1">
+              {pokemon.types.map((type, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 text-xs text-white font-semibold rounded mx-1 border border-white shadow-md"
+                >
+                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                </span>
+              ))}
             </div>
-          </Link>
+          </div>
+        </Link>
+             
         ))}
         
       </div>
@@ -114,9 +130,9 @@ const Pokedex = () => {
         <div className="flex justify-center mt-6">
           <button
             onClick={loadMore}
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+            className="px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
           >
-            Load More
+            Load More Pokemon
           </button>
         </div>
       )}
