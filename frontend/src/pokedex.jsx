@@ -3,6 +3,27 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+const typeColors = {
+  normal: "bg-gray-400",
+  fire: "bg-orange-500",
+  water: "bg-blue-500",
+  grass: "bg-green-500",
+  electric: "bg-yellow-400",
+  ice: "bg-blue-300",
+  fighting: "bg-red-600",
+  poison: "bg-purple-500",
+  ground: "bg-yellow-700",
+  flying: "bg-indigo-400",
+  psychic: "bg-pink-500",
+  bug: "bg-green-600",
+  rock: "bg-gray-600",
+  ghost: "bg-purple-700",
+  dragon: "bg-indigo-700",
+  dark: "bg-gray-800",
+  steel: "bg-gray-500",
+  fairy: "bg-pink-300",
+};
+
 const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [visibleCount, setVisibleCount] = useState(20); // initially show 20 Pokémon
@@ -74,7 +95,9 @@ const Pokedex = () => {
                 {pokemon.types.map((type, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 text-xs bg-gray-200 dark:bg-gray-700 rounded mx-1"
+                    className={`px-2 py-1 text-xs text-white rounded mx-1 ${
+                      typeColors[type] || "bg-gray-500"
+                    }`}
                   >
                     {type}
                   </span>
@@ -83,6 +106,7 @@ const Pokedex = () => {
             </div>
           </Link>
         ))}
+        
       </div>
 
       {/* Load More Button */}

@@ -129,9 +129,13 @@ function PokemonDetail() {
   return (
     <div className="container mx-auto p-4">
       {/* Link back to Pokédex grid */}
-      <Link to="/pokedex" className="mb-4 inline-block text-blue-500 underline">
+      <Link
+        to="/pokedex"
+        className="mb-4 inline-block bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-700 transition"
+      >
         Back to Pokédex
       </Link>
+
 
       {/* Pokémon name & artwork */}
       <h1 className="text-3xl font-bold text-center capitalize">{pokemon.name}</h1>
@@ -179,20 +183,28 @@ function PokemonDetail() {
       {/* Stats as vertical bars */}
       <h2 className="text-xl font-semibold mt-6 mb-2">Stats</h2>
       <div className="flex items-end justify-around bg-gray-100 p-4 rounded">
-        {pokemon.stats.map((stat) => {
-          const heightPercent = (stat.base_stat / MAX_STAT) * 100;
-          return (
-            <div key={stat.stat.name} className="flex flex-col items-center mx-1">
-              <div className="w-4 h-32 bg-gray-300 relative overflow-hidden rounded">
-                <div
-                  className="absolute bottom-0 left-0 w-full bg-blue-500"
-                  style={{ height: `${heightPercent}%` }}
-                />
-              </div>
-              <p className="text-xs mt-1 uppercase">{stat.stat.name}</p>
+      {pokemon.stats.map((stat, index) => {
+        const heightPercent = (stat.base_stat / MAX_STAT) * 100;
+        return (
+          <div key={stat.stat.name} className="flex flex-col items-center mx-1"> {/* Reduced spacing */}
+            <div className="w-6 h-32 bg-gray-200 dark:bg-gray-800 relative overflow-hidden rounded-lg shadow-lg border border-gray-300 dark:border-gray-600">
+              <div
+                className={`absolute bottom-0 left-0 w-full ${
+                  typeColors[pokemon.types[0].type.name] || "bg-blue-500"
+                } transition-all duration-500 ease-in-out`}
+                style={{
+                  height: `${heightPercent}%`,
+                  backgroundImage: "linear-gradient(to top, rgba(255,255,255,0.2), transparent)",
+                }}
+              />
             </div>
-          );
-        })}
+            <p className="text-xs mt-1 uppercase text-gray-700 dark:text-gray-300 text-center">{stat.stat.name}</p>
+            <p className="text-sm font-semibold dark:text-gray-200 text-center">{stat.base_stat}</p>
+          </div>
+        );
+      })}
+
+
       </div>
 
       {/* Evolutions in a horizontal layout */}
@@ -224,5 +236,6 @@ function PokemonDetail() {
     </div>
   );
 }
+
 
 export default PokemonDetail;
