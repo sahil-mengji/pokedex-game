@@ -898,5 +898,590 @@
     "accuracy": null,
     "pp": 20,
     "description": "Immediately ends wild battles.  No effect otherwise."
+  },
+  {
+    "move_id": 101,
+    "name": "Night-shade",
+    "type_id": 14,
+    "power": null,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Inflicts damage equal to the user's level."
+  },
+  {
+    "move_id": 102,
+    "name": "Mimic",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "description": "Copies the target's last used move."
+  },
+  {
+    "move_id": 103,
+    "name": "Screech",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 85,
+    "pp": 40,
+    "description": "Lowers the target's Defense by two stages."
+  },
+  {
+    "move_id": 104,
+    "name": "Double-team",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 15,
+    "description": "Raises the user's evasion by one stage."
+  },
+  {
+    "move_id": 105,
+    "name": "Recover",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 5,
+    "description": "Heals the user by half its max HP."
+  },
+  {
+    "move_id": 106,
+    "name": "Harden",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Raises the user's Defense by one stage."
+  },
+  {
+    "move_id": 107,
+    "name": "Minimize",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "description": "Raises the user's evasion by two stages."
+  },
+  {
+    "move_id": 108,
+    "name": "Smokescreen",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Lowers the target's accuracy by one stage."
+  },
+  {
+    "move_id": 109,
+    "name": "Confuse-ray",
+    "type_id": 14,
+    "power": null,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Confuses the target."
+  },
+  {
+    "move_id": 110,
+    "name": "Withdraw",
+    "type_id": 3,
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "description": "Raises the user's Defense by one stage."
+  },
+  {
+    "move_id": 111,
+    "name": "Defense-curl",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "description": "Raises user's Defense by one stage."
+  },
+  {
+    "move_id": 112,
+    "name": "Barrier",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Raises the user's Defense by two stages."
+  },
+  {
+    "move_id": 113,
+    "name": "Light-screen",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Reduces damage from special attacks by 50% for five turns."
+  },
+  {
+    "move_id": 114,
+    "name": "Haze",
+    "type_id": 6,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Resets all Pokémon's stats, accuracy, and evasion."
+  },
+  {
+    "move_id": 115,
+    "name": "Reflect",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Reduces damage from physical attacks by half."
+  },
+  {
+    "move_id": 116,
+    "name": "Focus-energy",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Increases the user's chance to score a critical hit."
+  },
+  {
+    "move_id": 117,
+    "name": "Bide",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "description": "User waits for two turns, then hits back for twice the damage it took."
+  },
+  {
+    "move_id": 118,
+    "name": "Metronome",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "description": "Randomly selects and uses any move in the game."
+  },
+  {
+    "move_id": 119,
+    "name": "Mirror-move",
+    "type_id": 10,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Uses the target's last used move."
+  },
+  {
+    "move_id": 120,
+    "name": "Self-destruct",
+    "type_id": 1,
+    "power": 200,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "User faints."
+  },
+  {
+    "move_id": 121,
+    "name": "Egg-bomb",
+    "type_id": 1,
+    "power": 100,
+    "accuracy": 75,
+    "pp": 10,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 122,
+    "name": "Lick",
+    "type_id": 14,
+    "power": 30,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Has a 30% chance to paralyze the target."
+  },
+  {
+    "move_id": 123,
+    "name": "Smog",
+    "type_id": 8,
+    "power": 30,
+    "accuracy": 70,
+    "pp": 20,
+    "description": "Has a 40% chance to poison the target."
+  },
+  {
+    "move_id": 124,
+    "name": "Sludge",
+    "type_id": 8,
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Has a 30% chance to poison the target."
+  },
+  {
+    "move_id": 125,
+    "name": "Bone-club",
+    "type_id": 9,
+    "power": 65,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "Has a 10% chance to make the target flinch."
+  },
+  {
+    "move_id": 126,
+    "name": "Fire-blast",
+    "type_id": 2,
+    "power": 110,
+    "accuracy": 85,
+    "pp": 5,
+    "description": "Has a 10% chance to burn the target."
+  },
+  {
+    "move_id": 127,
+    "name": "Waterfall",
+    "type_id": 3,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 20% chance to make the target flinch."
+  },
+  {
+    "move_id": 128,
+    "name": "Clamp",
+    "type_id": 3,
+    "power": 35,
+    "accuracy": 85,
+    "pp": 15,
+    "description": "Prevents the target from fleeing and inflicts damage for 2-5 turns."
+  },
+  {
+    "move_id": 129,
+    "name": "Swift",
+    "type_id": 1,
+    "power": 60,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Never misses."
+  },
+  {
+    "move_id": 130,
+    "name": "Skull-bash",
+    "type_id": 1,
+    "power": 130,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Raises the user's Defense by one stage.  User charges for one turn before attacking."
+  },
+  {
+    "move_id": 131,
+    "name": "Spike-cannon",
+    "type_id": 1,
+    "power": 20,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 132,
+    "name": "Constrict",
+    "type_id": 1,
+    "power": 10,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Has a 10% chance to lower the target's Speed by one stage."
+  },
+  {
+    "move_id": 133,
+    "name": "Amnesia",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Raises the user's Special Defense by two stages."
+  },
+  {
+    "move_id": 134,
+    "name": "Kinesis",
+    "type_id": 11,
+    "power": null,
+    "accuracy": 80,
+    "pp": 15,
+    "description": "Lowers the target's accuracy by one stage."
+  },
+  {
+    "move_id": 135,
+    "name": "Soft-boiled",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 5,
+    "description": "Heals the user by half its max HP."
+  },
+  {
+    "move_id": 136,
+    "name": "High-jump-kick",
+    "type_id": 7,
+    "power": 130,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "If the user misses, it takes half the damage it would have inflicted in recoil."
+  },
+  {
+    "move_id": 137,
+    "name": "Glare",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Paralyzes the target."
+  },
+  {
+    "move_id": 138,
+    "name": "Dream-eater",
+    "type_id": 11,
+    "power": 100,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Only works on sleeping Pokémon.  Drains half the damage inflicted to heal the user."
+  },
+  {
+    "move_id": 139,
+    "name": "Poison-gas",
+    "type_id": 8,
+    "power": null,
+    "accuracy": 90,
+    "pp": 40,
+    "description": "Poisons the target."
+  },
+  {
+    "move_id": 140,
+    "name": "Barrage",
+    "type_id": 1,
+    "power": 15,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 141,
+    "name": "Leech-life",
+    "type_id": 12,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Drains half the damage inflicted to heal the user."
+  },
+  {
+    "move_id": 142,
+    "name": "Lovely-kiss",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 75,
+    "pp": 10,
+    "description": "Puts the target to sleep."
+  },
+  {
+    "move_id": 143,
+    "name": "Sky-attack",
+    "type_id": 10,
+    "power": 140,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "User charges for one turn before attacking.  Has a 30% chance to make the target flinch."
+  },
+  {
+    "move_id": 144,
+    "name": "Transform",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "description": "User becomes a copy of the target until it leaves battle."
+  },
+  {
+    "move_id": 145,
+    "name": "Bubble",
+    "type_id": 3,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Has a 10% chance to lower the target's Speed by one stage."
+  },
+  {
+    "move_id": 146,
+    "name": "Dizzy-punch",
+    "type_id": 1,
+    "power": 70,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Has a 20% chance to confuse the target."
+  },
+  {
+    "move_id": 147,
+    "name": "Spore",
+    "type_id": 4,
+    "power": null,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Puts the target to sleep."
+  },
+  {
+    "move_id": 148,
+    "name": "Flash",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Lowers the target's accuracy by one stage."
+  },
+  {
+    "move_id": 149,
+    "name": "Psywave",
+    "type_id": 11,
+    "power": null,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Inflicts damage between 50% and 150% of the user's level."
+  },
+  {
+    "move_id": 150,
+    "name": "Splash",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "description": "Does nothing."
+  },
+  {
+    "move_id": 151,
+    "name": "Acid-armor",
+    "type_id": 8,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Raises the user's Defense by two stages."
+  },
+  {
+    "move_id": 152,
+    "name": "Crabhammer",
+    "type_id": 3,
+    "power": 100,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "Has an increased chance for a critical hit."
+  },
+  {
+    "move_id": 153,
+    "name": "Explosion",
+    "type_id": 1,
+    "power": 250,
+    "accuracy": 100,
+    "pp": 5,
+    "description": "User faints."
+  },
+  {
+    "move_id": 154,
+    "name": "Fury-swipes",
+    "type_id": 1,
+    "power": 18,
+    "accuracy": 80,
+    "pp": 15,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 155,
+    "name": "Bonemerang",
+    "type_id": 9,
+    "power": 50,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "Hits twice in one turn."
+  },
+  {
+    "move_id": 156,
+    "name": "Rest",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 5,
+    "description": "User sleeps for two turns, completely healing itself."
+  },
+  {
+    "move_id": 157,
+    "name": "Rock-slide",
+    "type_id": 13,
+    "power": 75,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "Has a 30% chance to make the target flinch."
+  },
+  {
+    "move_id": 158,
+    "name": "Hyper-fang",
+    "type_id": 1,
+    "power": 80,
+    "accuracy": 90,
+    "pp": 15,
+    "description": "Has a 10% chance to make the target flinch."
+  },
+  {
+    "move_id": 159,
+    "name": "Sharpen",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Raises the user's Attack by one stage."
+  },
+  {
+    "move_id": 160,
+    "name": "Conversion",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "User's type changes to the type of one of its moves at random."
+  },
+  {
+    "move_id": 161,
+    "name": "Tri-attack",
+    "type_id": 1,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Has a 20% chance to burn, freeze, or paralyze the target."
+  },
+  {
+    "move_id": 162,
+    "name": "Super-fang",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "Inflicts damage equal to half the target's HP."
+  },
+  {
+    "move_id": 163,
+    "name": "Slash",
+    "type_id": 1,
+    "power": 70,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Has an increased chance for a critical hit."
+  },
+  {
+    "move_id": 164,
+    "name": "Substitute",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 10,
+    "description": "Transfers 1/4 of the user's max HP into a doll, protecting the user from further damage or status changes until it breaks."
+  },
+  {
+    "move_id": 165,
+    "name": "Struggle",
+    "type_id": 1,
+    "power": 50,
+    "accuracy": null,
+    "pp": 1,
+    "description": "User takes 1/4 its max HP in recoil."
   }
 ]

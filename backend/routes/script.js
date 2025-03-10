@@ -64,7 +64,7 @@ async function fetchMoveDetails(moveUrl) {
 }
 
 async function fetchMoves() {
-  const limit = 100; // Number of moves to fetch
+  const limit = 165; // Number of moves to fetch
   let moves = [];
 
   try {

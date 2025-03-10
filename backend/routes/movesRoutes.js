@@ -2,32 +2,36 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../config/db");
 
-// GET all moves
-router.get("/moves", async (req, res) => {
+// Bulk insert route for moves
+router.post("/moves/bulk", async (req, res) => {
   try {
-    const [rows] = await pool.query("SELECT * FROM Move ORDER BY move_id");
-    res.json(rows);
-  } catch (error) {
-    console.error("Error fetching moves:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-});
-
-// POST a new move
-router.post("/moves", async (req, res) => {
-  try {
-    const { name, type_id, power, accuracy, pp, description } = req.body;
-    if (!name) {
-      return res.status(400).json({ error: "Name is required" });
+    const moves = req.body; // Expect an array of move objects
+    if (!Array.isArray(moves) || moves.length === 0) {
+      return res.status(400).json({ error: "Invalid moves data" });
     }
+    
+    // Map each move to an array of values (ignoring move_id because it's auto-increment)
+    const values = moves.map(move => [
+      move.name,
+      move.type_id,
+      move.power,
+      move.accuracy,
+      move.pp,
+      move.description
+    ]);
+    
+    // Generate placeholders for each row (e.g., "(?, ?, ?, ?, ?, ?)")
+    const placeholders = values.map(() => "(?, ?, ?, ?, ?, ?)").join(", ");
     const query = `
       INSERT INTO Move (name, type_id, power, accuracy, pp, description)
-      VALUES (?, ?, ?, ?, ?, ?)
+      VALUES ${placeholders}
     `;
-    const [result] = await pool.query(query, [name, type_id, power, accuracy, pp, description]);
-    res.status(201).json({ message: "Move added successfully", move_id: result.insertId });
+    
+    // Flatten the values array into a single array for the query
+    await pool.query(query, values.flat());
+    res.status(201).json({ message: `${moves.length} moves added successfully!` });
   } catch (error) {
-    console.error("Error inserting move:", error);
+    console.error("Error inserting moves:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
