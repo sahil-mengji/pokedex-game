@@ -336,16 +336,6 @@ function PokemonDetail() {
           <h2 className="text-2xl font-bold text-center mb-3">Evolution Chain</h2>
           <div className="relative flex items-center justify-center">
             {/* Global Navigation Arrows for Prev/Next Pokemon by ID */}
-            <div className="absolute left-0 ml-2">
-              {pokemon.id > 1 && (
-                <Link
-                  to={`/pokedex/${prevId}`}
-                  className="text-4xl text-gray-700 hover:text-gray-900"
-                >
-                  &larr;
-                </Link>
-              )}
-            </div>
             <div className="flex items-center space-x-4">
               {evolutions.map((evo, idx) => (
                 <div key={evo.id} className="flex flex-col items-center">
@@ -377,16 +367,6 @@ function PokemonDetail() {
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="absolute right-0 mr-2">
-              {pokemon.id < 151 && (
-                <Link
-                  to={`/pokedex/${nextId}`}
-                  className="text-4xl text-gray-700 hover:text-gray-900"
-                >
-                  &rarr;
-                </Link>
-              )}
             </div>
           </div>
         </div>
