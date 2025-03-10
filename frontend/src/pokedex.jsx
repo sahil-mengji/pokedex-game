@@ -122,7 +122,7 @@ const Pokedex = () => {
             </span>
         
             {/* Pokémon Image */}
-            <img src={pokemon.image} alt={pokemon.name} className="w-full" />
+            <img loading="lazy" src={pokemon.image} alt={pokemon.name} className="w-full" />
         
             {/* Pokémon Name */}
             <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900">
@@ -155,7 +155,7 @@ const Pokedex = () => {
             onClick={loadMore}
             className="px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
           >
-            Load More Pokemon
+            Load More Pokémon
           </button>
         </div>
       )}
