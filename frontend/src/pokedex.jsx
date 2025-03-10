@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const typeColors = {
+const typeColorsCards = {
   normal: "from-gray-300 to-gray-400",
   fire: "from-orange-300 to-orange-400",
   water: "from-blue-300 to-blue-400",
   grass: "from-green-300 to-green-400",
-  electric: "from-yellow-200 to-yellow-400",
+  electric: "from-yellow-300 to-yellow-500",
   ice: "from-blue-200 to-blue-300",
   fighting: "from-red-300 to-red-400",
   poison: "from-purple-300 to-purple-400",
@@ -23,6 +23,28 @@ const typeColors = {
   steel: "from-gray-400 to-gray-500",
   fairy: "from-pink-200 to-pink-300",
 };
+
+const typeColors = {
+  normal: "bg-gray-400",
+  fire: "bg-orange-500",
+  water: "bg-blue-500",
+  grass: "bg-green-500",
+  electric: "bg-yellow-400",
+  ice: "bg-blue-300",
+  fighting: "bg-red-600",
+  poison: "bg-purple-500",
+  ground: "bg-yellow-700",
+  flying: "bg-indigo-400",
+  psychic: "bg-pink-500",
+  bug: "bg-green-600",
+  rock: "bg-gray-600",
+  ghost: "bg-purple-700",
+  dragon: "bg-indigo-700",
+  dark: "bg-gray-800",
+  steel: "bg-gray-500",
+  fairy: "bg-pink-300",
+};
+
 
 const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -90,8 +112,8 @@ const Pokedex = () => {
             className={`relative p-4 rounded-xl shadow-md hover:shadow-lg cursor-pointer 
               bg-gradient-to-r ${
                 pokemon.types.length > 1
-                  ? `${typeColors[pokemon.types[0]]} ${typeColors[pokemon.types[1]]}`
-                  : typeColors[pokemon.types[0]]
+                  ? `${typeColorsCards[pokemon.types[0]]} ${typeColorsCards[pokemon.types[1]]}`
+                  : typeColorsCards[pokemon.types[0]]
               } bg-opacity-80`}
           >
             {/* Pokémon ID on the Top-Left */}
@@ -112,7 +134,8 @@ const Pokedex = () => {
               {pokemon.types.map((type, index) => (
                 <span
                   key={index}
-                  className="px-2 py-1 text-xs text-white font-semibold rounded mx-1 border border-white shadow-md"
+                  className={`px-2 py-1 text-xs text-white font-semibold rounded mx-1 border border-white shadow-md 
+                  ${typeColors[type] || "bg-gray-500"}`}
                 >
                   {type.charAt(0).toUpperCase() + type.slice(1)}
                 </span>
