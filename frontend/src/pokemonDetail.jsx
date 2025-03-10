@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-const typeColors = {
+// Hex color codes for each Pokémon type
+const typeColorCodes = {
   normal: "#A8A77A",
   fire: "#EE8130",
   water: "#6390F0",
@@ -26,17 +27,9 @@ const typeColors = {
 
 const MAX_STAT = 255;
 
-// Helper: Returns a background style object for the entire page
-function getBackground(pokemon) {
-  const types = pokemon.types.map((t) => t.type.name);
-  
-    // Use rgba for reduced opacity (0.8 opacity here)
-    const hex = typeColors[types[0]] || "#ccc";
-    // Convert hex to rgb:
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return { background: `rgba(${r}, ${g}, ${b}, 0.8)` };
+// Helper: Capitalize first letter
+function capFirst(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function PokemonDetail() {
@@ -54,10 +47,10 @@ function PokemonDetail() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Helper: Capitalize first letter
-  const capFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+  // Determine the primary type color
+  const [primaryTypeColor, setPrimaryTypeColor] = useState("#cccccc");
 
-  // Helper: Recursively parse evolution chain
+  // Recursively parse evolution chain
   const parseChain = (node, arr = []) => {
     if (!node) return arr;
     arr.push(node.species.name);
@@ -67,18 +60,37 @@ function PokemonDetail() {
     return arr;
   };
 
+  // Convert gender rate to text
+  const getGenderText = () => {
+    if (genderRate === -1) return "Genderless";
+    const femalePercent = (genderRate * 12.5).toFixed(1);
+    const malePercent = (100 - femalePercent).toFixed(1);
+    return `Male: ${malePercent}%, Female: ${femalePercent}%`;
+  };
+
+  // Global navigation by ID (prev/next)
+  const prevId = Math.max(1, parseInt(id, 10) - 1);
+  const nextId = Math.min(151, parseInt(id, 10) + 1);
+
   useEffect(() => {
     async function fetchData() {
       try {
         setLoading(true);
         setError(null);
+
         // 1. Fetch main Pokémon data
         const { data: pokeData } = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${id}`
         );
         setPokemon(pokeData);
 
-        // Height & Weight conversions
+        // Primary type color (only the first type)
+        if (pokeData.types.length > 0) {
+          const firstType = pokeData.types[0].type.name;
+          setPrimaryTypeColor(typeColorCodes[firstType] || "#cccccc");
+        }
+
+        // Height & Weight
         const heightM = pokeData.height / 10;
         const heightFt = (heightM * 3.28084).toFixed(2);
         const weightKg = pokeData.weight / 10;
@@ -94,7 +106,7 @@ function PokemonDetail() {
         );
         setAbilities(abilityList);
 
-        // 2. Calculate weaknesses and strengths
+        // Weaknesses & Strengths
         const weaknessSet = new Set();
         const strengthSet = new Set();
         for (const t of pokeData.types) {
@@ -112,10 +124,11 @@ function PokemonDetail() {
         setWeaknesses([...weaknessSet]);
         setStrengths([...strengthSet]);
 
-        // 3. Fetch species data for flavor text, category, gender rate, evolution chain
+        // 2. Fetch species data => flavor text, category, gender, evolution chain
         const { data: speciesData } = await axios.get(
           `https://pokeapi.co/api/v2/pokemon-species/${id}`
         );
+        // Flavor text
         const flavorEntry = speciesData.flavor_text_entries.find(
           (entry) => entry.language.name === "en"
         );
@@ -124,16 +137,19 @@ function PokemonDetail() {
             ? flavorEntry.flavor_text.replace(/\f|\n|\r/g, " ")
             : ""
         );
+        // Category
         const genusEntry = speciesData.genera.find(
           (g) => g.language.name === "en"
         );
         setCategory(genusEntry ? genusEntry.genus : "Pokémon");
+        // Gender rate
         setGenderRate(speciesData.gender_rate);
 
-        // 4. Fetch evolution chain
+        // Evolution chain
         const evoChainUrl = speciesData.evolution_chain.url;
         const { data: evoData } = await axios.get(evoChainUrl);
         const chainArray = parseChain(evoData.chain);
+
         const evoDetails = [];
         for (const evoName of chainArray) {
           try {
@@ -163,17 +179,6 @@ function PokemonDetail() {
     fetchData();
   }, [id]);
 
-  const getGenderText = () => {
-    if (genderRate === -1) return "Genderless";
-    const femalePercent = (genderRate * 12.5).toFixed(1);
-    const malePercent = (100 - femalePercent).toFixed(1);
-    return `Male: ${malePercent}%, Female: ${femalePercent}%`;
-  };
-
-  // Global Navigation by ID (prev/next)
-  const prevId = Math.max(1, parseInt(id, 10) - 1);
-  const nextId = Math.min(151, parseInt(id, 10) + 1);
-
   if (loading) {
     return <div className="text-center mt-10">Loading...</div>;
   }
@@ -183,23 +188,32 @@ function PokemonDetail() {
 
   return (
     <div
-      className="min-h-screen p-4 rounded-lg relative"
-      style={{ ...getBackground(pokemon) }}
+      className="min-h-screen p-4"
+      style={{
+        backgroundColor: primaryTypeColor,
+        // Use a lower alpha if you want even less opacity
+        backgroundImage:
+          "repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 20px, transparent 20px 40px)",
+      }}
     >
-      {/* Diagonal Stripes Overlay */}
-      <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(255,255,255,0.06)_0_20px,transparent_20px_40px)] pointer-events-none" />
-      <div className="relative z-10">
-        {/* Top Title */}
+      {/* Container for main content (white box) */}
+      <div className="bg-gray-200/95 backdrop-blur-md p-4 rounded-4 relative z-10 rounded-xl shadow-xl max-w-5xl mx-auto">
+        {/* Title */}
         <div className="text-center mb-6">
           <h1 className="text-4xl font-bold capitalize text-gray-900">
             {pokemon.name} #{pokemon.id.toString().padStart(4, "0")}
           </h1>
         </div>
 
-        {/* Main Section: Two-column layout */}
-        <div className="flex flex-col md:flex-row gap-6 mb-6">
-          {/* Left Column: Main Image */}
-          <div className="md:w-1/2 flex justify-center">
+        {/* Flavor Text & Two-column layout: Left: Profile box, Right: Pokémon image */}
+        {flavorText && (
+          <p className="max-w-xl mx-auto text-center text-gray-800 italic mb-6">
+            {flavorText}
+          </p>
+        )}
+        <div className="flex flex-col md:flex-row gap-4 items-start justify-center mb-6">
+          {/* left: Main Image */}
+          <div className="md:w-1/2 flex justify-center bg-gray-300 border-2 rounded-lg p-4">
             <img
               loading="lazy"
               src={
@@ -208,59 +222,54 @@ function PokemonDetail() {
               }
               alt={pokemon.name}
               className="w-64 h-64 object-contain"
-            />
+              />
           </div>
-          {/* Right Column: Flavor Text Above Profile Box */}
-          <div className="md:w-1/2 flex flex-col gap-4">
-            {flavorText && (
-              <p className="text-gray-800 dark:text-gray-200 italic text-center">
-                {flavorText}
+          {/* Right: Profile Box */}
+          <div className="md:w-1/3 p-4 rounded-xl shadow-md bg-blue-300 border border-gray-300">
+            <h2 className="text-2xl font-bold text-center mb-2">Profile</h2>
+            <div className="text-sm text-gray-800 space-y-2">
+              <p>
+                <strong>Height:</strong> {height}
               </p>
-            )}
-            <div className="p-4 rounded-xl shadow-xl bg-blue-400 dark:bg-blue-600 text-white backdrop-blur-md border border-blue-500">
-              <h2 className="text-2xl font-bold text-center mb-2">Profile</h2>
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <p>
-                  <strong>Height:</strong> {height}
-                </p>
-                <p>
-                  <strong>Weight:</strong> {weight}
-                </p>
-                <p className="col-span-2">
-                  <strong>Gender:</strong> {getGenderText()}
-                </p>
-                <p className="col-span-2">
-                  <strong>Category:</strong> {category}
-                </p>
-                <p className="col-span-2">
-                  <strong>Abilities:</strong> {abilities.join(", ")}
-                </p>
-              </div>
+              <p>
+                <strong>Weight:</strong> {weight}
+              </p>
+              <p>
+                <strong>Gender:</strong> {genderRate === -1 ? "Genderless" : `Male/Female`}
+              </p>
+              <p>
+                <strong>Category:</strong> {category}
+              </p>
+              <p>
+                <strong>Abilities:</strong> {abilities.join(", ")}
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Types, Weaknesses, Strengths & Stats Section in Two Columns */}
-        <div className="mb-6 flex flex-col md:flex-row gap-6">
+        {/* Type, Weaknesses, Strengths, Stats in a row */}
+        <div className="flex flex-col md:flex-row gap-6 mb-6">
           {/* Left Column: Types, Weaknesses, Strengths */}
-          <div className="flex-1 space-y-4 text-center">
+          <div className="md:w-1/2 space-y-4 text-center">
+            {/* Types */}
             <div>
               <h2 className="text-xl font-semibold">Type</h2>
-              <div className="flex justify-center gap-2 mt-2">
+              <div className="flex justify-center gap-2 mt-2 flex-wrap">
                 {pokemon.types.map((t) => (
                   <span
                     key={t.type.name}
                     className="px-3 py-1 rounded text-white"
-                    style={{ backgroundColor: typeColors[t.type.name] || "#ccc" }}
+                    style={{ backgroundColor: typeColorCodes[t.type.name] || "#ccc" }}
                   >
                     {capFirst(t.type.name)}
                   </span>
                 ))}
               </div>
             </div>
+            {/* Weaknesses */}
             <div>
               <h2 className="text-xl font-semibold">Weaknesses</h2>
-              <div className="flex justify-center gap-2 mt-2">
+              <div className="flex justify-center gap-2 mt-2 flex-wrap">
                 {weaknesses.length === 0 ? (
                   <span className="px-3 py-1 rounded bg-gray-300 text-white">
                     None
@@ -270,7 +279,7 @@ function PokemonDetail() {
                     <span
                       key={w}
                       className="px-3 py-1 rounded text-white"
-                      style={{ backgroundColor: typeColors[w] || "#ccc" }}
+                      style={{ backgroundColor: typeColorCodes[w] || "#ccc" }}
                     >
                       {capFirst(w)}
                     </span>
@@ -278,9 +287,10 @@ function PokemonDetail() {
                 )}
               </div>
             </div>
+            {/* Strengths */}
             <div>
               <h2 className="text-xl font-semibold">Strengths</h2>
-              <div className="flex justify-center gap-2 mt-2">
+              <div className="flex justify-center gap-2 mt-2 flex-wrap">
                 {strengths.length === 0 ? (
                   <span className="px-3 py-1 rounded bg-gray-300 text-white">
                     None
@@ -290,7 +300,7 @@ function PokemonDetail() {
                     <span
                       key={s}
                       className="px-3 py-1 rounded text-white"
-                      style={{ backgroundColor: typeColors[s] || "#ccc" }}
+                      style={{ backgroundColor: typeColorCodes[s] || "#ccc" }}
                     >
                       {capFirst(s)}
                     </span>
@@ -299,11 +309,10 @@ function PokemonDetail() {
               </div>
             </div>
           </div>
-
           {/* Right Column: Stats */}
-          <div className="flex-1">
+          <div className="md:w-1/2">
             <h2 className="text-2xl font-bold text-center mb-3">Stats</h2>
-            <div className="grid grid-cols-6 gap-1 place-items-center bg-gray-100 p-2 rounded">
+            <div className="grid grid-cols-6 gap-2 place-items-center bg-gray-100 p-2 rounded">
               {pokemon.stats.map((stat) => {
                 const heightPercent = (stat.base_stat / MAX_STAT) * 100;
                 return (
@@ -330,70 +339,71 @@ function PokemonDetail() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Evolution Chain Section with Global Navigation */}
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-center mb-3">Evolution Chain</h2>
-          <div className="relative flex items-center justify-center">
-            {/* Global Navigation Arrows for Prev/Next Pokemon by ID */}
-            <div className="flex items-center space-x-4">
-              {evolutions.map((evo, idx) => (
-                <div key={evo.id} className="flex flex-col items-center">
-                  <Link to={`/pokedex/${evo.id}`}>
-                    <div className="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
-                      <img
-                        src={evo.imageUrl}
-                        alt={evo.name}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </Link>
-                  <p className="text-lg font-bold capitalize text-gray-800">
-                    {evo.name}{" "}
-                    <span className="ml-1 text-sm text-gray-600">
-                      #{String(evo.id).padStart(4, "0")}
-                    </span>
-                  </p>
-                  <div className="flex space-x-2 mt-1">
-                    {evo.types?.map((type) => (
-                      <span
-                        key={type}
-                        className="px-2 py-1 text-xs text-white font-semibold rounded"
-                        style={{ backgroundColor: typeColors[type] || "#ccc" }}
-                      >
-                        {capFirst(type)}
-                      </span>
-                    ))}
-                  </div>
+      {/* Evolution Chain in a separate gray box */}
+      <div className="bg-gray-200/50 backdrop-blur-md p-4 rounded-xl shadow-xl max-w-5xl mx-auto mt-6 relative z-10">
+        <h2 className="text-2xl font-bold text-center mb-3">Evolution Chain</h2>
+        <div className="flex items-center justify-center space-x-4">
+          {evolutions.map((evo, idx) => (
+            <div key={evo.id} className="flex flex-col items-center">
+              <Link to={`/pokedex/${evo.id}`}>
+              
+                <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
+                  <img
+                    loading="lazy"
+                    src={evo.imageUrl}
+                    alt={evo.name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-              ))}
+                
+              </Link>
+              <p className="text-lg font-bold capitalize text-gray-800">
+                {evo.name}{" "}
+                <div className="flex flex-col items-center ml-1 text-sm text-gray-600">
+                  #{String(evo.id).padStart(4, "0")}
+                </div>
+              </p>
+              <div className="flex space-x-2 mt-1">
+                {evo.types?.map((type) => (
+                  <span
+                    key={type}
+                    className="px-2 py-1 text-xs text-white font-semibold rounded"
+                    style={{ backgroundColor: typeColorCodes[type] || "#ccc" }}
+                  >
+                    {capFirst(type)}
+                  </span>
+                ))}
+              </div>
+              {/* Arrow for next evolution */}
             </div>
-          </div>
+          ))}
         </div>
+      </div>
 
-        {/* Global Navigation: Prev/Next Pokemon (Bottom) */}
-        <div className="flex justify-between items-center mt-8">
-          {pokemon.id > 1 ? (
-            <Link
-              to={`/pokedex/${pokemon.id - 1}`}
-              className="text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
-            >
-              &larr; Prev
-            </Link>
-          ) : (
-            <div />
-          )}
-          {pokemon.id < 151 ? (
-            <Link
-              to={`/pokedex/${pokemon.id + 1}`}
-              className="text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
-            >
-              Next &rarr;
-            </Link>
-          ) : (
-            <div />
-          )}
-        </div>
+      {/* Global Navigation: Prev/Next Pokémon at the bottom */}
+      <div className="flex justify-between items-center mt-8 max-w-5xl mx-auto">
+        {pokemon.id > 1 ? (
+          <Link
+            to={`/pokedex/${pokemon.id - 1}`}
+            className="text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
+          >
+            &larr; Prev
+          </Link>
+        ) : (
+          <div />
+        )}
+        {pokemon.id < 151 ? (
+          <Link
+            to={`/pokedex/${pokemon.id + 1}`}
+            className="text-lg bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
+          >
+            Next &rarr;
+          </Link>
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   );
