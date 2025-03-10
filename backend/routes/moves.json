@@ -1,0 +1,902 @@
+[
+  {
+    "move_id": 1,
+    "name": "Pound",
+    "type_id": 1,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 2,
+    "name": "Karate-chop",
+    "type_id": 7,
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Has an increased chance for a critical hit."
+  },
+  {
+    "move_id": 3,
+    "name": "Double-slap",
+    "type_id": 1,
+    "power": 15,
+    "accuracy": 85,
+    "pp": 10,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 4,
+    "name": "Comet-punch",
+    "type_id": 1,
+    "power": 18,
+    "accuracy": 85,
+    "pp": 15,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 5,
+    "name": "Mega-punch",
+    "type_id": 1,
+    "power": 80,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 6,
+    "name": "Pay-day",
+    "type_id": 1,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Scatters money on the ground worth five times the user's level."
+  },
+  {
+    "move_id": 7,
+    "name": "Fire-punch",
+    "type_id": 2,
+    "power": 75,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 10% chance to burn the target."
+  },
+  {
+    "move_id": 8,
+    "name": "Ice-punch",
+    "type_id": 6,
+    "power": 75,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 10% chance to freeze the target."
+  },
+  {
+    "move_id": 9,
+    "name": "Thunder-punch",
+    "type_id": 5,
+    "power": 75,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 10% chance to paralyze the target."
+  },
+  {
+    "move_id": 10,
+    "name": "Scratch",
+    "type_id": 1,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 11,
+    "name": "Vice-grip",
+    "type_id": 1,
+    "power": 55,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 12,
+    "name": "Guillotine",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 30,
+    "pp": 5,
+    "description": "Causes a one-hit KO."
+  },
+  {
+    "move_id": 13,
+    "name": "Razor-wind",
+    "type_id": 1,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Requires a turn to charge before attacking."
+  },
+  {
+    "move_id": 14,
+    "name": "Swords-dance",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Raises the user's Attack by two stages."
+  },
+  {
+    "move_id": 15,
+    "name": "Cut",
+    "type_id": 1,
+    "power": 50,
+    "accuracy": 95,
+    "pp": 30,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 16,
+    "name": "Gust",
+    "type_id": 10,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Inflicts regular damage and can hit Pokémon in the air."
+  },
+  {
+    "move_id": 17,
+    "name": "Wing-attack",
+    "type_id": 10,
+    "power": 60,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 18,
+    "name": "Whirlwind",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Immediately ends wild battles.  Forces trainers to switch Pokémon."
+  },
+  {
+    "move_id": 19,
+    "name": "Fly",
+    "type_id": 10,
+    "power": 90,
+    "accuracy": 95,
+    "pp": 15,
+    "description": "User flies high into the air, dodging all attacks, and hits next turn."
+  },
+  {
+    "move_id": 20,
+    "name": "Bind",
+    "type_id": 1,
+    "power": 15,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "Prevents the target from fleeing and inflicts damage for 2-5 turns."
+  },
+  {
+    "move_id": 21,
+    "name": "Slam",
+    "type_id": 1,
+    "power": 80,
+    "accuracy": 75,
+    "pp": 20,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 22,
+    "name": "Vine-whip",
+    "type_id": 4,
+    "power": 45,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 23,
+    "name": "Stomp",
+    "type_id": 1,
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Has a 30% chance to make the target flinch."
+  },
+  {
+    "move_id": 24,
+    "name": "Double-kick",
+    "type_id": 7,
+    "power": 30,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Hits twice in one turn."
+  },
+  {
+    "move_id": 25,
+    "name": "Mega-kick",
+    "type_id": 1,
+    "power": 120,
+    "accuracy": 75,
+    "pp": 5,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 26,
+    "name": "Jump-kick",
+    "type_id": 7,
+    "power": 100,
+    "accuracy": 95,
+    "pp": 10,
+    "description": "If the user misses, it takes half the damage it would have inflicted in recoil."
+  },
+  {
+    "move_id": 27,
+    "name": "Rolling-kick",
+    "type_id": 7,
+    "power": 60,
+    "accuracy": 85,
+    "pp": 15,
+    "description": "Has a 30% chance to make the target flinch."
+  },
+  {
+    "move_id": 28,
+    "name": "Sand-attack",
+    "type_id": 9,
+    "power": null,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Lowers the target's accuracy by one stage."
+  },
+  {
+    "move_id": 29,
+    "name": "Headbutt",
+    "type_id": 1,
+    "power": 70,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 30% chance to make the target flinch."
+  },
+  {
+    "move_id": 30,
+    "name": "Horn-attack",
+    "type_id": 1,
+    "power": 65,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 31,
+    "name": "Fury-attack",
+    "type_id": 1,
+    "power": 15,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 32,
+    "name": "Horn-drill",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 30,
+    "pp": 5,
+    "description": "Causes a one-hit KO."
+  },
+  {
+    "move_id": 33,
+    "name": "Tackle",
+    "type_id": 1,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 34,
+    "name": "Body-slam",
+    "type_id": 1,
+    "power": 85,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 30% chance to paralyze the target."
+  },
+  {
+    "move_id": 35,
+    "name": "Wrap",
+    "type_id": 1,
+    "power": 15,
+    "accuracy": 90,
+    "pp": 20,
+    "description": "Prevents the target from fleeing and inflicts damage for 2-5 turns."
+  },
+  {
+    "move_id": 36,
+    "name": "Take-down",
+    "type_id": 1,
+    "power": 90,
+    "accuracy": 85,
+    "pp": 20,
+    "description": "User receives 1/4 the damage it inflicts in recoil."
+  },
+  {
+    "move_id": 37,
+    "name": "Thrash",
+    "type_id": 1,
+    "power": 120,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Hits every turn for 2-3 turns, then confuses the user."
+  },
+  {
+    "move_id": 38,
+    "name": "Double-edge",
+    "type_id": 1,
+    "power": 120,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "User receives 1/3 the damage inflicted in recoil."
+  },
+  {
+    "move_id": 39,
+    "name": "Tail-whip",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Lowers the target's Defense by one stage."
+  },
+  {
+    "move_id": 40,
+    "name": "Poison-sting",
+    "type_id": 8,
+    "power": 15,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Has a 30% chance to poison the target."
+  },
+  {
+    "move_id": 41,
+    "name": "Twineedle",
+    "type_id": 12,
+    "power": 25,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Hits twice in the same turn.  Has a 20% chance to poison the target."
+  },
+  {
+    "move_id": 42,
+    "name": "Pin-missile",
+    "type_id": 12,
+    "power": 25,
+    "accuracy": 95,
+    "pp": 20,
+    "description": "Hits 2-5 times in one turn."
+  },
+  {
+    "move_id": 43,
+    "name": "Leer",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Lowers the target's Defense by one stage."
+  },
+  {
+    "move_id": 44,
+    "name": "Bite",
+    "type_id": 16,
+    "power": 60,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Has a 30% chance to make the target flinch."
+  },
+  {
+    "move_id": 45,
+    "name": "Growl",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 40,
+    "description": "Lowers the target's Attack by one stage."
+  },
+  {
+    "move_id": 46,
+    "name": "Roar",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Immediately ends wild battles.  Forces trainers to switch Pokémon."
+  },
+  {
+    "move_id": 47,
+    "name": "Sing",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 55,
+    "pp": 15,
+    "description": "Puts the target to sleep."
+  },
+  {
+    "move_id": 48,
+    "name": "Supersonic",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 55,
+    "pp": 20,
+    "description": "Confuses the target."
+  },
+  {
+    "move_id": 49,
+    "name": "Sonic-boom",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 90,
+    "pp": 20,
+    "description": "Inflicts 20 points of damage."
+  },
+  {
+    "move_id": 50,
+    "name": "Disable",
+    "type_id": 1,
+    "power": null,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Disables the target's last used move for 1-8 turns."
+  },
+  {
+    "move_id": 51,
+    "name": "Acid",
+    "type_id": 8,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Has a 10% chance to lower the target's Special Defense by one stage."
+  },
+  {
+    "move_id": 52,
+    "name": "Ember",
+    "type_id": 2,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Has a 10% chance to burn the target."
+  },
+  {
+    "move_id": 53,
+    "name": "Flamethrower",
+    "type_id": 2,
+    "power": 90,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 10% chance to burn the target."
+  },
+  {
+    "move_id": 54,
+    "name": "Mist",
+    "type_id": 6,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Protects the user's stats from being changed by enemy moves."
+  },
+  {
+    "move_id": 55,
+    "name": "Water-gun",
+    "type_id": 3,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 56,
+    "name": "Hydro-pump",
+    "type_id": 3,
+    "power": 110,
+    "accuracy": 80,
+    "pp": 5,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 57,
+    "name": "Surf",
+    "type_id": 3,
+    "power": 90,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Inflicts regular damage and can hit Dive users."
+  },
+  {
+    "move_id": 58,
+    "name": "Ice-beam",
+    "type_id": 6,
+    "power": 90,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Has a 10% chance to freeze the target."
+  },
+  {
+    "move_id": 59,
+    "name": "Blizzard",
+    "type_id": 6,
+    "power": 110,
+    "accuracy": 70,
+    "pp": 5,
+    "description": "Has a 10% chance to freeze the target."
+  },
+  {
+    "move_id": 60,
+    "name": "Psybeam",
+    "type_id": 11,
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Has a 10% chance to confuse the target."
+  },
+  {
+    "move_id": 61,
+    "name": "Bubble-beam",
+    "type_id": 3,
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Has a 10% chance to lower the target's Speed by one stage."
+  },
+  {
+    "move_id": 62,
+    "name": "Aurora-beam",
+    "type_id": 6,
+    "power": 65,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Has a 10% chance to lower the target's Attack by one stage."
+  },
+  {
+    "move_id": 63,
+    "name": "Hyper-beam",
+    "type_id": 1,
+    "power": 150,
+    "accuracy": 90,
+    "pp": 5,
+    "description": "User foregoes its next turn to recharge."
+  },
+  {
+    "move_id": 64,
+    "name": "Peck",
+    "type_id": 10,
+    "power": 35,
+    "accuracy": 100,
+    "pp": 35,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 65,
+    "name": "Drill-peck",
+    "type_id": 10,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 66,
+    "name": "Submission",
+    "type_id": 7,
+    "power": 80,
+    "accuracy": 80,
+    "pp": 20,
+    "description": "User receives 1/4 the damage it inflicts in recoil."
+  },
+  {
+    "move_id": 67,
+    "name": "Low-kick",
+    "type_id": 7,
+    "power": null,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Inflicts more damage to heavier targets, with a maximum of 120 power."
+  },
+  {
+    "move_id": 68,
+    "name": "Counter",
+    "type_id": 7,
+    "power": null,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Inflicts twice the damage the user received from the last physical hit it took."
+  },
+  {
+    "move_id": 69,
+    "name": "Seismic-toss",
+    "type_id": 7,
+    "power": null,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "Inflicts damage equal to the user's level."
+  },
+  {
+    "move_id": 70,
+    "name": "Strength",
+    "type_id": 1,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 71,
+    "name": "Absorb",
+    "type_id": 4,
+    "power": 20,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Drains half the damage inflicted to heal the user."
+  },
+  {
+    "move_id": 72,
+    "name": "Mega-drain",
+    "type_id": 4,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Drains half the damage inflicted to heal the user."
+  },
+  {
+    "move_id": 73,
+    "name": "Leech-seed",
+    "type_id": 4,
+    "power": null,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "Seeds the target, stealing HP from it every turn."
+  },
+  {
+    "move_id": 74,
+    "name": "Growth",
+    "type_id": 1,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Raises the user's Attack and Special Attack by one stage."
+  },
+  {
+    "move_id": 75,
+    "name": "Razor-leaf",
+    "type_id": 4,
+    "power": 55,
+    "accuracy": 95,
+    "pp": 25,
+    "description": "Has an increased chance for a critical hit."
+  },
+  {
+    "move_id": 76,
+    "name": "Solar-beam",
+    "type_id": 4,
+    "power": 120,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Requires a turn to charge before attacking."
+  },
+  {
+    "move_id": 77,
+    "name": "Poison-powder",
+    "type_id": 8,
+    "power": null,
+    "accuracy": 75,
+    "pp": 35,
+    "description": "Poisons the target."
+  },
+  {
+    "move_id": 78,
+    "name": "Stun-spore",
+    "type_id": 4,
+    "power": null,
+    "accuracy": 75,
+    "pp": 30,
+    "description": "Paralyzes the target."
+  },
+  {
+    "move_id": 79,
+    "name": "Sleep-powder",
+    "type_id": 4,
+    "power": null,
+    "accuracy": 75,
+    "pp": 15,
+    "description": "Puts the target to sleep."
+  },
+  {
+    "move_id": 80,
+    "name": "Petal-dance",
+    "type_id": 4,
+    "power": 120,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Hits every turn for 2-3 turns, then confuses the user."
+  },
+  {
+    "move_id": 81,
+    "name": "String-shot",
+    "type_id": 12,
+    "power": null,
+    "accuracy": 95,
+    "pp": 40,
+    "description": "Lowers the target's Speed by two stages."
+  },
+  {
+    "move_id": 82,
+    "name": "Dragon-rage",
+    "type_id": 15,
+    "power": null,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Inflicts 40 points of damage."
+  },
+  {
+    "move_id": 83,
+    "name": "Fire-spin",
+    "type_id": 2,
+    "power": 35,
+    "accuracy": 85,
+    "pp": 15,
+    "description": "Prevents the target from fleeing and inflicts damage for 2-5 turns."
+  },
+  {
+    "move_id": 84,
+    "name": "Thunder-shock",
+    "type_id": 5,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Has a 10% chance to paralyze the target."
+  },
+  {
+    "move_id": 85,
+    "name": "Thunderbolt",
+    "type_id": 5,
+    "power": 90,
+    "accuracy": 100,
+    "pp": 15,
+    "description": "Has a 10% chance to paralyze the target."
+  },
+  {
+    "move_id": 86,
+    "name": "Thunder-wave",
+    "type_id": 5,
+    "power": null,
+    "accuracy": 90,
+    "pp": 20,
+    "description": "Paralyzes the target."
+  },
+  {
+    "move_id": 87,
+    "name": "Thunder",
+    "type_id": 5,
+    "power": 110,
+    "accuracy": 70,
+    "pp": 10,
+    "description": "Has a 30% chance to paralyze the target."
+  },
+  {
+    "move_id": 88,
+    "name": "Rock-throw",
+    "type_id": 13,
+    "power": 50,
+    "accuracy": 90,
+    "pp": 15,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 89,
+    "name": "Earthquake",
+    "type_id": 9,
+    "power": 100,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Inflicts regular damage and can hit Dig users."
+  },
+  {
+    "move_id": 90,
+    "name": "Fissure",
+    "type_id": 9,
+    "power": null,
+    "accuracy": 30,
+    "pp": 5,
+    "description": "Causes a one-hit KO."
+  },
+  {
+    "move_id": 91,
+    "name": "Dig",
+    "type_id": 9,
+    "power": 80,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "User digs underground, dodging all attacks, and hits next turn."
+  },
+  {
+    "move_id": 92,
+    "name": "Toxic",
+    "type_id": 8,
+    "power": null,
+    "accuracy": 90,
+    "pp": 10,
+    "description": "Badly poisons the target, inflicting more damage every turn."
+  },
+  {
+    "move_id": 93,
+    "name": "Confusion",
+    "type_id": 11,
+    "power": 50,
+    "accuracy": 100,
+    "pp": 25,
+    "description": "Has a 10% chance to confuse the target."
+  },
+  {
+    "move_id": 94,
+    "name": "Psychic",
+    "type_id": 11,
+    "power": 90,
+    "accuracy": 100,
+    "pp": 10,
+    "description": "Has a 10% chance to lower the target's Special Defense by one stage."
+  },
+  {
+    "move_id": 95,
+    "name": "Hypnosis",
+    "type_id": 11,
+    "power": null,
+    "accuracy": 60,
+    "pp": 20,
+    "description": "Puts the target to sleep."
+  },
+  {
+    "move_id": 96,
+    "name": "Meditate",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 40,
+    "description": "Raises the user's Attack by one stage."
+  },
+  {
+    "move_id": 97,
+    "name": "Agility",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 30,
+    "description": "Raises the user's Speed by two stages."
+  },
+  {
+    "move_id": 98,
+    "name": "Quick-attack",
+    "type_id": 1,
+    "power": 40,
+    "accuracy": 100,
+    "pp": 30,
+    "description": "Inflicts regular damage with no additional effect."
+  },
+  {
+    "move_id": 99,
+    "name": "Rage",
+    "type_id": 1,
+    "power": 20,
+    "accuracy": 100,
+    "pp": 20,
+    "description": "If the user is hit after using this move, its Attack rises by one stage."
+  },
+  {
+    "move_id": 100,
+    "name": "Teleport",
+    "type_id": 11,
+    "power": null,
+    "accuracy": null,
+    "pp": 20,
+    "description": "Immediately ends wild battles.  No effect otherwise."
+  }
+]

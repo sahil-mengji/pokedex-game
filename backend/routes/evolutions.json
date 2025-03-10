@@ -1,0 +1,416 @@
+[
+  {
+    "base_pokemon_id": 1,
+    "evolved_pokemon_id": 2,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 16"
+  },
+  {
+    "base_pokemon_id": 2,
+    "evolved_pokemon_id": 3,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 32"
+  },
+  {
+    "base_pokemon_id": 4,
+    "evolved_pokemon_id": 5,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 16"
+  },
+  {
+    "base_pokemon_id": 5,
+    "evolved_pokemon_id": 6,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 36"
+  },
+  {
+    "base_pokemon_id": 7,
+    "evolved_pokemon_id": 8,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 16"
+  },
+  {
+    "base_pokemon_id": 8,
+    "evolved_pokemon_id": 9,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 36"
+  },
+  {
+    "base_pokemon_id": 10,
+    "evolved_pokemon_id": 11,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 7"
+  },
+  {
+    "base_pokemon_id": 11,
+    "evolved_pokemon_id": 12,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 10"
+  },
+  {
+    "base_pokemon_id": 13,
+    "evolved_pokemon_id": 14,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 7"
+  },
+  {
+    "base_pokemon_id": 14,
+    "evolved_pokemon_id": 15,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 10"
+  },
+  {
+    "base_pokemon_id": 16,
+    "evolved_pokemon_id": 17,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 18"
+  },
+  {
+    "base_pokemon_id": 17,
+    "evolved_pokemon_id": 18,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 36"
+  },
+  {
+    "base_pokemon_id": 19,
+    "evolved_pokemon_id": 20,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 20"
+  },
+  {
+    "base_pokemon_id": 21,
+    "evolved_pokemon_id": 22,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 20"
+  },
+  {
+    "base_pokemon_id": 23,
+    "evolved_pokemon_id": 24,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 22"
+  },
+  {
+    "base_pokemon_id": 27,
+    "evolved_pokemon_id": 28,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 22"
+  },
+  {
+    "base_pokemon_id": 29,
+    "evolved_pokemon_id": 30,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 16"
+  },
+  {
+    "base_pokemon_id": 30,
+    "evolved_pokemon_id": 31,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use moon-stone"
+  },
+  {
+    "base_pokemon_id": 32,
+    "evolved_pokemon_id": 33,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 16"
+  },
+  {
+    "base_pokemon_id": 33,
+    "evolved_pokemon_id": 34,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use moon-stone"
+  },
+  {
+    "base_pokemon_id": 37,
+    "evolved_pokemon_id": 38,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use fire-stone"
+  },
+  {
+    "base_pokemon_id": 41,
+    "evolved_pokemon_id": 42,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 22"
+  },
+  {
+    "base_pokemon_id": 43,
+    "evolved_pokemon_id": 44,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 21"
+  },
+  {
+    "base_pokemon_id": 44,
+    "evolved_pokemon_id": 45,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use leaf-stone"
+  },
+  {
+    "base_pokemon_id": 46,
+    "evolved_pokemon_id": 47,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 24"
+  },
+  {
+    "base_pokemon_id": 48,
+    "evolved_pokemon_id": 49,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 31"
+  },
+  {
+    "base_pokemon_id": 50,
+    "evolved_pokemon_id": 51,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 26"
+  },
+  {
+    "base_pokemon_id": 52,
+    "evolved_pokemon_id": 53,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 28"
+  },
+  {
+    "base_pokemon_id": 54,
+    "evolved_pokemon_id": 55,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 33"
+  },
+  {
+    "base_pokemon_id": 56,
+    "evolved_pokemon_id": 57,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 28"
+  },
+  {
+    "base_pokemon_id": 58,
+    "evolved_pokemon_id": 59,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use fire-stone"
+  },
+  {
+    "base_pokemon_id": 60,
+    "evolved_pokemon_id": 61,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 25"
+  },
+  {
+    "base_pokemon_id": 61,
+    "evolved_pokemon_id": 62,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use water-stone"
+  },
+  {
+    "base_pokemon_id": 63,
+    "evolved_pokemon_id": 64,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 16"
+  },
+  {
+    "base_pokemon_id": 64,
+    "evolved_pokemon_id": 65,
+    "evolution_method": "trade",
+    "evolution_condition": ""
+  },
+  {
+    "base_pokemon_id": 66,
+    "evolved_pokemon_id": 67,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 28"
+  },
+  {
+    "base_pokemon_id": 67,
+    "evolved_pokemon_id": 68,
+    "evolution_method": "trade",
+    "evolution_condition": ""
+  },
+  {
+    "base_pokemon_id": 69,
+    "evolved_pokemon_id": 70,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 21"
+  },
+  {
+    "base_pokemon_id": 70,
+    "evolved_pokemon_id": 71,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use leaf-stone"
+  },
+  {
+    "base_pokemon_id": 72,
+    "evolved_pokemon_id": 73,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 30"
+  },
+  {
+    "base_pokemon_id": 74,
+    "evolved_pokemon_id": 75,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 25"
+  },
+  {
+    "base_pokemon_id": 75,
+    "evolved_pokemon_id": 76,
+    "evolution_method": "trade",
+    "evolution_condition": ""
+  },
+  {
+    "base_pokemon_id": 77,
+    "evolved_pokemon_id": 78,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 40"
+  },
+  {
+    "base_pokemon_id": 79,
+    "evolved_pokemon_id": 80,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 37"
+  },
+  {
+    "base_pokemon_id": 81,
+    "evolved_pokemon_id": 82,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 30"
+  },
+  {
+    "base_pokemon_id": 84,
+    "evolved_pokemon_id": 85,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 31"
+  },
+  {
+    "base_pokemon_id": 86,
+    "evolved_pokemon_id": 87,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 34"
+  },
+  {
+    "base_pokemon_id": 88,
+    "evolved_pokemon_id": 89,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 38"
+  },
+  {
+    "base_pokemon_id": 90,
+    "evolved_pokemon_id": 91,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use water-stone"
+  },
+  {
+    "base_pokemon_id": 92,
+    "evolved_pokemon_id": 93,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 25"
+  },
+  {
+    "base_pokemon_id": 93,
+    "evolved_pokemon_id": 94,
+    "evolution_method": "trade",
+    "evolution_condition": ""
+  },
+  {
+    "base_pokemon_id": 96,
+    "evolved_pokemon_id": 97,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 26"
+  },
+  {
+    "base_pokemon_id": 98,
+    "evolved_pokemon_id": 99,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 28"
+  },
+  {
+    "base_pokemon_id": 100,
+    "evolved_pokemon_id": 101,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 30"
+  },
+  {
+    "base_pokemon_id": 102,
+    "evolved_pokemon_id": 103,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use leaf-stone"
+  },
+  {
+    "base_pokemon_id": 104,
+    "evolved_pokemon_id": 105,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 28"
+  },
+  {
+    "base_pokemon_id": 109,
+    "evolved_pokemon_id": 110,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 35"
+  },
+  {
+    "base_pokemon_id": 111,
+    "evolved_pokemon_id": 112,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 42"
+  },
+  {
+    "base_pokemon_id": 116,
+    "evolved_pokemon_id": 117,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 32"
+  },
+  {
+    "base_pokemon_id": 118,
+    "evolved_pokemon_id": 119,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 33"
+  },
+  {
+    "base_pokemon_id": 120,
+    "evolved_pokemon_id": 121,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use water-stone"
+  },
+  {
+    "base_pokemon_id": 129,
+    "evolved_pokemon_id": 130,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 20"
+  },
+  {
+    "base_pokemon_id": 133,
+    "evolved_pokemon_id": 134,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use water-stone"
+  },
+  {
+    "base_pokemon_id": 133,
+    "evolved_pokemon_id": 135,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use thunder-stone"
+  },
+  {
+    "base_pokemon_id": 133,
+    "evolved_pokemon_id": 136,
+    "evolution_method": "use-item",
+    "evolution_condition": "Use fire-stone"
+  },
+  {
+    "base_pokemon_id": 138,
+    "evolved_pokemon_id": 139,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 40"
+  },
+  {
+    "base_pokemon_id": 140,
+    "evolved_pokemon_id": 141,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 40"
+  },
+  {
+    "base_pokemon_id": 147,
+    "evolved_pokemon_id": 148,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 30"
+  },
+  {
+    "base_pokemon_id": 148,
+    "evolved_pokemon_id": 149,
+    "evolution_method": "level-up",
+    "evolution_condition": "Level 55"
+  }
+]
