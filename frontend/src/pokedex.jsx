@@ -109,7 +109,7 @@ const Pokedex = () => {
         {filteredList.slice(0, visibleCount).map((pokemon) => (
           <Link key={pokemon.id} to={`/pokedex/${pokemon.id}`}>
           <div
-            className={`relative p-4 rounded-xl shadow-md hover:shadow-lg cursor-pointer 
+            className={`p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 
               bg-gradient-to-r ${
                 pokemon.types.length > 1
                   ? `${typeColorsCards[pokemon.types[0]]} ${typeColorsCards[pokemon.types[1]]}`
@@ -159,8 +159,16 @@ const Pokedex = () => {
           </button>
         </div>
       )}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed bottom-4 right-4 p-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all"
+      >
+        ⬆
+      </button>
+
     </div>
   );
+  
 };
 
 export default Pokedex;
