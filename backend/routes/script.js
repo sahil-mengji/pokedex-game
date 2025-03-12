@@ -1,92 +1,59 @@
 const axios = require("axios");
 const fs = require("fs");
 
-// Mapping from move type names to type IDs (adjust as per your Type table)
-const typeMapping = {
-  normal: 1,
-  fire: 2,
-  water: 3,
-  grass: 4,
-  electric: 5,
-  ice: 6,
-  fighting: 7,
-  poison: 8,
-  ground: 9,
-  flying: 10,
-  psychic: 11,
-  bug: 12,
-  rock: 13,
-  ghost: 14,
-  dragon: 15,
-  dark: 16,
-  steel: 17,
-  fairy: 18,
-};
-
-async function fetchMoveDetails(moveUrl) {
-  try {
-    const res = await axios.get(moveUrl);
-    const data = res.data;
-    
-    // Get the move's name and id from the API
-    const moveId = data.id;
-    const name = data.name.charAt(0).toUpperCase() + data.name.slice(1);
-
-    // Get type: data.type is an object with a "name" property.
-    const moveTypeName = data.type ? data.type.name : "normal";
-    const type_id = typeMapping[moveTypeName] || 1;  // default to 1 if missing
-
-    // power, accuracy, pp may be null
-    const power = data.power;
-    const accuracy = data.accuracy;
-    const pp = data.pp;
-
-    // Get description from effect_entries array – pick first English entry
-    let description = "";
-    if (data.effect_entries && data.effect_entries.length > 0) {
-      const enEntry = data.effect_entries.find(entry => entry.language.name === "en");
-      description = enEntry ? enEntry.short_effect || enEntry.effect : "";
-    }
-
-    return {
-      move_id: moveId,
-      name,
-      type_id,
-      power,
-      accuracy,
-      pp,
-      description,
-    };
-  } catch (error) {
-    console.error(`Error fetching move details from ${moveUrl}:`, error.message);
-    return null;
-  }
+// Helper: Extract numeric ID from a URL.
+function extractIdFromUrl(url) {
+  const parts = url.split("/").filter(Boolean);
+  return parseInt(parts[parts.length - 1], 10);
 }
 
-async function fetchMoves() {
-  const limit = 165; // Number of moves to fetch
-  let moves = [];
-
+// Fetch moves for a given Pokémon, filtering for moves learned via level-up.
+// We assume that TM moves have level_learned set to 0.
+async function fetchPokemonMoves(pokemonId) {
   try {
-    // Get the list of moves from the API
-    const res = await axios.get(`https://pokeapi.co/api/v2/move?limit=${limit}`);
-    const moveList = res.data.results;
-
-    // Loop through the list and fetch details for each move
-    for (let move of moveList) {
-      const moveDetails = await fetchMoveDetails(move.url);
-      if (moveDetails) {
-        moves.push(moveDetails);
-        console.log(`Fetched move: ${moveDetails.name}`);
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+    const data = response.data;
+    let movesList = [];
+    let seen = new Set();
+    
+    for (const moveEntry of data.moves) {
+      // Filter for moves learned in the "firered-leafgreen" version group.
+      const details = moveEntry.version_group_details.find(
+        vg => vg.version_group.name === "firered-leafgreen"
+      );
+      if (details) {
+        const levelLearned = details.level_learned_at;
+        // Only include moves learned by leveling up (level > 0)
+        if (levelLearned > 0) {
+          const moveId = extractIdFromUrl(moveEntry.move.url);
+          // Also, ensure we only insert one record per move for this Pokémon.
+          if (!seen.has(moveId) && moveId <= 400) {
+            seen.add(moveId);
+            movesList.push({
+              pokemon_id: pokemonId,
+              move_id: moveId,
+              level_learned: levelLearned
+            });
+          }
+        }
       }
     }
-
-    // Save moves to moves.json file
-    fs.writeFileSync("moves.json", JSON.stringify(moves, null, 2));
-    console.log("Moves data saved to moves.json!");
+    return movesList;
   } catch (error) {
-    console.error("Error fetching moves:", error.message);
+    console.error(`Error fetching moves for Pokémon #${pokemonId}: ${error.message}`);
+    return [];
   }
 }
 
-fetchMoves();
+async function generatePokemonMovesJSON() {
+  let allMoves = [];
+  for (let id = 76; id <= 151; id++) {
+    const moves = await fetchPokemonMoves(id);
+    allMoves = allMoves.concat(moves);
+    console.log(`Processed Pokémon #${id}, found ${moves.length} unique level-up moves.`);
+  }
+  fs.writeFileSync("pokemon_moves_76_151.json", JSON.stringify(allMoves, null, 2));
+  console.log(`pokemon_moves_76_151.json generated with ${allMoves.length} records.`);
+}
+
+generatePokemonMovesJSON();

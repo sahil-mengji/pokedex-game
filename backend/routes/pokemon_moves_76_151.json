@@ -1,0 +1,3837 @@
+[
+  {
+    "pokemon_id": 76,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 38,
+    "level_learned": 62
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 88,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 89,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 111,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 120,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 153,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 205,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 222,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 300,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 76,
+    "move_id": 350,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 23,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 36,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 39,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 45,
+    "level_learned": 5
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 52,
+    "level_learned": 14
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 83,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 97,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 98,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 126,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 77,
+    "move_id": 340,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 23,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 31,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 36,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 52,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 83,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 97,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 98,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 126,
+    "level_learned": 63
+  },
+  {
+    "pokemon_id": 78,
+    "move_id": 340,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 29,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 45,
+    "level_learned": 6
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 50,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 55,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 93,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 94,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 133,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 174,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 244,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 79,
+    "move_id": 281,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 29,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 50,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 55,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 93,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 94,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 110,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 133,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 174,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 244,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 80,
+    "move_id": 281,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 48,
+    "level_learned": 11
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 49,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 84,
+    "level_learned": 6
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 86,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 103,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 129,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 192,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 199,
+    "level_learned": 32
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 209,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 81,
+    "move_id": 319,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 48,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 49,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 84,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 86,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 103,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 161,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 192,
+    "level_learned": 62
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 199,
+    "level_learned": 35
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 209,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 82,
+    "move_id": 319,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 14,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 28,
+    "level_learned": 6
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 31,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 43,
+    "level_learned": 11
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 64,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 97,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 163,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 206,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 210,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 83,
+    "move_id": 282,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 31,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 64,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 65,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 97,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 99,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 161,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 228,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 84,
+    "move_id": 253,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 31,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 64,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 65,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 97,
+    "level_learned": 60
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 99,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 161,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 228,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 85,
+    "move_id": 253,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 29,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 36,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 45,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 58,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 62,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 156,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 196,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 86,
+    "move_id": 219,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 29,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 36,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 58,
+    "level_learned": 51
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 62,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 156,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 196,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 219,
+    "level_learned": 64
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 324,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 87,
+    "move_id": 329,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 50,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 103,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 106,
+    "level_learned": 4
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 107,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 124,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 139,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 151,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 188,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 88,
+    "move_id": 262,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 50,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 103,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 106,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 107,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 124,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 139,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 151,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 188,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 89,
+    "move_id": 262,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 43,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 48,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 58,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 62,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 110,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 128,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 182,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 90,
+    "move_id": 333,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 91,
+    "move_id": 48,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 91,
+    "move_id": 62,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 91,
+    "move_id": 110,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 91,
+    "move_id": 131,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 91,
+    "move_id": 182,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 91,
+    "move_id": 191,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 101,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 109,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 122,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 138,
+    "level_learned": 28
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 171,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 174,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 180,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 194,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 212,
+    "level_learned": 48
+  },
+  {
+    "pokemon_id": 92,
+    "move_id": 247,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 101,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 109,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 122,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 138,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 171,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 174,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 180,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 194,
+    "level_learned": 39
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 212,
+    "level_learned": 64
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 247,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 93,
+    "move_id": 325,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 101,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 109,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 122,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 138,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 171,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 174,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 180,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 194,
+    "level_learned": 39
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 212,
+    "level_learned": 64
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 247,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 94,
+    "move_id": 325,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 20,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 21,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 38,
+    "level_learned": 56
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 88,
+    "level_learned": 12
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 99,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 103,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 106,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 201,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 225,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 231,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 95,
+    "move_id": 328,
+    "level_learned": 52
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 29,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 50,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 93,
+    "level_learned": 11
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 94,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 96,
+    "level_learned": 27
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 139,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 207,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 244,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 96,
+    "move_id": 248,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 29,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 50,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 93,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 94,
+    "level_learned": 35
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 96,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 139,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 171,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 207,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 244,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 97,
+    "move_id": 248,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 11,
+    "level_learned": 12
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 12,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 23,
+    "level_learned": 27
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 43,
+    "level_learned": 5
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 106,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 145,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 152,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 175,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 182,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 98,
+    "move_id": 341,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 11,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 12,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 23,
+    "level_learned": 27
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 106,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 145,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 152,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 175,
+    "level_learned": 65
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 182,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 232,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 99,
+    "move_id": 341,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 49,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 103,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 113,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 120,
+    "level_learned": 27
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 129,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 153,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 205,
+    "level_learned": 32
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 209,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 243,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 100,
+    "move_id": 268,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 49,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 103,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 113,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 120,
+    "level_learned": 27
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 129,
+    "level_learned": 48
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 153,
+    "level_learned": 54
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 205,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 209,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 243,
+    "level_learned": 59
+  },
+  {
+    "pokemon_id": 101,
+    "move_id": 268,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 73,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 76,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 77,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 78,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 79,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 93,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 115,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 140,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 102,
+    "move_id": 253,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 103,
+    "move_id": 23,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 103,
+    "move_id": 93,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 103,
+    "move_id": 95,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 103,
+    "move_id": 121,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 103,
+    "move_id": 140,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 29,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 37,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 38,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 39,
+    "level_learned": 5
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 43,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 99,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 116,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 125,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 155,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 198,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 104,
+    "move_id": 206,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 29,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 37,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 38,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 43,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 99,
+    "level_learned": 32
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 116,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 125,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 155,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 198,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 105,
+    "move_id": 206,
+    "level_learned": 39
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 24,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 25,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 26,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 27,
+    "level_learned": 11
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 96,
+    "level_learned": 6
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 116,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 136,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 170,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 179,
+    "level_learned": 51
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 193,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 203,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 279,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 106,
+    "move_id": 280,
+    "level_learned": 20
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 4,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 5,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 7,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 8,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 9,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 68,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 97,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 183,
+    "level_learned": 20
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 197,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 228,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 279,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 107,
+    "move_id": 327,
+    "level_learned": 32
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 21,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 23,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 35,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 48,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 50,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 103,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 111,
+    "level_learned": 12
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 122,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 282,
+    "level_learned": 18
+  },
+  {
+    "pokemon_id": 108,
+    "move_id": 287,
+    "level_learned": 51
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 108,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 114,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 120,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 123,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 124,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 139,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 153,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 194,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 109,
+    "move_id": 262,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 108,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 114,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 120,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 123,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 124,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 139,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 153,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 194,
+    "level_learned": 51
+  },
+  {
+    "pokemon_id": 110,
+    "move_id": 262,
+    "level_learned": 58
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 23,
+    "level_learned": 10
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 30,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 31,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 32,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 36,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 89,
+    "level_learned": 52
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 184,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 224,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 111,
+    "move_id": 350,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 23,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 30,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 31,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 32,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 36,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 89,
+    "level_learned": 58
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 184,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 224,
+    "level_learned": 66
+  },
+  {
+    "pokemon_id": 112,
+    "move_id": 350,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 3,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 38,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 39,
+    "level_learned": 5
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 47,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 107,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 111,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 113,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 121,
+    "level_learned": 35
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 135,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 113,
+    "move_id": 287,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 20,
+    "level_learned": 28
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 21,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 22,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 71,
+    "level_learned": 10
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 72,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 74,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 77,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 78,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 79,
+    "level_learned": 4
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 132,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 275,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 114,
+    "move_id": 321,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 4,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 5,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 39,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 44,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 99,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 146,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 179,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 203,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 115,
+    "move_id": 252,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 43,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 55,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 56,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 97,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 108,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 145,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 239,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 116,
+    "move_id": 349,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 55,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 56,
+    "level_learned": 51
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 97,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 108,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 145,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 239,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 117,
+    "move_id": 349,
+    "level_learned": 62
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 30,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 31,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 32,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 48,
+    "level_learned": 10
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 64,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 97,
+    "level_learned": 52
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 127,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 175,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 224,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 118,
+    "move_id": 346,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 30,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 31,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 32,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 48,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 64,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 97,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 127,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 175,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 224,
+    "level_learned": 69
+  },
+  {
+    "pokemon_id": 119,
+    "move_id": 346,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 55,
+    "level_learned": 6
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 56,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 61,
+    "level_learned": 28
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 105,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 106,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 107,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 113,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 129,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 229,
+    "level_learned": 10
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 293,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 120,
+    "move_id": 322,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 121,
+    "move_id": 55,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 121,
+    "move_id": 105,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 121,
+    "move_id": 109,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 121,
+    "move_id": 129,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 121,
+    "move_id": 229,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 3,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 60,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 93,
+    "level_learned": 5
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 94,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 96,
+    "level_learned": 12
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 112,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 113,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 115,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 164,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 219,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 226,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 227,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 271,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 272,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 278,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 122,
+    "move_id": 345,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 14,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 17,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 97,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 98,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 104,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 116,
+    "level_learned": 6
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 163,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 206,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 210,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 123,
+    "move_id": 228,
+    "level_learned": 11
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 3,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 8,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 34,
+    "level_learned": 51
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 59,
+    "level_learned": 67
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 122,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 142,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 181,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 195,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 212,
+    "level_learned": 35
+  },
+  {
+    "pokemon_id": 124,
+    "move_id": 313,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 9,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 85,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 87,
+    "level_learned": 58
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 98,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 103,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 113,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 125,
+    "move_id": 129,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 7,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 52,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 53,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 108,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 109,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 123,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 126,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 126,
+    "move_id": 241,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 11,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 12,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 14,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 20,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 66,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 69,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 106,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 116,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 279,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 127,
+    "move_id": 280,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 30,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 36,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 37,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 99,
+    "level_learned": 4
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 156,
+    "level_learned": 34
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 184,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 207,
+    "level_learned": 26
+  },
+  {
+    "pokemon_id": 128,
+    "move_id": 228,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 129,
+    "move_id": 33,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 129,
+    "move_id": 150,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 129,
+    "move_id": 175,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 37,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 43,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 44,
+    "level_learned": 20
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 56,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 63,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 82,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 239,
+    "level_learned": 35
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 240,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 130,
+    "move_id": 349,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 34,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 45,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 47,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 54,
+    "level_learned": 7
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 55,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 56,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 58,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 109,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 195,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 219,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 240,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 131,
+    "move_id": 329,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 132,
+    "move_id": 144,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 28,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 36,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 44,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 45,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 98,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 226,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 133,
+    "move_id": 270,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 28,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 44,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 55,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 56,
+    "level_learned": 52
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 62,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 98,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 114,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 151,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 134,
+    "move_id": 270,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 24,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 28,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 42,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 84,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 86,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 87,
+    "level_learned": 52
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 97,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 98,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 135,
+    "move_id": 270,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 28,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 39,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 43,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 44,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 52,
+    "level_learned": 16
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 53,
+    "level_learned": 52
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 83,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 98,
+    "level_learned": 23
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 123,
+    "level_learned": 42
+  },
+  {
+    "pokemon_id": 136,
+    "move_id": 270,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 60,
+    "level_learned": 12
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 97,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 105,
+    "level_learned": 20
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 159,
+    "level_learned": 24
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 160,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 161,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 176,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 192,
+    "level_learned": 48
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 199,
+    "level_learned": 32
+  },
+  {
+    "pokemon_id": 137,
+    "move_id": 278,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 43,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 44,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 55,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 56,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 110,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 132,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 182,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 246,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 321,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 138,
+    "move_id": 341,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 43,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 44,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 55,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 56,
+    "level_learned": 65
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 110,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 131,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 132,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 182,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 246,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 321,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 139,
+    "move_id": 341,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 10,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 28,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 43,
+    "level_learned": 19
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 71,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 72,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 106,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 203,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 246,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 319,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 140,
+    "move_id": 341,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 10,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 28,
+    "level_learned": 31
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 71,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 72,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 106,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 163,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 203,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 210,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 246,
+    "level_learned": 65
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 319,
+    "level_learned": 46
+  },
+  {
+    "pokemon_id": 141,
+    "move_id": 341,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 17,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 36,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 44,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 48,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 63,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 97,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 184,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 142,
+    "move_id": 246,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 29,
+    "level_learned": 17
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 33,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 34,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 63,
+    "level_learned": 53
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 111,
+    "level_learned": 9
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 133,
+    "level_learned": 5
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 156,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 173,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 187,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 205,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 214,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 281,
+    "level_learned": 21
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 335,
+    "level_learned": 41
+  },
+  {
+    "pokemon_id": 143,
+    "move_id": 343,
+    "level_learned": 45
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 16,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 54,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 58,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 59,
+    "level_learned": 73
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 97,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 115,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 170,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 181,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 144,
+    "move_id": 329,
+    "level_learned": 85
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 64,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 65,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 84,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 86,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 87,
+    "level_learned": 85
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 97,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 113,
+    "level_learned": 73
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 197,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 145,
+    "move_id": 268,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 17,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 52,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 53,
+    "level_learned": 49
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 83,
+    "level_learned": 13
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 97,
+    "level_learned": 25
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 143,
+    "level_learned": 85
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 203,
+    "level_learned": 37
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 219,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 146,
+    "move_id": 257,
+    "level_learned": 73
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 21,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 35,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 63,
+    "level_learned": 57
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 82,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 86,
+    "level_learned": 8
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 97,
+    "level_learned": 36
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 200,
+    "level_learned": 50
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 219,
+    "level_learned": 43
+  },
+  {
+    "pokemon_id": 147,
+    "move_id": 239,
+    "level_learned": 15
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 21,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 35,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 63,
+    "level_learned": 65
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 82,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 86,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 97,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 200,
+    "level_learned": 56
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 219,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 148,
+    "move_id": 239,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 17,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 21,
+    "level_learned": 29
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 35,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 43,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 63,
+    "level_learned": 75
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 82,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 86,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 97,
+    "level_learned": 38
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 200,
+    "level_learned": 61
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 219,
+    "level_learned": 47
+  },
+  {
+    "pokemon_id": 149,
+    "move_id": 239,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 50,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 54,
+    "level_learned": 22
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 93,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 94,
+    "level_learned": 66
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 105,
+    "level_learned": 44
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 112,
+    "level_learned": 11
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 129,
+    "level_learned": 33
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 133,
+    "level_learned": 99
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 219,
+    "level_learned": 55
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 244,
+    "level_learned": 77
+  },
+  {
+    "pokemon_id": 150,
+    "move_id": 248,
+    "level_learned": 88
+  },
+  {
+    "pokemon_id": 151,
+    "move_id": 1,
+    "level_learned": 1
+  },
+  {
+    "pokemon_id": 151,
+    "move_id": 5,
+    "level_learned": 20
+  },
+  {
+    "pokemon_id": 151,
+    "move_id": 94,
+    "level_learned": 40
+  },
+  {
+    "pokemon_id": 151,
+    "move_id": 118,
+    "level_learned": 30
+  },
+  {
+    "pokemon_id": 151,
+    "move_id": 144,
+    "level_learned": 10
+  },
+  {
+    "pokemon_id": 151,
+    "move_id": 246,
+    "level_learned": 50
+  }
+]
