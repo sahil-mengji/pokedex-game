@@ -45,7 +45,6 @@ const typeColors = {
   fairy: "bg-pink-300",
 };
 
-
 const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [visibleCount, setVisibleCount] = useState(20); // initially show 20 Pokémon
@@ -54,24 +53,9 @@ const Pokedex = () => {
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        const response = await axios.get(
-          "https://pokeapi.co/api/v2/pokemon?limit=151"
-        );
-        const data = response.data.results;
-        const detailedData = await Promise.all(
-          data.map(async (pokemon) => {
-            const details = await axios.get(pokemon.url);
-            return {
-              id: details.data.id,
-              name: details.data.name,
-              image:
-                details.data.sprites.other["official-artwork"].front_default ||
-                details.data.sprites.front_default,
-              types: details.data.types.map((type) => type.type.name),
-            };
-          })
-        );
-        setPokemonList(detailedData);
+        // Fetch data from your backend instead of the external API
+        const response = await axios.get("http://localhost:5000/pokemon");
+        setPokemonList(response.data);
       } catch (error) {
         console.error("Error fetching Pokémon:", error);
       }
@@ -107,45 +91,44 @@ const Pokedex = () => {
       {/* Pokémon Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {filteredList.slice(0, visibleCount).map((pokemon) => (
-          <Link key={pokemon.id} to={`/pokedex/${pokemon.id}`}>
-          <div
-            className={`p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 
+          // Use Link only if you plan to implement the detail route.
+          <Link key={pokemon.pokemon_id} to={`/pokedex/${pokemon.pokemon_id}`}>
+            <div
+              className={`p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 
               bg-gradient-to-r ${
                 pokemon.types.length > 1
-                  ? `${typeColorsCards[pokemon.types[0]]} ${typeColorsCards[pokemon.types[1]]}`
-                  : typeColorsCards[pokemon.types[0]]
+                  ? `${typeColorsCards[pokemon.types[0].toLowerCase()]} ${typeColorsCards[pokemon.types[1].toLowerCase()]}`
+                  : typeColorsCards[pokemon.types[0].toLowerCase()]
               } bg-opacity-80`}
-          >
-            {/* Pokémon ID on the Top-Left */}
-            <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded">
-              #{pokemon.id.toString().padStart(4, "0")}
-            </span>
-        
-            {/* Pokémon Image */}
-            <img loading="lazy" src={pokemon.image} alt={pokemon.name} className="w-full" />
-        
-            {/* Pokémon Name */}
-            <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900">
-              {pokemon.name}
-            </h2>
-        
-            {/* Pokémon Types */}
-            <div className="flex justify-center mt-1">
-              {pokemon.types.map((type, index) => (
-                <span
-                  key={index}
-                  className={`px-2 py-1 text-xs text-white font-semibold rounded mx-1 border border-white shadow-md 
-                  ${typeColors[type] || "bg-gray-500"}`}
-                >
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
-                </span>
-              ))}
+            >
+              {/* Pokémon ID on the Top-Left */}
+              <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded">
+                #{pokemon.pokemon_id.toString().padStart(4, "0")}
+              </span>
+
+              {/* Pokémon Image */}
+              <img loading="lazy" src={pokemon.img_src} alt={pokemon.name} className="w-full" />
+
+              {/* Pokémon Name */}
+              <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900">
+                {pokemon.name}
+              </h2>
+
+              {/* Pokémon Types */}
+              <div className="flex justify-center mt-1">
+                {pokemon.types.map((type, index) => (
+                  <span
+                    key={index}
+                    className={`px-2 py-1 text-xs text-white font-semibold rounded mx-1 border border-white shadow-md 
+                    ${typeColors[type.toLowerCase()] || "bg-gray-500"}`}
+                  >
+                    {type}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </Link>
-             
+          </Link>
         ))}
-        
       </div>
 
       {/* Load More Button */}
@@ -159,16 +142,15 @@ const Pokedex = () => {
           </button>
         </div>
       )}
+
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         className="fixed bottom-4 right-4 p-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all"
       >
         ⬆
       </button>
-
     </div>
   );
-  
 };
 
 export default Pokedex;
