@@ -127,12 +127,11 @@ router.get("/:id", async (req, res) => {
       "SELECT a.name, pa.is_hidden FROM Pokemon_Ability pa JOIN Ability a ON pa.ability_id = a.ability_id WHERE pa.pokemon_id = ?",
       [id]
     );
-    const abilities = abilityRows.map((row) =>
-      row.is_hidden
-        ? `${capitalize(row.name)} (Hidden)`
-        : capitalize(row.name)
-    );
-
+    
+    const abilities = abilityRows
+      .filter((row) => !row.is_hidden)         // Only keep rows where is_hidden is false
+      .map((row) => capitalize(row.name));     // Then capitalize the ability name
+      
     // 6. Get evolutions recursively:
     const previous_evolutions = await getPreviousEvolutions(id);
     const next_evolutions = await getNextEvolutions(id);

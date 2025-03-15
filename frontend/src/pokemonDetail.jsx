@@ -99,7 +99,7 @@ function PokemonDetail() {
         {/* Profile & Image */}
         <div className="flex flex-col md:flex-row gap-4 items-start justify-center mb-6">
           {/* Pokémon Image */}
-          <div className="md:w-1/2 flex justify-center bg-gray-300 border-2 rounded-lg p-4">
+          <div className="md:w-1/2 flex justify-center bg-gray-300 border-2 rounded-3xl p-4">
             <img
               loading="lazy"
               src={pokemon.img_src}
@@ -107,32 +107,52 @@ function PokemonDetail() {
               className="w-64 h-64 object-contain"
             />
           </div>
-          {/* Profile Box */}
-          <div className="md:w-1/3 p-4 rounded-xl shadow-md bg-blue-300 border border-gray-300">
-            <h2 className="text-2xl font-bold text-center mb-2">Profile</h2>
-            <div className="text-sm text-gray-800 space-y-2">
-              <p>
-                <strong>Height:</strong> {pokemon.height} m
-              </p>
-              <p>
-                <strong>Weight:</strong> {pokemon.weight} kg
-              </p>
-              <p>
-                <strong>Gender:</strong>{" "}
+
+          {/* Profile Box */} 
+          <div className="bg-blue-400 rounded-3xl p-6 md:w-1/2">
+            <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+              {/* Row 1: Labels */}
+              <div className="font-semibold text-left text-white">Height</div>
+              <div className="font-semibold text-white">Category</div>
+
+              {/* Row 2: Values */}
+              <div className="text-left text-lg">
+                {pokemon.height ? pokemon.height : "—"} m
+              </div>
+              <div className="text-lg">
+                {pokemon.details?.category || "Pokémon"}
+              </div>
+
+              {/* Row 3: Labels */}
+              <div className="font-semibold text-left text-white">Weight</div>
+              <div className="font-semibold text-white">Abilities</div>
+
+              {/* Row 4: Values */}
+              <div className="text-left text-lg">
+                {pokemon.weight ? pokemon.weight : "—"} kg
+              </div>
+              <div className="text-lg">
+                {pokemon.abilities && pokemon.abilities.length > 0
+                  ? pokemon.abilities.join(", ")
+                  : "—"}
+              </div>
+
+              {/* Row 5: Label */}
+              <div className="font-semibold text-left text-white">Gender</div>
+              <div />
+
+              {/* Row 6: Value */}
+              <div className="text-left text-lg">
                 {pokemon.genders && pokemon.genders.length > 0
                   ? pokemon.genders.join(", ")
                   : "Genderless"}
-              </p>
-              <p>
-                <strong>Category:</strong>{" "}
-                {pokemon.details ? pokemon.details.category : "Pokémon"}
-              </p>
-              <p>
-                <strong>Abilities:</strong> {pokemon.abilities.join(", ")}
-              </p>
+              </div>
+              <div />
             </div>
           </div>
+
         </div>
+
 
         {/* Types, Weaknesses, Stats */}
         <div className="flex flex-col md:flex-row gap-8">
@@ -178,7 +198,7 @@ function PokemonDetail() {
 
           {/* Right Column: Stats */}
           {/* Stats Section */}
-          <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-1/2">
+          <div className="bg-white p-6 rounded-3xl shadow-md w-full md:w-1/2">
             <h2 className="text-2xl font-bold mb-4 text-center">Stats</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {statsArray.map((stat) => {
@@ -267,6 +287,7 @@ function PokemonDetail() {
     // Helper component to render a single Pokémon "circle card"
     const EvolutionCircle = ({ evoData }) => (
       <div className="flex flex-col items-center">
+        <Link key={evoData.id} to={`/pokedex/${evoData.id}`}>
         <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
           <img
             loading="lazy"
@@ -275,6 +296,7 @@ function PokemonDetail() {
             className="w-full h-full object-contain"
           />
         </div>
+        </Link>
         <p className="text-md sm:text-lg font-bold capitalize text-gray-800">
           {evoData.name}
           <span className="flex flex-col items-center block text-xs sm:text-sm text-gray-600">
