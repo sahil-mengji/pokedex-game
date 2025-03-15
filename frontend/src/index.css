@@ -403,3 +403,14 @@ html {
   .text-border {
 	-webkit-text-stroke: 2px rgb(15, 82, 182);
   }
+
+
+  /* Custom CSS for 3D effect on Pokémon sprite */
+/* Custom CSS for 3D hover effect on Pokémon sprite */
+.sprite-3d {
+	transition: transform 0.5s, box-shadow 0.5s;
+	transform-style: preserve-3d;
+  }
+  .sprite-3d:hover {
+	transform: rotateY(15deg) rotateX(5deg) scale(1.2);
+  }

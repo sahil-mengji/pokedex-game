@@ -159,13 +159,16 @@ function PokemonDetail() {
 
         {/* Profile & Image */}
         <div className="flex flex-col md:flex-row gap-6 items-center justify-center mb-8">
-          {/* Pokémon Image */}
-          <div className="md:w-1/2 flex justify-center bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-3xl p-4 transition-transform duration-300 hover:scale-105">
+          {/* Sprite Container with Perspective for 3D Effect */}
+          <div
+            className="md:w-1/2 flex justify-center bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-3xl p-4 transition-transform duration-300 hover:scale-105"
+            style={{ perspective: "1000px" }}
+          >
             <img
               loading="lazy"
               src={pokemon.img_src}
               alt={pokemon.name}
-              className="w-64 h-64 object-contain"
+              className="w-64 h-64 object-contain sprite-3d"
             />
           </div>
 
