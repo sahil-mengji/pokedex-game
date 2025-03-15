@@ -27,6 +27,7 @@ const typeColorCodes = {
 
 const MAX_STAT = 255;
 
+
 function PokemonDetail() {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState(null);
@@ -201,29 +202,29 @@ function PokemonDetail() {
           <div className="bg-white p-6 rounded-3xl shadow-md w-full md:w-1/2">
             <h2 className="text-2xl font-bold mb-4 text-center">Stats</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {statsArray.map((stat) => {
-                const statPercent = (stat.base_stat / MAX_STAT) * 100;
-                return (
-                  <div key={stat.name} className="flex flex-col">
-                    {/* Stat Name & Value */}
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="capitalize text-gray-700 font-medium">
-                        {stat.name}
-                      </span>
-                      <span className="font-bold text-gray-900">
-                        {stat.base_stat}
-                      </span>
+            {statsArray.map((stat) => {
+                  const statPercent = (stat.base_stat / MAX_STAT) * 100;
+                  return (
+                    <div key={stat.name} className="flex flex-col">
+                      {/* Stat Name & Value */}
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="capitalize text-gray-700 font-medium">
+                          {stat.name}
+                        </span>
+                        <span className="font-bold text-gray-900">
+                          {stat.base_stat}
+                        </span>
+                      </div>
+                      {/* Horizontal Bar with CSS animation */}
+                      <div className="w-full bg-gray-300 rounded-full h-2">
+                        <div
+                          className="bg-blue-500 h-2 rounded-full transition-all duration-500 ease-in-out animate-progress"
+                          style={{ "--target-width": `${statPercent}%` }}
+                        />
+                      </div>
                     </div>
-                    {/* Horizontal Bar */}
-                    <div className="w-full bg-gray-300 rounded-full h-2">
-                      <div
-                        className="bg-blue-500 h-2 rounded-full transition-all duration-500 ease-in-out"
-                        style={{ width: `${statPercent}%` }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -403,12 +404,7 @@ function PokemonDetail() {
           );
         })()}
       </div>
-
-
-
-
-
-
+      
       {/* Global Navigation */}
       <div className="flex justify-between items-center mt-8 max-w-5xl mx-auto">
         {pokemon.id > 1 ? (

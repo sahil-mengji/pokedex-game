@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes progressAnimation {
+	from {
+	  width: 0%;
+	}
+	to {
+	  width: var(--target-width);
+	}
+  }
+  
+  .animate-progress {
+	animation: progressAnimation 0.5s ease-in-out forwards;
+  }  
 @font-face {
 	font-family: "Gilroy";
 	src: url("./assets/fonts/gilroy/Gilroy-Black.ttf") format("truetype");
