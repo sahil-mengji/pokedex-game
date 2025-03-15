@@ -47,13 +47,12 @@ const typeColors = {
 
 const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(20); // initially show 20 Pokémon
+  const [visibleCount, setVisibleCount] = useState(20);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
-        // Fetch data from your backend instead of the external API
         const response = await axios.get("http://localhost:5000/pokemon");
         setPokemonList(response.data);
       } catch (error) {
@@ -68,59 +67,63 @@ const Pokedex = () => {
     setVisibleCount((prev) => prev + 20);
   };
 
-  // Filter Pokémon based on the search term
   const filteredList = pokemonList.filter((pokemon) =>
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">Pokédex</h1>
+      <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
+        Pokédex
+      </h1>
 
       {/* Search Bar */}
-      <div className="mb-4 flex justify-center">
+      <div className="mb-6 flex justify-center">
         <input
           type="text"
           placeholder="Search Pokémon..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-4 py-2 border rounded w-full max-w-md text-black"
+          className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 text-gray-900"
         />
       </div>
 
       {/* Pokémon Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {filteredList.slice(0, visibleCount).map((pokemon) => (
-          // Use Link only if you plan to implement the detail route.
           <Link key={pokemon.pokemon_id} to={`/pokedex/${pokemon.pokemon_id}`}>
             <div
-            
-              className={` group p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 hover:scale-[0.7] hover:translate-y-[40px] transition-transform
-              bg-gradient-to-r ${
+              className={`relative group p-4 rounded-xl shadow-lg bg-gradient-to-r transition transform duration-300 hover:scale-105 hover:shadow-2xl
+              ${
                 pokemon.types.length > 1
                   ? `${typeColorsCards[pokemon.types[0].toLowerCase()]} ${typeColorsCards[pokemon.types[1].toLowerCase()]}`
                   : typeColorsCards[pokemon.types[0].toLowerCase()]
-              } bg-opacity-80  hover:bg-opacity-50`}
+              } bg-opacity-90`}
             >
-              {/* Pokémon ID on the Top-Left */}
-              <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded group-hover:opacity-0">
+              {/* Pokémon ID */}
+              <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded">
                 #{pokemon.pokemon_id.toString().padStart(4, "0")}
               </span>
 
               {/* Pokémon Image */}
-              <img loading="lazy" src={pokemon.img_src} alt={pokemon.name} className="w-full group-hover:scale-[2] transition-transform group-hover:translate-y-[-60px]" />
+              <img
+                loading="lazy"
+                src={pokemon.img_src}
+                alt={pokemon.name}
+                className="w-full transition-transform duration-300 group-hover:scale-110"
+              />
 
               {/* Pokémon Name */}
-              <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900 group-hover:translate-y-[30px] group-hover:scale-[1.7] transition-transform ">
+              <h2 className="mt-4 text-xl font-bold text-center capitalize text-gray-900 transition-transform duration-300 group-hover:scale-105">
                 {pokemon.name}
               </h2>
 
               {/* Pokémon Types */}
-              <div className="flex justify-center mt-1 group-hover:opacity-0 ">
+              <div className="flex justify-center mt-2">
                 {pokemon.types.map((type, index) => (
                   <span
                     key={index}
-                    className={`px-2 py-1 text-xs text-white font-semibold rounded mx-1 border border-white shadow-md 
+                    className={`mx-1 px-3 py-1 text-xs font-medium text-white rounded-full border border-white shadow-sm
                     ${typeColors[type.toLowerCase()] || "bg-gray-500"}`}
                   >
                     {type}
@@ -134,19 +137,22 @@ const Pokedex = () => {
 
       {/* Load More Button */}
       {visibleCount < filteredList.length && (
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-8">
           <button
             onClick={loadMore}
-            className="px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full shadow transition-colors duration-300"
           >
             Load More Pokémon
           </button>
         </div>
       )}
 
+      {/* Scroll to Top Button */}
       <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-4 right-4 p-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all"
+        onClick={() =>
+          window.scrollTo({ top: 0, behavior: "smooth" })
+        }
+        className="fixed bottom-6 right-6 p-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg transition-colors duration-300"
       >
         ⬆
       </button>
