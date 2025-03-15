@@ -1,5 +1,5 @@
 // PokemonDetail.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
@@ -34,36 +34,46 @@ function PokemonDetail() {
   const [error, setError] = useState(null);
   const [primaryTypeColor, setPrimaryTypeColor] = useState("#cccccc");
   const [animateBars, setAnimateBars] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
+
+  // Function to fetch Pokémon data; can be re-used for retrying
+  const fetchData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const { data } = await axios.get(`http://localhost:5000/pokemon-detail/${id}`);
+      setPokemon(data);
+
+      // Set primary type color (data.types is an array of strings)
+      if (data.types && data.types.length > 0) {
+        const firstType = data.types[0].toLowerCase();
+        setPrimaryTypeColor(typeColorCodes[firstType] || "#cccccc");
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load Pokémon data");
+    } finally {
+      setLoading(false);
+    }
+  }, [id]);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        setLoading(true);
-        setError(null);
-        // Use the backend endpoint instead of the external API.
-        const { data } = await axios.get(`http://localhost:5000/pokemon-detail/${id}`);
-        setPokemon(data);
-
-        // Set primary type color (data.types is an array of strings)
-        if (data.types && data.types.length > 0) {
-          const firstType = data.types[0].toLowerCase();
-          setPrimaryTypeColor(typeColorCodes[firstType] || "#cccccc");
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load Pokémon data");
-      } finally {
-        setLoading(false);
-      }
-    }
     fetchData();
-  }, [id]);
+  }, [fetchData]);
 
   // Trigger stat bar animation shortly after mount
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimateBars(true);
     }, 200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Trigger fade-in effect for main content and evolution chain
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setContentVisible(true);
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
 
@@ -76,8 +86,14 @@ function PokemonDetail() {
   }
   if (error || !pokemon) {
     return (
-      <div className="text-center mt-10 text-lg text-red-600">
-        {error || "Error loading data."}
+      <div className="text-center mt-10 space-y-4">
+        <div className="text-lg text-red-600">{error || "Error loading data."}</div>
+        <button
+          onClick={fetchData}
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors duration-300"
+        >
+          Retry
+        </button>
       </div>
     );
   }
@@ -90,7 +106,7 @@ function PokemonDetail() {
 
   return (
     <div
-      className="min-h-screen p-4 font-sans"
+      className="min-h-screen p-4 font-sans transition-all duration-500"
       style={{
         backgroundColor: primaryTypeColor,
         backgroundImage:
@@ -98,9 +114,22 @@ function PokemonDetail() {
       }}
     >
       {/* Main Content Container */}
-      <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-3xl shadow-2xl max-w-5xl mx-auto">
+      <div
+        className={`relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-3xl shadow-2xl max-w-5xl mx-auto transition-opacity duration-500 ease-in-out ${
+          contentVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {/* Pokéball Watermark */}
+        <div className="absolute right-4 top-4 opacity-10 pointer-events-none">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
+            alt="Pokéball watermark"
+            className="w-16 h-16"
+          />
+        </div>
+
         {/* Title */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-6 pt-8">
           <h1 className="text-4xl font-bold capitalize text-gray-900 dark:text-gray-100 tracking-wide">
             {pokemon.name} #{String(pokemon.id).padStart(4, "0")}
           </h1>
@@ -250,7 +279,11 @@ function PokemonDetail() {
       </div>
 
       {/* Evolution Chain */}
-      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-6 rounded-3xl shadow-2xl max-w-5xl mx-auto mt-6 relative z-10">
+      <div
+        className={`bg-white/80 dark:bg-gray-800/80 backdrop-blur-md p-6 rounded-3xl shadow-2xl max-w-5xl mx-auto mt-6 relative z-10 transition-opacity duration-500 ease-in-out ${
+          contentVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">
           Evolutions
         </h2>
