@@ -230,115 +230,181 @@ function PokemonDetail() {
       </div>
 
       {/* Evolution Chain */}
-<div className="bg-gray-200/50 backdrop-blur-md p-6 rounded-xl shadow-xl max-w-5xl mx-auto mt-6 relative z-10">
-  <h2 className="text-2xl font-bold text-center mb-6">Evolutions</h2>
+      <div className="bg-gray-200/50 backdrop-blur-md p-6 rounded-xl shadow-xl max-w-5xl mx-auto mt-6 relative z-10">
+        <h2 className="text-2xl font-bold text-center mb-6">Evolutions</h2>
 
-  {(() => {
-    // Combine previous evolutions, current Pokémon, and next evolutions in one array
-    const prevEvos = pokemon.previous_evolutions || [];
-    const nextEvos = pokemon.next_evolutions || [];
-    const chain = [
-      ...prevEvos,
-      {
-        id: pokemon.id,
-        name: pokemon.name,
-        img_src: pokemon.img_src,
-        types: pokemon.types || [],
-      },
-      ...nextEvos,
-    ];
+        {(() => {
+          const prevEvos = pokemon.previous_evolutions || [];
+          const nextEvos = pokemon.next_evolutions || [];
+          const chain = [
+            ...prevEvos,
+            {
+              id: pokemon.id,
+              name: pokemon.name,
+              img_src: pokemon.img_src,
+              types: pokemon.types || [],
+            },
+            ...nextEvos,
+          ];
 
-    // If the chain has only 1 Pokémon, just display it
-    if (chain.length === 1) {
-      const single = chain[0];
-      return (
-        <div className="flex flex-col items-center">
-          <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
-            <img
-              loading="lazy"
-              src={single.img_src}
-              alt={single.name}
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <p className="text-lg font-bold capitalize text-gray-800">
-            {single.name}
-            <span className="block text-sm text-gray-600">
-              #{String(single.id).padStart(4, "0")}
-            </span>
-          </p>
-          <div className="flex space-x-2 mt-2">
-            {single.types?.map((type) => (
-              <span
-                key={type}
-                className="px-2 py-1 text-xs text-white font-semibold rounded-full"
-                style={{
-                  backgroundColor: typeColorCodes[type.toLowerCase()] || "#ccc",
-                }}
-              >
-                {type.charAt(0).toUpperCase() + type.slice(1)}
-              </span>
-            ))}
-          </div>
-        </div>
-      );
-    }
+          // 1. If there's only one Pokémon in the chain, just show it
+          if (chain.length === 1) {
+            const single = chain[0];
+            return (
+              <div className="flex flex-col items-center">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
+                  <img
+                    loading="lazy"
+                    src={single.img_src}
+                    alt={single.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <p className="text-lg font-bold capitalize text-gray-800 text-center">
+                  {single.name}
+                  <div className="text-xs sm:text-sm text-gray-600">
+                    #{String(single.id).padStart(4, "0")}
+                  </div>
+                </p>
 
-    // Helper component to render a single Pokémon "circle card"
-    const EvolutionCircle = ({ evoData }) => (
-      <div className="flex flex-col items-center">
-        <Link key={evoData.id} to={`/pokedex/${evoData.id}`}>
-        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
-          <img
-            loading="lazy"
-            src={evoData.img_src}
-            alt={evoData.name}
-            className="w-full h-full object-contain"
-          />
-        </div>
-        </Link>
-        <p className="text-md sm:text-lg font-bold capitalize text-gray-800">
-          {evoData.name}
-          <span className="flex flex-col items-center block text-xs sm:text-sm text-gray-600">
-            #{String(evoData.id).padStart(4, "0")}
-          </span>
-        </p>
-        <div className="flex space-x-2 mt-2">
-          {evoData.types?.map((type) => (
-            <span
-              key={type}
-              className="px-2 py-1 text-xs text-white font-semibold rounded-full"
-              style={{
-                backgroundColor: typeColorCodes[type.toLowerCase()] || "#ccc",
-              }}
-            >
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </span>
-          ))}
-        </div>
-      </div>
-    );
-
-    return (
-      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-        {chain.map((poke, idx) => (
-          <React.Fragment key={poke.id}>
-            {/* Circle for each stage */}
-            <EvolutionCircle evoData={poke} />
-
-            {/* Arrow to next stage, if not the last one */}
-            {idx < chain.length - 1 && (
-              <div className="text-4xl text-gray-500 font-bold hidden sm:block">
-                &rarr;
+                <div className="flex space-x-2 mt-2">
+                  {single.types?.map((type) => (
+                    <span
+                      key={type}
+                      className="px-2 py-1 text-xs text-white font-semibold rounded-full"
+                      style={{
+                        backgroundColor: typeColorCodes[type.toLowerCase()] || "#ccc",
+                      }}
+                    >
+                      {type.charAt(0).toUpperCase() + type.slice(1)}
+                    </span>
+                  ))}
+                </div>
               </div>
-            )}
-          </React.Fragment>
-        ))}
+            );
+          }
 
+          // 2. Special logic for Eevee (id = 133) => Only ONE arrow
+          if (chain[0].id === 133) {
+            // The first element is Eevee; the rest are its evolutions
+            const eevee = chain[0];
+            const evolutions = chain.slice(1);
+
+            const EvolutionCircle = ({ evoData }) => (
+              <div className="flex flex-col items-center">
+                <Link key={evoData.id} to={`/pokedex/${evoData.id}`}>
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
+                    <img
+                      loading="lazy"
+                      src={evoData.img_src}
+                      alt={evoData.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </Link>
+                <p className="text-md sm:text-lg font-bold capitalize text-gray-800">
+                  {evoData.name}
+                  <span className="block text-xs sm:text-sm text-gray-600">
+                    #{String(evoData.id).padStart(4, "0")}
+                  </span>
+                </p>
+                <div className="flex space-x-2 mt-2">
+                  {evoData.types?.map((type) => (
+                    <span
+                      key={type}
+                      className="px-2 py-1 text-xs text-white font-semibold rounded-full"
+                      style={{
+                        backgroundColor: typeColorCodes[type.toLowerCase()] || "#ccc",
+                      }}
+                    >
+                      {type.charAt(0).toUpperCase() + type.slice(1)}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            );
+
+            return (
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+                {/* Eevee on the left */}
+                <EvolutionCircle evoData={eevee} />
+
+                {/* ONE arrow in the middle */}
+                {evolutions.length > 0 && (
+                  <div className="text-4xl text-gray-500 font-bold hidden sm:block relative -mt-3">
+                    &rarr;
+                  </div>
+                )}
+
+                {/* All evolutions on the right (no additional arrows) */}
+                <div className="flex gap-4 sm:gap-8">
+                  {evolutions.map((evo) => (
+                    <EvolutionCircle evoData={evo} key={evo.id} />
+                  ))}
+                </div>
+              </div>
+            );
+          }
+
+          // 3. Default case => arrow between each stage
+          const EvolutionCircle = ({ evoData }) => (
+            <div className="flex flex-col items-center">
+              <Link key={evoData.id} to={`/pokedex/${evoData.id}`}>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white shadow-lg overflow-hidden mb-2">
+                  <img
+                    loading="lazy"
+                    src={evoData.img_src}
+                    alt={evoData.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </Link>
+              <p className="text-md sm:text-lg font-bold capitalize text-gray-800">
+                {evoData.name}
+                <span className="block text-xs sm:text-sm text-gray-600">
+                  #{String(evoData.id).padStart(4, "0")}
+                </span>
+              </p>
+              <div className="flex space-x-2 mt-2">
+                {evoData.types?.map((type) => (
+                  <span
+                    key={type}
+                    className="px-2 py-1 text-xs text-white font-semibold rounded-full"
+                    style={{
+                      backgroundColor: typeColorCodes[type.toLowerCase()] || "#ccc",
+                    }}
+                  >
+                    {type.charAt(0).toUpperCase() + type.slice(1)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+
+          return (
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+              {chain.map((poke, idx) => {
+                // If this is not the last item, render the arrow after
+                if (idx < chain.length - 1) {
+                  return (
+                    <React.Fragment key={poke.id}>
+                      <EvolutionCircle evoData={poke} />
+                      <div className="text-4xl text-gray-500 font-bold hidden sm:block relative -mt-3">
+                        &rarr;
+                      </div>
+                    </React.Fragment>
+                  );
+                } else {
+                  // If it's the last item, just render the circle
+                  return <EvolutionCircle evoData={poke} key={poke.id} />;
+                }
+              })}
+            </div>
+          );
+        })()}
       </div>
-    );
-  })()}
-</div>
+
+
 
 
 
