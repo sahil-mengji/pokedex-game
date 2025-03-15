@@ -20,11 +20,9 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-500 ease-in-out">
         <header className="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700 transition-all duration-500 ease-in-out">
-          <Link to="/" className="flex items-center space-x-3 transform transition duration-300 ease-in-out hover:scale-105">
             <h1 className="text-3xl font-extrabold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent transition-all duration-500 ease-in-out">
               PokéGame
             </h1>
-          </Link>
           <nav className="flex items-center space-x-4">
             <Link
               to="/pokedex"
