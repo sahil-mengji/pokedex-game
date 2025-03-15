@@ -1,0 +1,1336 @@
+[
+  {
+    "pokemon_id": 1,
+    "category": "Seed Pokémon",
+    "flavor_text": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 2,
+    "category": "Seed Pokémon",
+    "flavor_text": "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 3,
+    "category": "Seed Pokémon",
+    "flavor_text": "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 4,
+    "category": "Lizard Pokémon",
+    "flavor_text": "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 5,
+    "category": "Flame Pokémon",
+    "flavor_text": "When it swings its burning tail, it elevates the temperature to unbearably high levels.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 6,
+    "category": "Flame Pokémon",
+    "flavor_text": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 7,
+    "category": "Tiny Turtle Pokémon",
+    "flavor_text": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 8,
+    "category": "Turtle Pokémon",
+    "flavor_text": "Often hides in water to stalk unwary prey. For swimming fast, it moves its ears to maintain balance.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 9,
+    "category": "Shellfish Pokémon",
+    "flavor_text": "A brutal POKéMON with pressurized water jets on its shell. They are used for high speed tackles.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 10,
+    "category": "Worm Pokémon",
+    "flavor_text": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 11,
+    "category": "Cocoon Pokémon",
+    "flavor_text": "This POKéMON is vulnerable to attack while its shell is soft, exposing its weak and tender body.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 12,
+    "category": "Butterfly Pokémon",
+    "flavor_text": "In battle, it flaps its wings at high speed to release highly toxic dust into the air.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 13,
+    "category": "Hairy Bug Pokémon",
+    "flavor_text": "Often found in forests, eating leaves. It has a sharp venomous stinger on its head.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 14,
+    "category": "Cocoon Pokémon",
+    "flavor_text": "Almost incapable of moving, this POKéMON can only harden its shell to protect itself from predators.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 15,
+    "category": "Poison Bee Pokémon",
+    "flavor_text": "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 16,
+    "category": "Tiny Bird Pokémon",
+    "flavor_text": "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 17,
+    "category": "Bird Pokémon",
+    "flavor_text": "Very protective of its sprawling territorial area, this POKéMON will fiercely peck at any intruder.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 18,
+    "category": "Bird Pokémon",
+    "flavor_text": "When hunting, it skims the surface of water at high speed to pick off unwary prey such as MAGIKARP.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 19,
+    "category": "Mouse Pokémon",
+    "flavor_text": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 20,
+    "category": "Mouse Pokémon",
+    "flavor_text": "It uses its whis­ kers to maintain its balance. It apparently slows down if they are cut off.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 21,
+    "category": "Tiny Bird Pokémon",
+    "flavor_text": "It flaps its small wings busily to fly. Using its beak, it searches in grass for prey.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 22,
+    "category": "Beak Pokémon",
+    "flavor_text": "With its huge and magnificent wings, it can keep aloft without ever having to land for rest.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 23,
+    "category": "Snake Pokémon",
+    "flavor_text": "Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 24,
+    "category": "Cobra Pokémon",
+    "flavor_text": "It is rumored that the ferocious warning markings on its belly differ from area to area.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 25,
+    "category": "Mouse Pokémon",
+    "flavor_text": "When several of these POKéMON gather, their electricity could build and cause lightning storms.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 26,
+    "category": "Mouse Pokémon",
+    "flavor_text": "Its long tail serves as a ground to protect itself from its own high-voltage power.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 27,
+    "category": "Mouse Pokémon",
+    "flavor_text": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 28,
+    "category": "Mouse Pokémon",
+    "flavor_text": "Curls up into a spiny ball when threatened. It can roll while curled up to attack or escape.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 29,
+    "category": "Poison Pin Pokémon",
+    "flavor_text": "Although small, its venomous barbs render this POKéMON dangerous. The female has smaller horns.",
+    "genders": [
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 30,
+    "category": "Poison Pin Pokémon",
+    "flavor_text": "The female's horn develops slowly. Prefers physical attacks such as clawing and biting.",
+    "genders": [
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 31,
+    "category": "Drill Pokémon",
+    "flavor_text": "Its hard scales provide strong protection. It uses its hefty bulk to execute powerful moves.",
+    "genders": [
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 32,
+    "category": "Poison Pin Pokémon",
+    "flavor_text": "Stiffens its ears to sense danger. The larger its horns, the more powerful its secreted venom.",
+    "genders": [
+      "Male"
+    ]
+  },
+  {
+    "pokemon_id": 33,
+    "category": "Poison Pin Pokémon",
+    "flavor_text": "An aggressive POKéMON that is quick to attack. The horn on its head secretes a powerful venom.",
+    "genders": [
+      "Male"
+    ]
+  },
+  {
+    "pokemon_id": 34,
+    "category": "Drill Pokémon",
+    "flavor_text": "It uses its powerful tail in battle to smash, constrict, then break the prey's bones.",
+    "genders": [
+      "Male"
+    ]
+  },
+  {
+    "pokemon_id": 35,
+    "category": "Fairy Pokémon",
+    "flavor_text": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 36,
+    "category": "Fairy Pokémon",
+    "flavor_text": "A timid fairy POKéMON that is rarely seen. It will run and hide the moment it senses people.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 37,
+    "category": "Fox Pokémon",
+    "flavor_text": "At the time of birth, it has just one tail. The tail splits from its tip as it grows older.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 38,
+    "category": "Fox Pokémon",
+    "flavor_text": "Very smart and very vengeful. Grabbing one of its many tails could result in a 1000-year curse.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 39,
+    "category": "Balloon Pokémon",
+    "flavor_text": "When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 40,
+    "category": "Balloon Pokémon",
+    "flavor_text": "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 41,
+    "category": "Bat Pokémon",
+    "flavor_text": "Forms colonies in perpetually dark places. Uses ultrasonic waves to identify and approach targets.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 42,
+    "category": "Bat Pokémon",
+    "flavor_text": "Once it strikes, it will not stop draining energy from the victim even if it gets too heavy to fly.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 43,
+    "category": "Weed Pokémon",
+    "flavor_text": "During the day, it keeps its face buried in the ground. At night, it wanders around sowing its seeds.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 44,
+    "category": "Weed Pokémon",
+    "flavor_text": "The fluid that oozes from its mouth isn't drool. It is a nectar that is used to attract prey.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 45,
+    "category": "Flower Pokémon",
+    "flavor_text": "It has the world’s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 46,
+    "category": "Mushroom Pokémon",
+    "flavor_text": "Burrows to suck tree roots. The mushrooms on its back grow by draw­ ing nutrients from the bug host.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 47,
+    "category": "Mushroom Pokémon",
+    "flavor_text": "A host-parasite pair in which the parasite mushroom has taken over the host bug. Prefers damp places.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 48,
+    "category": "Insect Pokémon",
+    "flavor_text": "Lives in the shadows of tall trees where it eats insects. It is attracted by light at night.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 49,
+    "category": "Poison Moth Pokémon",
+    "flavor_text": "The dustlike scales covering its wings are color-coded to indicate the kinds of poison it has.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 50,
+    "category": "Mole Pokémon",
+    "flavor_text": "Lives about one yard underground where it feeds on plant roots. It sometimes appears above ground.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 51,
+    "category": "Mole Pokémon",
+    "flavor_text": "A team of DIGLETT triplets. It triggers huge earthquakes by burrowing 60 miles underground.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 52,
+    "category": "Scratch Cat Pokémon",
+    "flavor_text": "It washes its face regularly to keep the coin on its forehead spotless. It doesn’t get along with Galarian Meowth.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 53,
+    "category": "Classy Cat Pokémon",
+    "flavor_text": "Although its fur has many admirers, it is tough to raise as a pet because of its fickle meanness.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 54,
+    "category": "Duck Pokémon",
+    "flavor_text": "While lulling its enemies with its vacant look, this wily POKéMON will use psychokinetic powers.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 55,
+    "category": "Duck Pokémon",
+    "flavor_text": "Often seen swim­ ming elegantly by lake shores. It is often mistaken for the Japanese monster, Kappa.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 56,
+    "category": "Pig Monkey Pokémon",
+    "flavor_text": "Extremely quick to anger. It could be docile one moment then thrashing away the next instant.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 57,
+    "category": "Pig Monkey Pokémon",
+    "flavor_text": "Always furious and tenacious to boot. It will not abandon chasing its quarry until it is caught.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 58,
+    "category": "Puppy Pokémon",
+    "flavor_text": "Very protective of its territory. It will bark and bite to repel intruders from its space.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 59,
+    "category": "Legendary Pokémon",
+    "flavor_text": "A POKéMON that has been admired since the past for its beauty. It runs agilely as if on wings.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 60,
+    "category": "Tadpole Pokémon",
+    "flavor_text": "Its newly grown legs prevent it from running. It appears to prefer swimming than trying to stand.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 61,
+    "category": "Tadpole Pokémon",
+    "flavor_text": "Capable of living in or out of water. When out of water, it sweats to keep its body slimy.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 62,
+    "category": "Tadpole Pokémon",
+    "flavor_text": "An adept swimmer at both the front crawl and breast stroke. Easily overtakes the best human swimmers.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 63,
+    "category": "Psi Pokémon",
+    "flavor_text": "Using its ability to read minds, it will identify impending danger and TELEPORT to safety.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 64,
+    "category": "Psi Pokémon",
+    "flavor_text": "It emits special alpha waves from its body that induce headaches just by being close by.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 65,
+    "category": "Psi Pokémon",
+    "flavor_text": "Its brain can out­ perform a super­ computer. Its intelligence quotient is said to be 5,000.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 66,
+    "category": "Superpower Pokémon",
+    "flavor_text": "Loves to build its muscles. It trains in all styles of martial arts to become even stronger.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 67,
+    "category": "Superpower Pokémon",
+    "flavor_text": "Its muscular body is so powerful, it must wear a power save belt to be able to regulate its motions.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 68,
+    "category": "Superpower Pokémon",
+    "flavor_text": "Using its heavy muscles, it throws powerful punches that can send the victim clear over the horizon.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 69,
+    "category": "Flower Pokémon",
+    "flavor_text": "A carnivorous POKéMON that traps and eats bugs. It uses its root feet to soak up needed moisture.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 70,
+    "category": "Flycatcher Pokémon",
+    "flavor_text": "It spits out POISONPOWDER to immobilize the enemy and then finishes it with a spray of ACID.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 71,
+    "category": "Flycatcher Pokémon",
+    "flavor_text": "Said to live in huge colonies deep in jungles, although no one has ever returned from there.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 72,
+    "category": "Jellyfish Pokémon",
+    "flavor_text": "Drifts in shallow seas. Anglers who hook them by accident are often punished by its stinging acid.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 73,
+    "category": "Jellyfish Pokémon",
+    "flavor_text": "The tentacles are normally kept short. On hunts, they are extended to ensnare and immobilize prey.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 74,
+    "category": "Rock Pokémon",
+    "flavor_text": "Found in fields and mountains. Mistaking them for boulders, people often step or trip on them.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 75,
+    "category": "Rock Pokémon",
+    "flavor_text": "Rolls down slopes to move. It rolls over any obstacle without slowing or changing its direction.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 76,
+    "category": "Megaton Pokémon",
+    "flavor_text": "Its boulder-like body is extremely hard. It can easily withstand dynamite blasts without damage.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 77,
+    "category": "Fire Horse Pokémon",
+    "flavor_text": "Its hooves are 10 times harder than diamonds. It can trample anything completely flat in little time.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 78,
+    "category": "Fire Horse Pokémon",
+    "flavor_text": "Very competitive, this POKéMON will chase anything that moves fast in the hopes of racing it.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 79,
+    "category": "Dopey Pokémon",
+    "flavor_text": "Incredibly slow and dopey. It takes 5 seconds for it to feel pain when under attack.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 80,
+    "category": "Hermit Crab Pokémon",
+    "flavor_text": "The SHELLDER that is latched onto SLOWPOKE's tail is said to feed on the host's left over scraps.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 81,
+    "category": "Magnet Pokémon",
+    "flavor_text": "Uses anti-gravity to stay suspended. Appears without warning and uses THUNDER WAVE and similar moves.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 82,
+    "category": "Magnet Pokémon",
+    "flavor_text": "Formed by several MAGNEMITEs linked together. They frequently appear when sunspots flare up.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 83,
+    "category": "Wild Duck Pokémon",
+    "flavor_text": "The sprig of green onions it holds is its weapon. It is used much like a metal sword.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 84,
+    "category": "Twin Bird Pokémon",
+    "flavor_text": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 85,
+    "category": "Triple Bird Pokémon",
+    "flavor_text": "Uses its three brains to execute complex plans. While two heads sleep, one head stays awake.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 86,
+    "category": "Sea Lion Pokémon",
+    "flavor_text": "The protruding horn on its head is very hard. It is used for bashing through thick ice.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 87,
+    "category": "Sea Lion Pokémon",
+    "flavor_text": "Stores thermal energy in its body. Swims at a steady 8 knots even in intensely cold waters.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 88,
+    "category": "Sludge Pokémon",
+    "flavor_text": "Appears in filthy areas. Thrives by sucking up polluted sludge that is pumped out of factories.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 89,
+    "category": "Sludge Pokémon",
+    "flavor_text": "Thickly covered with a filthy, vile sludge. It is so toxic, even its footprints contain poison.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 90,
+    "category": "Bivalve Pokémon",
+    "flavor_text": "Its hard shell repels any kind of attack. It is vulnerable only when its shell is open.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 91,
+    "category": "Bivalve Pokémon",
+    "flavor_text": "When attacked, it launches its horns in quick volleys. Its innards have never been seen.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 92,
+    "category": "Gas Pokémon",
+    "flavor_text": "Almost invisible, this gaseous POKéMON cloaks the target and puts it to sleep without notice.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 93,
+    "category": "Gas Pokémon",
+    "flavor_text": "Because of its ability to slip through block walls, it is said to be from an­ other dimension.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 94,
+    "category": "Shadow Pokémon",
+    "flavor_text": "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 95,
+    "category": "Rock Snake Pokémon",
+    "flavor_text": "As it grows, the stone portions of its body harden to become similar to a diamond, but colored black.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 96,
+    "category": "Hypnosis Pokémon",
+    "flavor_text": "Puts enemies to sleep then eats their dreams. Occasionally gets sick from eating bad dreams.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 97,
+    "category": "Hypnosis Pokémon",
+    "flavor_text": "When it locks eyes with an enemy, it will use a mix of PSI moves such as HYPNOSIS and CONFUSION.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 98,
+    "category": "River Crab Pokémon",
+    "flavor_text": "Its pincers are not only powerful weapons, they are used for balance when walking sideways.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 99,
+    "category": "Pincer Pokémon",
+    "flavor_text": "The large pincer has 10000 hp of crushing power. However, its huge size makes it unwieldy to use.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 100,
+    "category": "Ball Pokémon",
+    "flavor_text": "Usually found in power plants. Easily mistaken for a POKé BALL, they have zapped many people.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 101,
+    "category": "Ball Pokémon",
+    "flavor_text": "It stores electric energy under very high pressure. It often explodes with little or no provocation.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 102,
+    "category": "Egg Pokémon",
+    "flavor_text": "Often mistaken for eggs. When disturbed, they quickly gather and attack in swarms.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 103,
+    "category": "Coconut Pokémon",
+    "flavor_text": "Legend has it that on rare occasions, one of its heads will drop off and continue on as an EXEGGCUTE.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 104,
+    "category": "Lonely Pokémon",
+    "flavor_text": "Because it never removes its skull helmet, no one has ever seen this POKéMON's real face.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 105,
+    "category": "Bone Keeper Pokémon",
+    "flavor_text": "The bone it holds is its key weapon. It throws the bone skillfully like a boomerang to KO targets.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 106,
+    "category": "Kicking Pokémon",
+    "flavor_text": "When in a hurry, its legs lengthen progressively. It runs smoothly with extra long, loping strides.",
+    "genders": [
+      "Male"
+    ]
+  },
+  {
+    "pokemon_id": 107,
+    "category": "Punching Pokémon",
+    "flavor_text": "While apparently doing nothing, it fires punches in lightning fast volleys that are impossible to see.",
+    "genders": [
+      "Male"
+    ]
+  },
+  {
+    "pokemon_id": 108,
+    "category": "Licking Pokémon",
+    "flavor_text": "Its tongue can be extended like a chameleon's. It leaves a tingling sensation when it licks enemies.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 109,
+    "category": "Poison Gas Pokémon",
+    "flavor_text": "Because it stores several kinds of toxic gases in its body, it is prone to exploding without warning.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 110,
+    "category": "Poison Gas Pokémon",
+    "flavor_text": "Where two kinds of poison gases meet, 2 KOFFINGs can fuse into a WEEZING over many years.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 111,
+    "category": "Spikes Pokémon",
+    "flavor_text": "A POKéMON with a one-track mind. Once it charges,  it won't stop running until it falls asleep.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 112,
+    "category": "Drill Pokémon",
+    "flavor_text": "Protected by an armor-like hide, it is capable of living in molten lava of 3,600 degrees.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 113,
+    "category": "Egg Pokémon",
+    "flavor_text": "A rare and elusive POKéMON that is said to bring happiness to those who manage to get it.",
+    "genders": [
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 114,
+    "category": "Vine Pokémon",
+    "flavor_text": "The whole body is swathed with wide vines that are similar to sea­ weed. Its vines shake as it walks.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 115,
+    "category": "Parent Pokémon",
+    "flavor_text": "The infant rarely ventures out of its mother's protective pouch until it is 3 years old.",
+    "genders": [
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 116,
+    "category": "Dragon Pokémon",
+    "flavor_text": "Known to shoot down flying bugs with precision blasts of ink from the surface of the water.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 117,
+    "category": "Dragon Pokémon",
+    "flavor_text": "Capable of swim­ ming backwards by rapidly flapping its wing-like pectoral fins and stout tail.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 118,
+    "category": "Goldfish Pokémon",
+    "flavor_text": "Its tail fin billows like an elegant ballroom dress, giving it the nickname of the Water Queen.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 119,
+    "category": "Goldfish Pokémon",
+    "flavor_text": "In the autumn spawning season, they can be seen swimming powerfully up rivers and creeks.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 120,
+    "category": "Star Shape Pokémon",
+    "flavor_text": "If its body is torn, it can grow back if the red core remains. The core flashes at midnight.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 121,
+    "category": "Mysterious Pokémon",
+    "flavor_text": "Its central core glows with the seven colors of the rainbow. Some people value the core as a gem.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 122,
+    "category": "Barrier Pokémon",
+    "flavor_text": "If interrupted while it is miming, it will slap around the offender with its broad hands.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 123,
+    "category": "Mantis Pokémon",
+    "flavor_text": "With ninja-like agility and speed, it can create the illusion that there is more than one.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 124,
+    "category": "Human Shape Pokémon",
+    "flavor_text": "It seductively wiggles its hips as it walks. It can cause people to dance in unison with it.",
+    "genders": [
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 125,
+    "category": "Electric Pokémon",
+    "flavor_text": "Normally found near power plants, they can wander away and cause major blackouts in cities.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 126,
+    "category": "Spitfire Pokémon",
+    "flavor_text": "Its body always burns with an orange glow that enables it to hide perfectly among flames.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 127,
+    "category": "Stag Beetle Pokémon",
+    "flavor_text": "If it fails to crush the victim in its pincers, it will swing it around and toss it hard.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 128,
+    "category": "Wild Bull Pokémon",
+    "flavor_text": "When it targets an enemy, it charges furiously while whipping its body with its long tails.",
+    "genders": [
+      "Male"
+    ]
+  },
+  {
+    "pokemon_id": 129,
+    "category": "Fish Pokémon",
+    "flavor_text": "In the distant past, it was somewhat stronger than the horribly weak descendants that exist today.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 130,
+    "category": "Atrocious Pokémon",
+    "flavor_text": "Once it begins to rampage, a GYARADOS will burn everything down, even in a harsh storm.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 131,
+    "category": "Transport Pokémon",
+    "flavor_text": "A POKéMON that has been over­ hunted almost to extinction. It can ferry people across the water.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 132,
+    "category": "Transform Pokémon",
+    "flavor_text": "Capable of copying an enemy's genetic code to instantly transform itself into a duplicate of the enemy.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 133,
+    "category": "Evolution Pokémon",
+    "flavor_text": "Its genetic code is irregular. It may mutate if it is exposed to radiation from element STONEs.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 134,
+    "category": "Bubble Jet Pokémon",
+    "flavor_text": "Lives close to water. Its long tail is ridged with a fin which is often mistaken for a mermaid's.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 135,
+    "category": "Lightning Pokémon",
+    "flavor_text": "It accumulates negative ions in the atmosphere to blast out 10000- volt lightning bolts.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 136,
+    "category": "Flame Pokémon",
+    "flavor_text": "When storing thermal energy in its body, its temperature could soar to over 1600 degrees.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 137,
+    "category": "Virtual Pokémon",
+    "flavor_text": "A POKéMON that consists entirely of programming code. Capable of moving freely in cyberspace.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 138,
+    "category": "Spiral Pokémon",
+    "flavor_text": "Although long extinct, in rare cases, it can be genetically resurrected from fossils.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 139,
+    "category": "Spiral Pokémon",
+    "flavor_text": "A prehistoric POKéMON that died out when its heavy shell made it impossible to catch prey.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 140,
+    "category": "Shellfish Pokémon",
+    "flavor_text": "A POKéMON that was resurrected from a fossil found in what was once the ocean floor eons ago.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 141,
+    "category": "Shellfish Pokémon",
+    "flavor_text": "Its sleek shape is perfect for swim­ ming. It slashes prey with its claws and drains the body fluids.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 142,
+    "category": "Fossil Pokémon",
+    "flavor_text": "A Pokémon that roamed the skies in the dinosaur era. Its teeth are like saw blades.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 143,
+    "category": "Sleeping Pokémon",
+    "flavor_text": "Very lazy. Just eats and sleeps. As its rotund bulk builds, it becomes steadily more slothful.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 144,
+    "category": "Freeze Pokémon",
+    "flavor_text": "A legendary bird POKéMON that is said to appear to doomed people who are lost in icy mountains.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 145,
+    "category": "Electric Pokémon",
+    "flavor_text": "A legendary bird POKéMON that is said to appear from clouds while dropping enormous lightning bolts.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 146,
+    "category": "Flame Pokémon",
+    "flavor_text": "Known as the legendary bird of fire. Every flap of its wings creates a dazzling flash of flames.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 147,
+    "category": "Dragon Pokémon",
+    "flavor_text": "Long considered a mythical POKéMON until recently when a small colony was found living underwater.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 148,
+    "category": "Dragon Pokémon",
+    "flavor_text": "A mystical POKéMON that exudes a gentle aura. Has the ability to change climate conditions.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 149,
+    "category": "Dragon Pokémon",
+    "flavor_text": "An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans.",
+    "genders": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+    "pokemon_id": 150,
+    "category": "Genetic Pokémon",
+    "flavor_text": "It was created by a scientist after years of horrific gene splicing and DNA engineering experiments.",
+    "genders": [
+      "Genderless"
+    ]
+  },
+  {
+    "pokemon_id": 151,
+    "category": "New Species Pokémon",
+    "flavor_text": "So rare that it is still said to be a mirage by many experts. Only a few people have seen it worldwide.",
+    "genders": [
+      "Genderless"
+    ]
+  }
+]

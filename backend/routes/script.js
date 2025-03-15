@@ -1,59 +1,50 @@
+// generatePokemonSpeciesData.js
 const axios = require("axios");
 const fs = require("fs");
 
-// Helper: Extract numeric ID from a URL.
-function extractIdFromUrl(url) {
-  const parts = url.split("/").filter(Boolean);
-  return parseInt(parts[parts.length - 1], 10);
-}
+async function generatePokemonSpeciesData() {
+  const totalPokemon = 151; // Adjust as needed
+  const data = [];
 
-// Fetch moves for a given Pokémon, filtering for moves learned via level-up.
-// We assume that TM moves have level_learned set to 0.
-async function fetchPokemonMoves(pokemonId) {
-  try {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-    const data = response.data;
-    let movesList = [];
-    let seen = new Set();
-    
-    for (const moveEntry of data.moves) {
-      // Filter for moves learned in the "firered-leafgreen" version group.
-      const details = moveEntry.version_group_details.find(
-        vg => vg.version_group.name === "firered-leafgreen"
-      );
-      if (details) {
-        const levelLearned = details.level_learned_at;
-        // Only include moves learned by leveling up (level > 0)
-        if (levelLearned > 0) {
-          const moveId = extractIdFromUrl(moveEntry.move.url);
-          // Also, ensure we only insert one record per move for this Pokémon.
-          if (!seen.has(moveId) && moveId <= 400) {
-            seen.add(moveId);
-            movesList.push({
-              pokemon_id: pokemonId,
-              move_id: moveId,
-              level_learned: levelLearned
-            });
-          }
-        }
+  for (let id = 1; id <= totalPokemon; id++) {
+    try {
+      const { data: speciesData } = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+      
+      // Get first English flavor text and clean it up.
+      const flavorEntry = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
+      const flavor_text = flavorEntry ? flavorEntry.flavor_text.replace(/[\n\r\f]/g, " ") : "";
+      
+      // Get the English genus as the category.
+      const genusEntry = speciesData.genera.find(genus => genus.language.name === "en");
+      const category = genusEntry ? genusEntry.genus : "";
+      
+      // Determine genders based on gender_rate.
+      let genders = [];
+      if (speciesData.gender_rate === -1) {
+        genders = ["Genderless"];
+      } else if (speciesData.gender_rate === 0) {
+        genders = ["Male"];
+      } else if (speciesData.gender_rate === 8) {
+        genders = ["Female"];
+      } else {
+        genders = ["Male", "Female"];
       }
+      
+      data.push({
+        pokemon_id: id,
+        category,
+        flavor_text,
+        genders
+      });
+      
+      console.log(`Processed species ${id}`);
+    } catch (error) {
+      console.error(`Error processing species ${id}: ${error.message}`);
     }
-    return movesList;
-  } catch (error) {
-    console.error(`Error fetching moves for Pokémon #${pokemonId}: ${error.message}`);
-    return [];
   }
+
+  fs.writeFileSync("pokemon_species.json", JSON.stringify(data, null, 2));
+  console.log(`File "pokemon_species.json" created with ${data.length} entries.`);
 }
 
-async function generatePokemonMovesJSON() {
-  let allMoves = [];
-  for (let id = 76; id <= 151; id++) {
-    const moves = await fetchPokemonMoves(id);
-    allMoves = allMoves.concat(moves);
-    console.log(`Processed Pokémon #${id}, found ${moves.length} unique level-up moves.`);
-  }
-  fs.writeFileSync("pokemon_moves_76_151.json", JSON.stringify(allMoves, null, 2));
-  console.log(`pokemon_moves_76_151.json generated with ${allMoves.length} records.`);
-}
-
-generatePokemonMovesJSON();
+generatePokemonSpeciesData();
