@@ -26,6 +26,7 @@ const typeColorCodes = {
 };
 
 const MAX_STAT = 255;
+const legendaryIds = [144, 145, 146, 150, 151];
 
 function PokemonDetail() {
   const { id } = useParams();
@@ -43,7 +44,6 @@ function PokemonDetail() {
       setError(null);
       const { data } = await axios.get(`http://localhost:5000/pokemon-detail/${id}`);
       setPokemon(data);
-
       // Set primary type color (data.types is an array of strings)
       if (data.types && data.types.length > 0) {
         const firstType = data.types[0].toLowerCase();
@@ -60,6 +60,11 @@ function PokemonDetail() {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
+  // Scroll to top on mount or when id changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   // Trigger stat bar animation shortly after mount
   useEffect(() => {
@@ -104,6 +109,9 @@ function PokemonDetail() {
     base_stat: value,
   }));
 
+  // Determine if this Pokémon is legendary
+  const isLegendary = legendaryIds.includes(Number(pokemon.id));
+
   return (
     <div
       className="min-h-screen p-4 font-sans transition-all duration-500"
@@ -115,7 +123,9 @@ function PokemonDetail() {
     >
       {/* Main Content Container */}
       <div
-        className={`relative bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-3xl shadow-2xl max-w-5xl mx-auto transition-opacity duration-500 ease-in-out ${
+        className={`relative ${
+          isLegendary ? "ring-4 ring-yellow-400 ring-offset-2" : ""
+        } bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-6 rounded-3xl shadow-2xl max-w-5xl mx-auto transition-opacity duration-500 ease-in-out ${
           contentVisible ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -133,6 +143,11 @@ function PokemonDetail() {
           <h1 className="text-4xl font-bold capitalize text-gray-900 dark:text-gray-100 tracking-wide">
             {pokemon.name} #{String(pokemon.id).padStart(4, "0")}
           </h1>
+          {isLegendary && (
+            <p className="mt-2 text-xl text-purple-600 font-semibold animate-pulse">
+              A Legendary Pokémon!
+            </p>
+          )}
         </div>
 
         {/* Flavor Text */}
@@ -287,7 +302,6 @@ function PokemonDetail() {
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">
           Evolutions
         </h2>
-
         {(() => {
           const prevEvos = pokemon.previous_evolutions || [];
           const nextEvos = pokemon.next_evolutions || [];
@@ -374,29 +388,31 @@ function PokemonDetail() {
           );
         })()}
       </div>
-      
+
       {/* Global Navigation */}
-      <div className="flex justify-between items-center mt-8 max-w-5xl mx-auto">
-        {pokemon.id > 1 ? (
-          <Link
-            to={`/pokedex/${pokemon.id - 1}`}
-            className="text-lg bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
-          >
-            &larr; Prev
-          </Link>
-        ) : (
-          <div />
-        )}
-        {pokemon.id < 151 ? (
-          <Link
-            to={`/pokedex/${pokemon.id + 1}`}
-            className="text-lg bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
-          >
-            Next &rarr;
-          </Link>
-        ) : (
-          <div />
-        )}
+      <div className="flex flex-col items-center mt-8 max-w-5xl mx-auto space-y-4">
+        <div className="flex justify-between w-full">
+          {pokemon.id > 1 ? (
+            <Link
+              to={`/pokedex/${pokemon.id - 1}`}
+              className="text-lg bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
+            >
+              &larr; Prev
+            </Link>
+          ) : (
+            <div />
+          )}
+          {pokemon.id < 151 ? (
+            <Link
+              to={`/pokedex/${pokemon.id + 1}`}
+              className="text-lg bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300"
+            >
+              Next &rarr;
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
       </div>
     </div>
   );
