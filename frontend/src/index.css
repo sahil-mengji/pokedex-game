@@ -1,5 +1,5 @@
 @import url(https://db.onlinewebfonts.com/c/5a5c2865c8fa7a166d94d0880ca9eebc?family=Sharp+Grotesk+Medium+25+Regular);
-
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -388,3 +388,18 @@ html {
 	flex-shrink: 0;
 	display: flex;
 }
+
+
+.tektur,* {
+	font-family: "Tektur", sans-serif;
+	font-optical-sizing: auto;
+	
+	font-style: normal;
+	font-variation-settings:
+	  "wdth" 100;
+  }
+
+  
+  .text-border {
+	-webkit-text-stroke: 2px rgb(15, 82, 182);
+  }

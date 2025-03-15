@@ -20,7 +20,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
         <header className="flex justify-between items-center p-4">
-          <h1 className="text-3xl font-bold">Pokémon Game</h1>
+          <h1 className="text-3xl font-bold flex items-center text-yellow-300 "><img src="https://clipground.com/images/pokemon-logo-png-5.png" alt="" className="h-[60px]" /> <p className="text-border">Game</p></h1>
           <div className="flex items-center space-x-4">
             <Link
               to="/pokedex"

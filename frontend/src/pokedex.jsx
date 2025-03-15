@@ -84,7 +84,7 @@ const Pokedex = () => {
           placeholder="Search Pokémon..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-4 py-2 border rounded w-full max-w-md"
+          className="px-4 py-2 border rounded w-full max-w-md text-black"
         />
       </div>
 
@@ -94,28 +94,29 @@ const Pokedex = () => {
           // Use Link only if you plan to implement the detail route.
           <Link key={pokemon.pokemon_id} to={`/pokedex/${pokemon.pokemon_id}`}>
             <div
-              className={`p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 
+            
+              className={` group p-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 hover:scale-[0.7] hover:translate-y-[40px] transition-transform
               bg-gradient-to-r ${
                 pokemon.types.length > 1
                   ? `${typeColorsCards[pokemon.types[0].toLowerCase()]} ${typeColorsCards[pokemon.types[1].toLowerCase()]}`
                   : typeColorsCards[pokemon.types[0].toLowerCase()]
-              } bg-opacity-80`}
+              } bg-opacity-80  hover:bg-opacity-50`}
             >
               {/* Pokémon ID on the Top-Left */}
-              <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded">
+              <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded group-hover:opacity-0">
                 #{pokemon.pokemon_id.toString().padStart(4, "0")}
               </span>
 
               {/* Pokémon Image */}
-              <img loading="lazy" src={pokemon.img_src} alt={pokemon.name} className="w-full" />
+              <img loading="lazy" src={pokemon.img_src} alt={pokemon.name} className="w-full group-hover:scale-[2] transition-transform group-hover:translate-y-[-60px]" />
 
               {/* Pokémon Name */}
-              <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900">
+              <h2 className="text-lg font-semibold text-center capitalize mt-2 text-gray-900 group-hover:translate-y-[30px] group-hover:scale-[1.7] transition-transform ">
                 {pokemon.name}
               </h2>
 
               {/* Pokémon Types */}
-              <div className="flex justify-center mt-1">
+              <div className="flex justify-center mt-1 group-hover:opacity-0 ">
                 {pokemon.types.map((type, index) => (
                   <span
                     key={index}
