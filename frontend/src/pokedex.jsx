@@ -129,7 +129,7 @@ const Pokedex = () => {
           {filteredList.slice(0, visibleCount).map((pokemon) => (
             <Link key={pokemon.pokemon_id} to={`/pokedex/${pokemon.pokemon_id}`}>
               <div
-                className={`relative group p-4 rounded-xl shadow-lg bg-gradient-to-r transition-all transform duration-300 hover:scale-105 hover:shadow-2xl
+                className={`relative group p-4 rounded-2xl shadow-lg bg-gradient-to-r transition-all transform duration-300 hover:scale-105 hover:shadow-2xl
                 ${
                   pokemon.types.length > 1
                     ? `${typeColorsCards[pokemon.types[0].toLowerCase()]} ${typeColorsCards[pokemon.types[1].toLowerCase()]}`
