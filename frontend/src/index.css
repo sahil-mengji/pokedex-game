@@ -404,8 +404,24 @@ html {
 	-webkit-text-stroke: 2px rgb(15, 82, 182);
   }
 
-
-  /* Custom CSS for 3D effect on Pokémon sprite */
+  .fade-enter {
+	opacity: 0;
+  }
+  
+  .fade-enter-active {
+	opacity: 1;
+	transition: opacity 300ms ease-in;
+  }
+  
+  .fade-exit {
+	opacity: 1;
+  }
+  
+  .fade-exit-active {
+	opacity: 0;
+	transition: opacity 300ms ease-out;
+  }
+  
 /* Custom CSS for 3D hover effect on Pokémon sprite */
 .sprite-3d {
 	transition: transform 0.5s, box-shadow 0.5s;
