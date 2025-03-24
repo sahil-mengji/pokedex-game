@@ -1,3 +1,4 @@
+// Game.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../App';
@@ -12,14 +13,26 @@ const Game = () => {
 
   useEffect(() => {
     if (!user) {
-      navigate('/auth'); // Redirect to auth if not logged in
+      navigate('/auth');
     }
   }, [user, navigate]);
 
   const starters = [
-    { id: 'mankey', name: 'Mankey', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png' },
-    { id: 'sandshrew', name: 'Sandshrew', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png' },
-    { id: 'growlithe', name: 'Growlithe', image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png' },
+    {
+      id: 'mankey',
+      name: 'Mankey',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png'
+    },
+    {
+      id: 'sandshrew',
+      name: 'Sandshrew',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png'
+    },
+    {
+      id: 'growlithe',
+      name: 'Growlithe',
+      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png'
+    },
   ];
 
   const handleLogout = () => {
@@ -37,12 +50,14 @@ const Game = () => {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post('/game/choose-starter', {
-        trainerId: user.id,
+      const response = await axios.post('http://localhost:5000/api/choose-starter', {
+        trainerId: user.trainer_id, // Ensure this matches your user data property
         chosenPokemon: selectedStarter,
       });
       setMessage(response.data.message);
-      setUser({ ...user, starterChosen: true, starter: selectedStarter });
+      const updatedUser = { ...user, starterChosen: true, starter: selectedStarter };
+      setUser(updatedUser);
+      localStorage.setItem("trainer", JSON.stringify(updatedUser));
     } catch (error) {
       console.error('Error selecting starter:', error);
       setMessage('An error occurred while choosing your starter.');
@@ -103,6 +118,7 @@ const Game = () => {
         <p className="mt-2 text-md text-gray-600 dark:text-gray-400">
           Starter Pokémon: {user.starter || 'Not chosen'}
         </p>
+        {/* You can display additional stats and Pokémon details here */}
         <button
           onClick={handleLogout}
           className="mt-6 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-all duration-300"
@@ -115,3 +131,5 @@ const Game = () => {
 };
 
 export default Game;
+
+

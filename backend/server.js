@@ -5,10 +5,10 @@ const cors = require("cors");
 
 const registerRoutes = require("./register");
 const loginRoutes = require("./login");
-const validateRoutes = require("./validate"); // Import validate routes
+const validateRoutes = require("./validate");
 const pokemonRoutes = require("./Pokedex");
 const pokemonDetailRoutes = require("./PokemonDetailRoutes");
-// const gamestarter = require("./games");
+const gamestarter = require("./games");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,10 +16,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Mount auth routes under '/api'
 app.use("/api", registerRoutes);
 app.use("/api", loginRoutes);
 app.use("/api", validateRoutes);
+app.use("/api", gamestarter);
 
 app.use("/pokemon", pokemonRoutes);
 app.use("/pokemon-detail", pokemonDetailRoutes);

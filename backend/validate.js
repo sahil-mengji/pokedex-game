@@ -7,7 +7,6 @@ const pool = require("./config/trainerdb"); // Your database pool
 const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 
 router.get("/validate", async (req, res) => {
-  // Get token from the Authorization header (format: Bearer <token>)
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   
@@ -21,14 +20,29 @@ router.get("/validate", async (req, res) => {
     }
     
     try {
-      // Check if the trainer exists in the database
-      const query =
-        "SELECT trainer_id, name, email, gender, level, created_at FROM trainers WHERE trainer_id = ?";
+      const query = "SELECT trainer_id, name, email, gender, level, created_at FROM trainers WHERE trainer_id = ?";
       const [rows] = await pool.query(query, [decoded.trainer_id]);
+      
       if (rows.length === 0) {
         return res.status(404).json({ success: false, error: "User not found" });
       }
-      return res.json({ success: true, user: rows[0] });
+      
+      // Fetch the trainer's Pokémon
+      const [pokemonRows] = await pool.query("SELECT * FROM trainer_pokemon WHERE trainer_id = ?", [decoded.trainer_id]);
+      
+      let userData = rows[0];
+      
+      if (pokemonRows.length > 0) {
+        userData.starterChosen = true;
+        userData.starter = pokemonRows[0].nickname; // or however you want to identify it
+        userData.pokemons = pokemonRows;
+      } else {
+        userData.starterChosen = false;
+        userData.starter = null;
+        userData.pokemons = [];
+      }
+      
+      return res.json({ success: true, user: userData });
     } catch (error) {
       console.error("Error during validation:", error);
       return res.status(500).json({ success: false, error: "Server error during validation" });

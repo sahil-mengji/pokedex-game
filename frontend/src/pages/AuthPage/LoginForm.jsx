@@ -17,6 +17,7 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
+      // First, login
       const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -24,10 +25,24 @@ const LoginForm = () => {
       });
       const data = await response.json();
       if (data.success) {
-        localStorage.setItem('trainer', JSON.stringify(data.user));
         localStorage.setItem('token', data.token);
-        setUser(data.user);
-        navigate('/game');
+
+        // Immediately call the validate endpoint to get full user data
+        const validateResponse = await fetch('http://localhost:5000/api/validate', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + data.token,
+          },
+        });
+        const validateData = await validateResponse.json();
+        if (validateData.success) {
+          localStorage.setItem('trainer', JSON.stringify(validateData.user));
+          setUser(validateData.user);
+          navigate('/game');
+        } else {
+          setErrorMsg(validateData.error || 'Validation failed.');
+        }
       } else {
         setErrorMsg(data.error || 'Login failed.');
       }
