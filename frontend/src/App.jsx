@@ -5,22 +5,21 @@ import {
   Routes,
   Route,
   Navigate,
-  NavLink,
   useLocation,
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { FaMoon, FaSun } from "react-icons/fa";
 
 import "./index.css";
 
 // Your components
-import Pokedex from "./pokedex";
-import PokemonDetail from "./pokemonDetail";
-import Game from "./Game";
-import AuthPage from "./AuthPage";
+import Pokedex from "./pages/Pokedex/pokedex";
+import PokemonDetail from "./pages/Pokedex/pokemonDetail";
+import Game from "./pages/Game/Game";
+import AuthPage from "./pages/AuthPage/AuthPage";
+import Header from "./components/Header/header"; // Import the header component
 
-// Import nav items
-import { navItems } from "./navData.jsx";
+// Import nav items if needed in Header component
+// import { navItems } from "./navData.jsx"; // Already imported in Header
 
 // Example Home component
 function Home() {
@@ -40,11 +39,7 @@ function AnimatedRoutes({ user }) {
   const location = useLocation();
   return (
     <TransitionGroup>
-      <CSSTransition
-        key={location.key}
-        timeout={300}
-        classNames="fade"
-      >
+      <CSSTransition key={location.key} timeout={300} classNames="fade">
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/pokedex" element={<Pokedex />} />
@@ -105,7 +100,7 @@ function App() {
     validateSession();
   }, []);
 
-  // Dark mode toggle
+  // Dark mode toggle effect
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -120,53 +115,8 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <Router>
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-          {/* Header */}
-          <header className="bg-white dark:bg-gray-800 shadow-md border-b border-gray-200 dark:border-gray-700 transition-colors">
-            {/* Top bar: logo + dark mode toggle */}
-            <div className="flex items-center justify-between px-6 py-3">
-              <h1 className="text-2xl font-extrabold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
-                PokéGame
-              </h1>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="flex items-center justify-center w-10 h-10 rounded-full 
-                           text-gray-700 dark:text-gray-300 
-                           hover:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700 
-                           transition-colors duration-300"
-                title="Toggle Dark Mode"
-              >
-                {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-              </button>
-            </div>
-
-            {/* Centered Nav in a fixed-width container */}
-            <div className="mx-auto max-w-md w-full">
-              <nav className="flex bg-white dark:bg-gray-800 rounded-md overflow-hidden shadow">
-                {navItems.map(({ name, path, icon, color }) => (
-                  <div key={name} className="flex-1">
-                    <NavLink
-                      to={path}
-                      end
-                      className={({ isActive }) =>
-                        `flex flex-col items-center justify-center py-3 
-                         transition-all duration-300 
-                         ${
-                           isActive
-                             ? `${color} text-white scale-105`
-                             : "bg-transparent text-gray-700 dark:text-gray-200 hover:scale-105"
-                         }`
-                      }
-                    >
-                      <div className="text-xl mb-1">{icon}</div>
-                      <span className="text-sm font-medium leading-tight text-center">
-                        {name}
-                      </span>
-                    </NavLink>
-                  </div>
-                ))}
-              </nav>
-            </div>
-          </header>
+          {/* Render Header; Header will hide itself on /game route */}
+          <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
           {/* Animated Routes */}
           <AnimatedRoutes user={user} />

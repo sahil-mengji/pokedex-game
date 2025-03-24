@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import RegistrationForm from './RegistrationForm';
 import LoginForm from './LoginForm';
-import { useUser } from './App';
+import { useUser } from '../../App';
 
 const AuthPage = () => {
   const { user } = useUser();

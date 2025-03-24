@@ -8,7 +8,7 @@ const loginRoutes = require("./login");
 const validateRoutes = require("./validate"); // Import validate routes
 const pokemonRoutes = require("./Pokedex");
 const pokemonDetailRoutes = require("./PokemonDetailRoutes");
-const gamestarter = require("./game");
+// const gamestarter = require("./games");
 
 const app = express();
 const PORT = process.env.PORT || 5000;

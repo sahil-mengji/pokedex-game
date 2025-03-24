@@ -1,13 +1,11 @@
-// RegistrationForm.jsx
+// LoginForm.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useUser } from './App';
+import { useUser } from '../../App';
 
-const RegistrationForm = () => {
+const LoginForm = () => {
   const { setUser } = useUser();
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [gender, setGender] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -17,12 +15,12 @@ const RegistrationForm = () => {
     e.preventDefault();
     setErrorMsg('');
     setLoading(true);
-    
+
     try {
-      const response = await fetch('http://localhost:5000/api/register', {
+      const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, gender, password }),
+        body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
       if (data.success) {
@@ -31,10 +29,10 @@ const RegistrationForm = () => {
         setUser(data.user);
         navigate('/game');
       } else {
-        setErrorMsg(data.error || 'Registration failed.');
+        setErrorMsg(data.error || 'Login failed.');
       }
     } catch (err) {
-      setErrorMsg('Error during registration: ' + err.message);
+      setErrorMsg('Error during login: ' + err.message);
     } finally {
       setLoading(false);
     }
@@ -42,17 +40,6 @@ const RegistrationForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label>Your Name:</label>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="mt-1 p-2 border rounded w-full"
-        />
-      </div>
       <div>
         <label>Email:</label>
         <input
@@ -65,24 +52,10 @@ const RegistrationForm = () => {
         />
       </div>
       <div>
-        <label>Gender:</label>
-        <select
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-          required
-          className="mt-1 p-2 border rounded w-full"
-        >
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div>
         <label>Password:</label>
         <input
           type="password"
-          placeholder="Enter a secure password"
+          placeholder="Enter your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -92,13 +65,13 @@ const RegistrationForm = () => {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-all duration-300"
+        className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
       >
-        {loading ? 'Registering...' : 'Register'}
+        {loading ? 'Logging in...' : 'Login'}
       </button>
       {errorMsg && <p className="text-red-500">{errorMsg}</p>}
     </form>
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;
