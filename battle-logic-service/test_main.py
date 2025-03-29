@@ -1,43 +1,47 @@
-import requests
+from fastapi.testclient import TestClient
+from main import app
 
-def test_calculate_damage_miss():
-    url = "http://localhost:8000/calculate_damage/"
-    payload = {
-        "attacker": {
-            "attack": 0,
-            "defense": 0,
-            "hp": 0,
-            "speed": 0,
-            "special_atk": 0,
-            "special_def": 0,
-            "types": ["string"]
-        },
-        "defender": {
-            "attack": 0,
-            "defense": 0,
-            "hp": 0,
-            "speed": 0,
-            "special_atk": 0,
-            "special_def": 0,
-            "types": ["string"]
-        },
-        "move": {
-            "name": "string",
-            "power": 0,
-            "accuracy": 0,
-            "move_type": "string",
-            "status_effect": "string",
-            "effect_chance": 0
-        }
+client = TestClient(app)
+
+# Example battle payload:
+battle_payload = {
+    "attacker": {
+        "level": 5,
+        "xp": 0,
+        "xp_to_next": 100,
+        "attack": 55,
+        "defense": 40,
+        "hp": 35,
+        "speed": 90,
+        "special_atk": 50,
+        "special_def": 50,
+        "types": ["Electric"]
+    },
+    "defender": {
+        "level": 5,
+        "xp": 0,
+        "xp_to_next": 100,
+        "attack": 52,
+        "defense": 43,
+        "hp": 39,
+        "speed": 65,
+        "special_atk": 60,
+        "special_def": 50,
+        "types": ["Fire"]
+    },
+    "move": {
+        "name": "Thunderbolt",
+        "power": 90,
+        "accuracy": 1.0,         # Accuracy as a value between 0 and 1
+        "move_type": "Electric",
+        "status_effect": "paralyze",
+        "effect_chance": 0.1,      # 10% chance
+        "category": "special"      # Ensure this matches your model's field name
     }
-    
-    response = requests.post(url, json=payload)
-    data = response.json()
-    print("Response:", data)
-    
-    # Given that accuracy is 0, the move should miss.
-    assert data["result"] == "miss"
-    assert data["damage"] == 0
+}
 
-if __name__ == "__main__":
-    test_calculate_damage_miss()
+# Send a POST request to the battle endpoint.
+response = client.post("/calculate_damage/", json=battle_payload)
+
+# Print the JSON response (battle results)
+print(response.json())

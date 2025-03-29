@@ -16,6 +16,8 @@ import PokemonDetail from "./pages/Pokedex/pokemonDetail";
 import Game from "./pages/Game/Game";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import Header from "./components/Header/header";
+import Level1 from './pages/Game/level1';
+
 
 const UserContext = createContext(null);
 export const useUser = () => useContext(UserContext);
@@ -30,6 +32,7 @@ function AnimatedRoutes({ user }) {
           <Route path="/pokedex" element={<Pokedex />} />
           <Route path="/pokedex/:id" element={<PokemonDetail />} />
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="/level/1" element={<Level1 />} />
           <Route
             path="/game"
             element={user ? <Game user={user} /> : <Navigate to="/auth" replace />}

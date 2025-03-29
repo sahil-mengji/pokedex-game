@@ -11,6 +11,7 @@ const Game = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // Redirect to auth if not logged in
   useEffect(() => {
     if (!user) {
       navigate('/auth');
@@ -19,20 +20,23 @@ const Game = () => {
 
   const starters = [
     {
-      id: 'mankey',
-      name: 'Mankey',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png'
+      id: 'squirtle',
+      name: 'Squirtle',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png'
     },
     {
-      id: 'sandshrew',
-      name: 'Sandshrew',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png'
+      id: 'charmander',
+      name: 'Charmander',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png'
     },
     {
-      id: 'growlithe',
-      name: 'Growlithe',
-      image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/58.png'
-    },
+      id: 'bulbasaur',
+      name: 'Bulbasaur',
+      image:
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'
+    }
   ];
 
   const handleLogout = () => {
@@ -52,12 +56,13 @@ const Game = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/choose-starter', {
         trainerId: user.trainer_id, // Ensure this matches your user data property
-        chosenPokemon: selectedStarter,
+        chosenPokemon: selectedStarter
       });
-      setMessage(response.data.message);
+      // Optionally, set message from response:
+      // setMessage(response.data.message);
       const updatedUser = { ...user, starterChosen: true, starter: selectedStarter };
       setUser(updatedUser);
-      localStorage.setItem("trainer", JSON.stringify(updatedUser));
+      localStorage.setItem('trainer', JSON.stringify(updatedUser));
     } catch (error) {
       console.error('Error selecting starter:', error);
       setMessage('An error occurred while choosing your starter.');
@@ -103,6 +108,7 @@ const Game = () => {
     );
   }
 
+  // If the starter has been chosen, show game info plus a button to proceed to Level 1.
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col justify-center items-center p-6">
       <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 max-w-lg w-full text-center">
@@ -110,20 +116,26 @@ const Game = () => {
           Welcome, {user.name}!
         </h1>
         <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-          You have successfully entered the game area.
+          You have successfully chosen your starter Pokémon.
         </p>
         <p className="mt-2 text-md text-gray-600 dark:text-gray-400">
           Gender: {user.gender}
         </p>
         <p className="mt-2 text-md text-gray-600 dark:text-gray-400">
-          Starter Pokémon: {user.starter || 'Not chosen'}
+          Starter Pokémon: {user.starter ? user.starter.charAt(0).toUpperCase() + user.starter.slice(1) : 'Not chosen'}
         </p>
-        {/* You can display additional stats and Pokémon details here */}
         <button
           onClick={handleLogout}
           className="mt-6 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-all duration-300"
         >
           Log Out
+        </button>
+        {/* New button for proceeding to Level 1 */}
+        <button
+          onClick={() => navigate('/level/1')}
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+        >
+          Go to Level 1
         </button>
       </div>
     </div>
@@ -131,5 +143,3 @@ const Game = () => {
 };
 
 export default Game;
-
-

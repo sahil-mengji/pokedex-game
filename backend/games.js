@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const starterStats = require('./starterStats');
-const db = require('./config/trainerdb'); // your MySQL connection
+const trainerDb = require('./config/trainerdb'); // MySQL connection/pool for the trainer database
 
 // POST /api/choose-starter
 router.post('/choose-starter', async (req, res) => {
@@ -15,8 +15,8 @@ router.post('/choose-starter', async (req, res) => {
       return res.status(400).json({ error: 'Invalid starter choice' });
     }
 
-    // Check if trainer already has a Pokémon (starter)
-    const [rows] = await db.query(
+    // Check if the trainer already has a starter Pokémon (position = 1)
+    const [rows] = await trainerDb.query(
       'SELECT COUNT(*) as count FROM trainer_pokemon WHERE trainer_id = ?',
       [trainerId]
     );
@@ -24,12 +24,16 @@ router.post('/choose-starter', async (req, res) => {
       return res.status(400).json({ error: 'Trainer already has a Pokémon' });
     }
 
+    // Get the starter stats from the imported starterStats file
     const s = starterStats[chosenPokemon];
-    const insertQuery = `
+
+    // Insert the chosen starter into the trainer_pokemon table.
+    // Position 1 indicates this is the starter.
+    const insertPokemonQuery = `
       INSERT INTO trainer_pokemon
         (trainer_id, pokemon_id, nickname, level, current_hp, max_hp, 
-         attack, defense, speed, special_atk, special_def, experience, status)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         attack, defense, speed, special_atk, special_def, experience, status, position)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1)
     `;
     const insertParams = [
       trainerId,
@@ -47,7 +51,25 @@ router.post('/choose-starter', async (req, res) => {
       s.status
     ];
 
-    await db.query(insertQuery, insertParams);
+    const [result] = await trainerDb.query(insertPokemonQuery, insertParams);
+    // Get the auto-generated trainer_pokemon id to link moves with this record.
+    const trainerPokemonId = result.insertId;
+
+    // Insert the moves for this starter into trainer_pokemon_moves.
+    // The trainer_pokemon_moves table only needs the trainer_pokemon_id, move_id, and current_pp.
+    if (s.moves && s.moves.length > 0) {
+      for (const move of s.moves) {
+        const insertMoveQuery = `
+          INSERT INTO trainer_pokemon_moves
+            (trainer_pokemon_id, move_id, current_pp)
+          VALUES (?, ?, ?)
+        `;
+        // We use move.pp as the default current_pp.
+        const defaultPP = move.pp || 0;
+        await trainerDb.query(insertMoveQuery, [trainerPokemonId, move.move_id, defaultPP]);
+      }
+    }
+
     res.json({ message: 'Starter chosen successfully', chosenPokemon });
   } catch (error) {
     console.error(error);

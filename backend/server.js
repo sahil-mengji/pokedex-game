@@ -9,6 +9,8 @@ const validateRoutes = require("./validate");
 const pokemonRoutes = require("./Pokedex");
 const pokemonDetailRoutes = require("./PokemonDetailRoutes");
 const gamestarter = require("./games");
+const trainerRouter = require('./trainer');
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +26,7 @@ app.use("/api", gamestarter);
 app.use("/pokemon", pokemonRoutes);
 app.use("/pokemon-detail", pokemonDetailRoutes);
 
+app.use('/trainer', trainerRouter);
 app.get("/", (req, res) => {
   res.send("Pokémon API is running.");
 });

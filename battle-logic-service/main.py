@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from models import BattleRequest, XPUpdateRequest
 import random
 import uvicorn
+from level1 import router as level1_router
 from utils import (
     get_type_effectiveness,
     augment_move_data,
@@ -9,8 +10,20 @@ from utils import (
     add_experience,
     xp_needed_for_level
 )
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # or ["*"] to allow all origins (for development)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(level1_router)
+
 
 @app.get("/")
 def read_root():
@@ -23,6 +36,7 @@ def health_check():
 @app.post("/calculate_damage/")
 def calculate_damage(battle: BattleRequest):
     # Convert move to dict and augment with extra effects.
+    print("Received battle request:", battle.dict())
     move_dict = battle.move.dict()  # Use model_dump() if using Pydantic V2.
     move_dict = augment_move_data(move_dict)
 
