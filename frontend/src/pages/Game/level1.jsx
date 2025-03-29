@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+const TRAINER_API = "http://localhost:5000";
+const LEVEL_API = "http://localhost:8000";
+const DAMAGE_ENDPOINT = `${LEVEL_API}/calculate_damage/`;
+
 const Level1BattleSim = ({ trainerId }) => {
-  // Default trainerId if not provided as a prop
+  // Use trainerId prop, defaulting to 33 if not provided.
   const currentTrainerId = trainerId || 33;
 
   const [userPokemon, setUserPokemon] = useState(null);
@@ -18,94 +22,55 @@ const Level1BattleSim = ({ trainerId }) => {
   const navigate = useNavigate();
 
   // Function to fetch trainer data.
-  const fetchTrainerData = () => {
-    axios.get(`http://localhost:5000/trainer/${currentTrainerId}/data`)
-      .then(response => {
-        const trainerData = response.data;
-        if (trainerData && trainerData.pokemon && trainerData.pokemon.length > 0) {
-          setUserPokemon(trainerData.pokemon[0]);
-          setError('');
-        } else {
-          setError('No Pokémon found for this trainer.');
-        }
-      })
-      .catch(err => {
-        console.error("Error fetching trainer data:", err.response || err.message);
-        setError('Error loading trainer data');
-      });
+  const fetchTrainerData = async () => {
+    try {
+      const response = await axios.get(`${TRAINER_API}/trainer/${currentTrainerId}/data`);
+      const trainerData = response.data;
+      if (trainerData?.pokemon?.length > 0) {
+        setUserPokemon(trainerData.pokemon[0]);
+        setError('');
+      } else {
+        setError('No Pokémon found for this trainer.');
+      }
+    } catch (err) {
+      console.error("Error fetching trainer data:", err.response || err.message);
+      setError('Error loading trainer data');
+    }
   };
 
   // Function to fetch level data.
-  const fetchLevelData = () => {
-    axios.get('http://localhost:8000/level/1')
-      .then(response => {
-        setLevelData(response.data);
-        if (response.data.trainers && response.data.trainers.length > 0 && response.data.trainers[0].pokemon?.length > 0) {
-          setTrainerPokemon(response.data.trainers[0].pokemon[0]);
-          setError('');
-        } else {
-          setError('No trainers found in level data.');
-        }
-      })
-      .catch(err => {
-        console.error("Error fetching level data:", err.response || err.message);
-        setError('Error loading level data');
-      });
+  const fetchLevelData = async () => {
+    try {
+      const response = await axios.get(`${LEVEL_API}/level/1`);
+      setLevelData(response.data);
+      if (response.data?.trainers?.length > 0 && response.data.trainers[0].pokemon?.length > 0) {
+        setTrainerPokemon(response.data.trainers[0].pokemon[0]);
+        setError('');
+      } else {
+        setError('No trainers found in level data.');
+      }
+    } catch (err) {
+      console.error("Error fetching level data:", err.response || err.message);
+      setError('Error loading level data');
+    }
   };
 
-  // Initial data fetching.
+  // Initial data fetching. trainerId is in dependency so changes re-trigger fetch.
   useEffect(() => {
     fetchTrainerData();
     fetchLevelData();
-    // currentTrainerId is constant within this component's lifecycle.
   }, [currentTrainerId]);
 
   // Function to call /calculate_damage/ for damage calculation.
   const calculateDamage = async (attacker, defender, move) => {
-    try {
-      const payload = {
-        attacker: {
-          pokemon_id: attacker.pokemon_id,
-          nickname: attacker.nickname,
-          level: attacker.level,
-          max_hp: attacker.max_hp,
-          current_hp: attacker.current_hp,
-          attack: attacker.attack,
-          defense: attacker.defense,
-          speed: attacker.speed,
-          special_atk: attacker.special_atk,
-          special_def: attacker.special_def,
-          status: attacker.status,
-          types: attacker.types,
-          moves: attacker.moves
-        },
-        defender: {
-          pokemon_id: defender.pokemon_id,
-          nickname: defender.nickname,
-          level: defender.level,
-          max_hp: defender.max_hp,
-          current_hp: defender.current_hp,
-          attack: defender.attack,
-          defense: defender.defense,
-          speed: defender.speed,
-          special_atk: defender.special_atk,
-          special_def: defender.special_def,
-          status: defender.status,
-          types: defender.types,
-          moves: defender.moves
-        },
-        move: {
-          move_id: move.move_id,
-          name: move.name,
-          power: move.power,
-          accuracy: move.accuracy,
-          move_type: move.move_type,
-          status_effect: move.status_effect,
-          effect_chance: move.effect_chance
-        }
-      };
+    const payload = {
+      attacker: { ...attacker },
+      defender: { ...defender },
+      move: { ...move }
+    };
 
-      const response = await axios.post("http://localhost:8000/calculate_damage/", payload);
+    try {
+      const response = await axios.post(DAMAGE_ENDPOINT, payload);
       return response.data;
     } catch (err) {
       console.error("Error calculating damage:", err.response ? err.response.data : err.message);
@@ -122,10 +87,10 @@ const Level1BattleSim = ({ trainerId }) => {
     }
     setLoading(true);
     setError("");
-    const logEntries = [];
-    const timestamp = new Date().toLocaleTimeString();
+    let logEntries = [];
 
     // --- User's Turn ---
+    const timestampUser = new Date().toLocaleTimeString();
     const userAttackResult = await calculateDamage(userPokemon, trainerPokemon, selectedMove);
     if (!userAttackResult) {
       setLoading(false);
@@ -133,11 +98,11 @@ const Level1BattleSim = ({ trainerId }) => {
     }
     const userDamage = userAttackResult.damage;
     const newTrainerHP = Math.max(trainerPokemon.current_hp - userDamage, 0);
-    logEntries.push(`${timestamp} - ${userPokemon.nickname} used ${selectedMove.name} and dealt ${userDamage} damage!`);
+    logEntries.push(`${timestampUser} - ${userPokemon.nickname} used ${selectedMove.name} and dealt ${userDamage} damage!`);
 
     const updatedTrainer = { ...trainerPokemon, current_hp: newTrainerHP };
     if (newTrainerHP <= 0) {
-      logEntries.push(`${timestamp} - ${trainerPokemon.nickname} fainted!`);
+      logEntries.push(`${new Date().toLocaleTimeString()} - ${trainerPokemon.nickname} fainted!`);
       setTrainerPokemon(updatedTrainer);
       setBattleLog(prevLog => [...prevLog, ...logEntries]);
       setBattleOutcome({ outcome: "win", winner: userPokemon.nickname });
@@ -152,6 +117,7 @@ const Level1BattleSim = ({ trainerId }) => {
       return;
     }
     const randomMove = updatedTrainer.moves[Math.floor(Math.random() * updatedTrainer.moves.length)];
+    const timestampTrainer = new Date().toLocaleTimeString();
     const trainerAttackResult = await calculateDamage(updatedTrainer, userPokemon, randomMove);
     if (!trainerAttackResult) {
       setLoading(false);
@@ -159,7 +125,7 @@ const Level1BattleSim = ({ trainerId }) => {
     }
     const trainerDamage = trainerAttackResult.damage;
     const newUserHP = Math.max(userPokemon.current_hp - trainerDamage, 0);
-    logEntries.push(`${timestamp} - ${updatedTrainer.nickname} used ${randomMove.name} and dealt ${trainerDamage} damage!`);
+    logEntries.push(`${timestampTrainer} - ${updatedTrainer.nickname} used ${randomMove.name} and dealt ${trainerDamage} damage!`);
 
     const updatedUser = { ...userPokemon, current_hp: newUserHP };
     setUserPokemon(updatedUser);
@@ -181,6 +147,7 @@ const Level1BattleSim = ({ trainerId }) => {
     fetchLevelData();
   };
 
+  // UI: Show loading state or error message.
   if (error) return <div className="p-8 text-red-500">{error}</div>;
   if (!userPokemon || !trainerPokemon) return <div className="p-8">Loading battle data...</div>;
 
@@ -197,9 +164,9 @@ const Level1BattleSim = ({ trainerId }) => {
             {userPokemon?.moves?.map((move) => (
               <li key={move.move_id}>
                 <button
-                  className={`border px-2 py-1 rounded mb-1 ${selectedMove && selectedMove.move_id === move.move_id ? 'bg-green-300' : ''}`}
+                  className={`border px-2 py-1 rounded mb-1 ${selectedMove?.move_id === move.move_id ? 'bg-green-300' : ''}`}
                   onClick={() => setSelectedMove(move)}
-                  disabled={loading}
+                  disabled={loading}  // Disable if battling
                 >
                   {move.name} (Power: {move.power}, Accuracy: {move.accuracy})
                 </button>
@@ -222,7 +189,12 @@ const Level1BattleSim = ({ trainerId }) => {
 
       <button
         onClick={simulateTurn}
-        disabled={loading || userPokemon.current_hp <= 0 || trainerPokemon.current_hp <= 0}
+        disabled={
+          loading ||
+          userPokemon.current_hp <= 0 ||
+          trainerPokemon.current_hp <= 0 ||
+          !selectedMove // Disable fight if no move is selected
+        }
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
       >
         {loading ? 'Battling...' : 'Fight!'}
@@ -259,4 +231,3 @@ const Level1BattleSim = ({ trainerId }) => {
 };
 
 export default Level1BattleSim;
-    

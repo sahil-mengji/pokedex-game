@@ -151,8 +151,14 @@ def calculate_damage(battle: BattleRequest):
             stat_ratio = battle.attacker.special_atk / battle.defender.special_def if battle.defender.special_def else 1
         else:
             stat_ratio = battle.attacker.attack / battle.defender.defense if battle.defender.defense else 1
+
         details["stat_ratio"] = stat_ratio
-        base_damage = stat_ratio * move_dict["power"]
+        move_power = move_dict.get("power")
+        if move_power is None:
+            move_power = 0.0  # or handle it as a special case if needed
+        base_damage = stat_ratio * move_power
+
+
         details["base_damage_pre_type"] = base_damage
         defender_types = battle.defender.types or ["normal"]
         type_multiplier = get_type_effectiveness(move_dict["move_type"], defender_types)
