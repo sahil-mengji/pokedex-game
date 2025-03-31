@@ -311,6 +311,7 @@ html {
 	height: 100vh;
 	scroll-snap-type: y mandatory;
 	font-family: "Gilroy", sans-serif;
+	/* overflow-y: scroll; */
 }
 
 * {

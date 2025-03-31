@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useUser } from '../../App'; // import your context hook
 import { useNavigate } from 'react-router-dom';
 
 const TRAINER_API = "http://localhost:5000";
 const LEVEL_API = "http://localhost:8000";
 const DAMAGE_ENDPOINT = `${LEVEL_API}/calculate_damage/`;
 
-const Level1BattleSim = ({ trainerId }) => {
-  // Use trainerId prop, defaulting to 33 if not provided.
-  const currentTrainerId = trainerId || 33;
+const Level1BattleSim = () => {
+  // Pull the user from context, which should contain trainer info including the id.
+  const { user } = useUser();
+  const trainerId = user?.trainer_id; // Assumes your user object has trainer_id
 
   const [userPokemon, setUserPokemon] = useState(null);
   const [trainerPokemon, setTrainerPokemon] = useState(null);
@@ -23,8 +25,12 @@ const Level1BattleSim = ({ trainerId }) => {
 
   // Function to fetch trainer data.
   const fetchTrainerData = async () => {
+    if (!trainerId) {
+      setError('Trainer ID not found.');
+      return;
+    }
     try {
-      const response = await axios.get(`${TRAINER_API}/trainer/${currentTrainerId}/data`);
+      const response = await axios.get(`${TRAINER_API}/trainer/${trainerId}/data`);
       const trainerData = response.data;
       if (trainerData?.pokemon?.length > 0) {
         setUserPokemon(trainerData.pokemon[0]);
@@ -55,11 +61,11 @@ const Level1BattleSim = ({ trainerId }) => {
     }
   };
 
-  // Initial data fetching. trainerId is in dependency so changes re-trigger fetch.
+  // Initial data fetching.
   useEffect(() => {
     fetchTrainerData();
     fetchLevelData();
-  }, [currentTrainerId]);
+  }, [trainerId]); // re-run if trainerId changes
 
   // Function to call /calculate_damage/ for damage calculation.
   const calculateDamage = async (attacker, defender, move) => {
@@ -138,7 +144,7 @@ const Level1BattleSim = ({ trainerId }) => {
     setLoading(false);
   };
 
-  // Restart the battle by resetting user Pokémon and reloading the opponent.
+  // Restart the battle by resetting state and refetching data.
   const restartBattle = () => {
     setBattleLog([]);
     setBattleOutcome(null);
@@ -166,7 +172,7 @@ const Level1BattleSim = ({ trainerId }) => {
                 <button
                   className={`border px-2 py-1 rounded mb-1 ${selectedMove?.move_id === move.move_id ? 'bg-green-300' : ''}`}
                   onClick={() => setSelectedMove(move)}
-                  disabled={loading}  // Disable if battling
+                  disabled={loading}
                 >
                   {move.name} (Power: {move.power}, Accuracy: {move.accuracy})
                 </button>
@@ -193,7 +199,7 @@ const Level1BattleSim = ({ trainerId }) => {
           loading ||
           userPokemon.current_hp <= 0 ||
           trainerPokemon.current_hp <= 0 ||
-          !selectedMove // Disable fight if no move is selected
+          !selectedMove
         }
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
       >

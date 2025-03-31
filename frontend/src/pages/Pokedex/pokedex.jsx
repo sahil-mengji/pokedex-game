@@ -1,4 +1,3 @@
-// pokedex.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -69,6 +68,7 @@ const Pokedex = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Adjust the threshold as needed or target a specific container if not window
       if (window.scrollY > 300) {
         setShowScrollButton(true);
       } else {
@@ -97,7 +97,7 @@ const Pokedex = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 transition-all duration-500 ease-in-out bg-white dark:bg-gray-800">
+    <div className="container mx-auto p-4 transition-all duration-500 ease-in-out bg-white dark:bg-gray-800 max-w-[1400px] w-full">
       <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-800 dark:text-gray-300 transition-colors duration-500 ease-in-out">
         Pokédex
       </h1>
@@ -137,7 +137,7 @@ const Pokedex = () => {
                 } bg-opacity-90 dark:bg-opacity-80`}
               >
                 {/* Pokémon ID */}
-                <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded transition-all duration-300">
+                <span className="absolute top-2 left-2 text-xs font-semibold text-white bg-black bg-opacity-50 px-2 py-1 rounded-full transition-all duration-300">
                   #{pokemon.pokemon_id.toString().padStart(4, "0")}
                 </span>
 
@@ -192,7 +192,7 @@ const Pokedex = () => {
       {showScrollButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 p-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg transition-colors duration-300 transform hover:scale-105"
+          className="fixed bottom-6 right-6 p-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg transition-colors duration-300 transform hover:scale-105 z-50"
         >
           ⬆
         </button>

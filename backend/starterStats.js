@@ -34,6 +34,16 @@ module.exports = {
         pp: 40,
         status_effect: null,
         effect_chance: null
+      },
+      {
+        move_id: 22,
+        name: "Vine-whip",
+        power: 45,    
+        accuracy: 1,
+        move_type: "Grass",
+        pp: 25,
+        status_effect: null,
+        effect_chance: null
       }
     ]
   },
@@ -70,6 +80,16 @@ module.exports = {
         pp: 40,
         status_effect: null,
         effect_chance: null
+      },
+      {
+        move_id: 52,
+        name: "Ember",
+        power: 40,  
+        accuracy: 1,
+        move_type: "Fire",
+        pp: 25,
+        status_effect: null,
+        effect_chance: null
       }
     ]
   },
@@ -104,6 +124,16 @@ module.exports = {
         accuracy: 1,
         move_type:"Normal",
         pp: 30,
+        status_effect: null,
+        effect_chance: null
+      },
+      {
+        move_id: 55,
+        name: "Water-gun",
+        power: 40,  
+        accuracy: 100,
+        move_type:"Normal",
+        pp: 25,
         status_effect: null,
         effect_chance: null
       }

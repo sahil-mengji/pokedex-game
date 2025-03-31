@@ -16,14 +16,13 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # or ["*"] to allow all origins (for development)
+    allow_origins=["http://localhost:5173"],  # or ["*"] for development
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 app.include_router(level1_router)
-
 
 @app.get("/")
 def read_root():
@@ -36,9 +35,10 @@ def health_check():
 @app.post("/calculate_damage/")
 def calculate_damage(battle: BattleRequest):
     # Convert move to dict and augment with extra effects.
-    print("Received battle request:", battle.dict())
     move_dict = battle.move.dict()  # Use model_dump() if using Pydantic V2.
+    print("Original move data:", move_dict)
     move_dict = augment_move_data(move_dict)
+    print("Augmented move data:", move_dict)
 
     # Prepare a dictionary to capture details.
     details = {}
@@ -75,36 +75,55 @@ def calculate_damage(battle: BattleRequest):
             current_hit = {}
             current_hit["hit_roll"] = random.random()
             if current_hit["hit_roll"] <= move_dict["accuracy"]:
-                # Calculate stat ratio based on move category.
+                # Determine the correct attack/defense stats based on move category.
                 if battle.move.category == "physical":
-                    stat_ratio = battle.attacker.attack / battle.defender.defense if battle.defender.defense else 1
+                    stat = battle.attacker.attack
+                    defense = battle.defender.defense if battle.defender.defense else 1
                 elif battle.move.category == "special":
-                    stat_ratio = battle.attacker.special_atk / battle.defender.special_def if battle.defender.special_def else 1
+                    stat = battle.attacker.special_atk
+                    defense = battle.defender.special_def if battle.defender.special_def else 1
                 else:
-                    stat_ratio = battle.attacker.attack / battle.defender.defense if battle.defender.defense else 1
-                current_hit["stat_ratio"] = stat_ratio
-                base_damage = stat_ratio * move_dict["power"]
+                    stat = battle.attacker.attack
+                    defense = battle.defender.defense if battle.defender.defense else 1
+
+                # Incorporate the level factor similar to the Pokémon formula.
+                level_factor = ((2 * battle.attacker.level) / 5) + 2
+
+                # Calculate base damage using the formula: (((level_factor * power * (attack/defense)) / 50) + 2)
+                base_damage = ((level_factor * move_dict["power"] * (stat / defense)) / 50) + 2
+                current_hit["stat_ratio"] = stat / defense
+                current_hit["level_factor"] = level_factor
                 current_hit["base_damage"] = base_damage
+
+                # Calculate type effectiveness multiplier.
                 defender_types = battle.defender.types or ["normal"]
                 type_multiplier = get_type_effectiveness(move_dict["move_type"], defender_types)
                 current_hit["type_multiplier"] = type_multiplier
-                base_damage *= type_multiplier
+
+                # Determine if this hit is a critical hit.
                 crit = random.random() < 0.0625
-                current_hit["critical_hit"] = crit
                 crit_multiplier = 1.5 if crit else 1.0
+                current_hit["critical_hit"] = crit
                 current_hit["crit_multiplier"] = crit_multiplier
-                base_damage *= crit_multiplier
+
+                # Apply a random damage variation factor.
                 random_factor = random.uniform(0.85, 1.0)
                 current_hit["random_factor"] = random_factor
-                hit_damage = round(base_damage * random_factor, 2)
+
+                # Final damage calculation includes all modifiers.
+                final_damage = base_damage * type_multiplier * crit_multiplier * random_factor
+                hit_damage = round(final_damage, 2)
                 current_hit["hit_damage"] = hit_damage
+
                 total_damage += hit_damage
                 hit_details.append(hit_damage)
             else:
                 hit_details.append(0)
                 current_hit["hit_damage"] = 0
+
             details["individual_hits"].append(current_hit)
-        details["total_damage"] = total_damage
+            details["total_damage"] = total_damage
+
         return {
             "result": "hit",
             "damage": total_damage,
@@ -137,6 +156,7 @@ def calculate_damage(battle: BattleRequest):
             if status_roll < move_dict["effect_chance"]:
                 status_applied = move_dict["status_effect"]
         details["status_effect_applied"] = status_applied
+        print("Status branch - roll:", status_roll, "effect_chance:", move_dict.get("effect_chance"), "applied:", status_applied)
         return {
             "result": "status",
             "status_effect_applied": status_applied,
@@ -153,27 +173,36 @@ def calculate_damage(battle: BattleRequest):
             stat_ratio = battle.attacker.attack / battle.defender.defense if battle.defender.defense else 1
 
         details["stat_ratio"] = stat_ratio
-        move_power = move_dict.get("power")
-        if move_power is None:
-            move_power = 0.0  # or handle it as a special case if needed
-        base_damage = stat_ratio * move_power
+        move_power = move_dict.get("power", 0.0)  # Default to 0 if power is not provided
 
+        # **Add Level Factor**
+        level_factor = (2 * battle.attacker.level / 5) + 2
+        details["level_factor"] = level_factor
 
+        # **Use the proper Pokémon-like formula**
+        base_damage = ((level_factor * move_power * stat_ratio) / 50) + 2
         details["base_damage_pre_type"] = base_damage
+
+        # Apply type effectiveness
         defender_types = battle.defender.types or ["normal"]
         type_multiplier = get_type_effectiveness(move_dict["move_type"], defender_types)
         details["type_multiplier"] = type_multiplier
         base_damage *= type_multiplier
+
+        # Apply critical hit multiplier
         crit = random.random() < 0.0625
         details["critical_hit"] = crit
         crit_multiplier = 1.5 if crit else 1.0
         details["crit_multiplier"] = crit_multiplier
         base_damage *= crit_multiplier
+
+        # Apply random factor (for variability)
         random_factor = random.uniform(0.85, 1.0)
         details["random_factor"] = random_factor
         damage = round(base_damage * random_factor, 2)
         details["final_damage"] = damage
-        # Also check for potential status effect application.
+
+        # Check for status effect application.
         status_applied = None
         if move_dict.get("status_effect") and move_dict.get("effect_chance"):
             status_roll = random.random()
@@ -181,6 +210,7 @@ def calculate_damage(battle: BattleRequest):
             if status_roll < move_dict["effect_chance"]:
                 status_applied = move_dict["status_effect"]
             details["status_effect_applied"] = status_applied
+
         return {
             "result": "hit",
             "damage": damage,
@@ -191,10 +221,9 @@ def calculate_damage(battle: BattleRequest):
             "details": details
         }
 
+
 @app.post("/add_experience/")
 def add_experience_endpoint(xp_update: XPUpdateRequest):
-    # For simplicity, we assume XP update is handled entirely in memory.
-    # Convert the Pydantic model to a dict.
     stats_dict = xp_update.attacker.dict()
     increments = {
         "attack": 2,

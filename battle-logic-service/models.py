@@ -22,6 +22,7 @@ class Move(BaseModel):
     power: Optional[float] = 0.0  # Allow null values, default to 0
     accuracy: float
     move_type: str
+    pp: Optional[int] = None
     status_effect: Optional[str] = None
     effect_chance: Optional[float] = None
 

@@ -192,7 +192,7 @@
         "effect_chance": 0.1
     },
     "Ember": {
-        "effect_type": "status",
+        "effect_type": "damage",
         "status_effect": "burn",
         "effect_chance": 0.1
     },
