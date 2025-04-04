@@ -165,6 +165,17 @@ def calculate_damage(battle: BattleRequest):
     
     # --- Default: Standard Damage Moves ---
     else:
+        move_power = move_dict.get("power", 0.0)  # Default to 0 if power is not provided
+        if move_power is None or move_power == 0:
+            return {
+                "result": "hit",
+                "damage": 0,  # No damage for non-damaging moves
+                "category": battle.move.category,
+                "critical_hit": False,
+                "type_multiplier": 1.0,
+                "status_effect_applied": None,
+                "details": {"reason": "Move has no power"}
+            }
         if battle.move.category == "physical":
             stat_ratio = battle.attacker.attack / battle.defender.defense if battle.defender.defense else 1
         elif battle.move.category == "special":
@@ -173,7 +184,6 @@ def calculate_damage(battle: BattleRequest):
             stat_ratio = battle.attacker.attack / battle.defender.defense if battle.defender.defense else 1
 
         details["stat_ratio"] = stat_ratio
-        move_power = move_dict.get("power", 0.0)  # Default to 0 if power is not provided
 
         # **Add Level Factor**
         level_factor = (2 * battle.attacker.level / 5) + 2

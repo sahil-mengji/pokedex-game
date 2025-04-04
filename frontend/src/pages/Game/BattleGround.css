@@ -1,0 +1,159 @@
+/* BattleGround.css */
+
+.battle-container {
+    padding: 16px;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Battle Ground Background */
+  .battle-ground {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url("/battle-bg.png"); 
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 16px;
+  }
+  
+  /* Section for each Pokémon */
+  .battle-section {
+    position: absolute;
+    width: 40%;
+    padding: 8px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  .battle-section.opponent {
+    top: 10%;
+    left: 10%;
+    text-align: left;
+  }
+  
+  .battle-section.player {
+    bottom: 10%;
+    right: 10%;
+    text-align: right;
+  }
+  
+  /* Sprite styling */
+  .pokemon-sprite img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Health bars */
+  .health-bar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #fff;
+    margin-top: 4px;
+    height: 10px;
+  }
+  
+  .health {
+    height: 100%;
+    background-color: #4caf50;
+  }
+  
+  /* Move selection styling */
+  .move-selection {
+    margin: 16px 0;
+  }
+  
+  .move-selection ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .move-btn {
+    border: 1px solid #333;
+    background-color: #fff;
+    padding: 8px 12px;
+    margin: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .move-btn:hover {
+    background-color: #ddd;
+  }
+  
+  .move-btn.selected {
+    background-color: #a0e3a0;
+  }
+  
+  /* Action panel styling */
+  .action-panel {
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .action-btn, .restart-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .action-btn {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  
+  .action-btn:hover {
+    background-color: #1976d2;
+  }
+  
+  .restart-btn {
+    background-color: #e53935;
+    color: #fff;
+  }
+  
+  .restart-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Battle log styling */
+  .battle-log {
+    max-height: 150px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  /* Outcome message */
+  .battle-outcome {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+  }
+  
+  /* Animations */
+  @keyframes attackAnimation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Apply animations to sprites during attack (for demo purposes) */
+  .animate-player img {
+    animation: attackAnimation 0.5s ease-in-out;
+  }
+  
+  .animate-enemy img {
+    animation: attackAnimation 0.5s ease-in-out reverse;
+  }
+  
