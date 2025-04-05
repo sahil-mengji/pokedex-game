@@ -17,6 +17,7 @@ import Game from "./pages/Game/Game";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import Header from "./components/Header/header";
 import Level1 from './pages/Game/level1';
+import { LayoutGroup } from "framer-motion";
 
 
 const UserContext = createContext(null);
@@ -27,6 +28,7 @@ function AnimatedRoutes({ user }) {
   return (
     <TransitionGroup>
       <CSSTransition key={location.key} timeout={300} classNames="fade">
+      <LayoutGroup>
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/pokedex" element={<Pokedex />} />
@@ -42,6 +44,7 @@ function AnimatedRoutes({ user }) {
             element={<Navigate to={user ? "/game" : "/auth"} replace />}
           />
         </Routes>
+        </LayoutGroup>
       </CSSTransition>
     </TransitionGroup>
   );

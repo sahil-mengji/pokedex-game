@@ -3,13 +3,13 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-const registerRoutes = require("./register");
-const loginRoutes = require("./login");
-const validateRoutes = require("./validate");
-const pokemonRoutes = require("./Pokedex");
-const pokemonDetailRoutes = require("./PokemonDetailRoutes");
-const gamestarter = require("./games");
-const trainerRouter = require('./trainer');
+const registerRoutes = require("./src/register");
+const loginRoutes = require("./src/login");
+const validateRoutes = require("./src/validate");
+const pokemonRoutes = require("./src/Pokedex");
+const pokemonDetailRoutes = require("./src/PokemonDetailRoutes");
+const gamestarter = require("./src/games");
+const trainerRouter = require('./src/trainer');
 
 
 const app = express();

@@ -19,21 +19,8 @@ const Header = ({ darkMode, setDarkMode }) => {
         <h1 className="text-2xl font-extrabold bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
           PokéGame
         </h1>
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="flex items-center justify-center w-10 h-10 rounded-full 
-                     text-gray-700 dark:text-gray-300 
-                     hover:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700 
-                     transition-colors duration-300"
-          title="Toggle Dark Mode"
-        >
-          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-        </button>
-      </div>
-
-      {/* Centered Nav */}
-      <div className="mx-auto max-w-md w-full">
-        <nav className="flex bg-white dark:bg-gray-800 rounded-md overflow-hidden shadow">
+        <div className="mx-auto max-w-md w-full">
+        <nav className="flex  dark:bg-gray-800 rounded-full overflow-hidden  bg-gray-200">
           {navItems.map(({ name, path, icon, color }) => (
             <div key={name} className="flex-1">
               <NavLink
@@ -58,6 +45,20 @@ const Header = ({ darkMode, setDarkMode }) => {
           ))}
         </nav>
       </div>
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="flex items-center justify-center w-10 h-10 rounded-full 
+                     text-gray-700 dark:text-gray-300 
+                     hover:text-orange-500 hover:bg-gray-100 dark:hover:bg-gray-700 
+                     transition-colors duration-300"
+          title="Toggle Dark Mode"
+        >
+          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+        </button>
+      </div>
+
+      {/* Centered Nav */}
+    
     </header>
   );
 };

@@ -1,10 +1,11 @@
 // Level1BattleSim.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useRef} from 'react';
 import axios from 'axios';
 import { useUser } from '../../App'; // your context hook
 import { useNavigate } from 'react-router-dom';
 import './BattleGround.css'; // import the CSS styles
 import battleBg from './battle-bg.png'; 
+import {motion} from "framer-motion";
 
 const TRAINER_API = "http://localhost:5000";
 const LEVEL_API = "http://localhost:8000";
@@ -46,6 +47,18 @@ const Level1BattleSim = () => {
     }
   };
 
+
+  const logRef = useRef(null);
+
+  // Smooth scroll to bottom on update
+  useEffect(() => {
+    if (logRef.current) {
+      logRef.current.scrollTo({
+        top: logRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [battleLog]);
   // Fetch level data.
   const fetchLevelData = async () => {
     try {
@@ -106,9 +119,9 @@ const Level1BattleSim = () => {
     }
     const userDamage = userAttackResult.damage;
     const newTrainerHP = Math.max(trainerPokemon.current_hp - userDamage, 0);
-    logEntries.push(`${timestampUser} - ${userPokemon.nickname} used ${selectedMove.name} and dealt ${userDamage} damage!`);
-
+    
     const updatedTrainer = { ...trainerPokemon, current_hp: newTrainerHP };
+    logEntries.push(`${timestampUser} - ${userPokemon.nickname} used ${selectedMove.name} and dealt ${userDamage} damage!`);
     if (newTrainerHP <= 0) {
       logEntries.push(`${new Date().toLocaleTimeString()} - ${trainerPokemon.nickname} fainted!`);
       setTrainerPokemon(updatedTrainer);
@@ -166,8 +179,8 @@ const Level1BattleSim = () => {
         backgroundImage: `url(${battleBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        width: '1195px',
-        height: '555px' // Ensure the element has height
+        width: '100%',
+        height: '100%' // Ensure the element has height
       }}
     >
       {/* Background and battle scene */}
@@ -196,25 +209,11 @@ const Level1BattleSim = () => {
       </div>
 
       {/* Move selection */}
-      <div className="move-selection">
-        <h4>Select Your Move:</h4>
-        <ul>
-          {userPokemon?.moves?.map((move) => (
-            <li key={move.move_id}>
-              <button
-                className={`move-btn ${selectedMove?.move_id === move.move_id ? 'selected' : ''}`}
-                onClick={() => setSelectedMove(move)}
-                disabled={loading}
-              >
-                {move.name} (Power: {move.power}, Acc: {move.accuracy})
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <div className="move-selection flex justify-end items-center bg-orange-100 h-12 fixed bottom-0 w-full text-end px-12 gap-8">
+        <h4 className='text-2xl font-bold'>Select Your  Move:</h4>
 
-      {/* Battle action button */}
-      <div className="action-panel">
+
+        <div className="action-panel">
         <button
           onClick={simulateTurn}
           disabled={
@@ -233,24 +232,69 @@ const Level1BattleSim = () => {
           </button>
         )}
       </div>
-
-      {/* Battle Log */}
-      <div className="battle-log">
-        {battleLog.map((entry, index) => (
-          <p key={index}>{entry}</p>
-        ))}
+        <ul className='fixed bottom-[-30px] left-[20px]'>
+          {userPokemon?.moves?.map((move) => (
+            <li key={move.move_id} className=' hover:translate-y-[-30px] transition-all duration-500 relative '>
+              
+              <button
+                className={` move-btn h-64 w-48 rounded-3xl p-4 relative overflow-hidden ${selectedMove?.move_id === move.move_id ? 'selected' : ''}`}
+                onClick={() => setSelectedMove(move)}
+                disabled={loading}
+              >
+                <div className='move-btn-div bg-orange-200 w-full h-full border border-1 border-slate-700  p-4 relative'>
+               <b className='text-2xl'> {move.name}</b> <br /> Power: {move.power}, <br /> Acc: {move.accuracy}
+               
+               <img src="https://www.pngall.com/wp-content/uploads/15/Pokemon-Ball-PNG-Images-HD.png"  className="absolute bottom-[-40px] left-[-20%] w-[200%] h-[70%] opacity-70" alt="" />
+               </div>
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Battle action button */}
+    
+      <motion.div
+    
+      className="fixed top-[90px] right-0 w-120  p-4 rounded-l-lg overflow-hidden "
+      style={{ fontSize: "20px" }}
+    >
+      {/* Battle Log */}
+      <div
+      ref={logRef}
+      className="battle-log max-h-64 overflow-y-auto relative space-y-4 no-scrollbar"
+    >
+      {battleLog.map((entry, index) => (
+        <motion.p
+          key={index}
+          initial={{ opacity: 0, y: 20, filter: "blur(16px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          {entry}
+        </motion.p>
+      ))}
+
+      {/* Gradient at bottom */}
+      <div className="absolute bottom-0 left-0 w-full h-10 pointer-events-none" />
+    </div>
 
       {/* Outcome */}
       {battleOutcome && (
-        <div className="battle-outcome">
-          <h3>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="battle-outcome relative mt-4"
+        >
+          <h3 className="font-semibold text-lg">
             {battleOutcome.outcome === "win"
               ? `Victory! ${battleOutcome.winner} wins the battle!`
               : `Defeat! ${battleOutcome.winner} wins the battle!`}
           </h3>
-        </div>
+        </motion.div>
       )}
+    </motion.div>
     </div>
   );
 };

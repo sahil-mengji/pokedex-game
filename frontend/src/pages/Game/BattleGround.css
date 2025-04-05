@@ -2,6 +2,8 @@
 
 .battle-container {
     padding: 16px;
+    width: 100%;
+
     font-family: sans-serif;
     background-color: #f4f4f4;
   }
@@ -9,8 +11,9 @@
   /* Battle Ground Background */
   .battle-ground {
     position: relative;
+
     width: 100%;
-    height: 400px;
+    height: 70vh;
     background-image: url("/battle-bg.png"); 
     background-size: cover;
     background-position: center;
@@ -60,7 +63,7 @@
   
   /* Move selection styling */
   .move-selection {
-    margin: 16px 0;
+    margin: 0px 0;
   }
   
   .move-selection ul {
@@ -77,14 +80,34 @@
     margin: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
+    background-color: #d96868;
+    clip-path: polygon(
+      10% 0%, 90% 0%,
+      100% 10%, 100% 90%,
+      90% 100%, 10% 100%,
+      0% 90%, 0% 10%
+    );
+  }
+
+  .move-btn-div{
+    clip-path: polygon(
+      10% 0%, 90% 0%,
+      100% 10%, 100% 90%,
+      90% 100%, 10% 100%,
+      0% 90%, 0% 10%
+    );
+    border-radius: 10px;
   }
   
   .move-btn:hover {
-    background-color: #ddd;
+    background-color: #aa4545;
   }
   
   .move-btn.selected {
-    background-color: #a0e3a0;
+    background-color: #611717;
+    transform: scale(1.05) translateY(-20px);
+    transition: all;
+    transition-duration: 300ms;
   }
   
   /* Action panel styling */
@@ -125,8 +148,7 @@
   .battle-log {
     max-height: 150px;
     overflow-y: auto;
-    background: #fff;
-    border: 1px solid #ccc;
+ 
     padding: 8px;
     margin-bottom: 16px;
   }
