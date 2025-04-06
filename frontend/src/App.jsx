@@ -116,6 +116,7 @@ function App() {
 			<Router>
 				<div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 					<Header darkMode={darkMode} setDarkMode={setDarkMode} />
+					<div className="h-20">hi</div>
 					<AnimatedRoutes user={user} />
 				</div>
 			</Router>

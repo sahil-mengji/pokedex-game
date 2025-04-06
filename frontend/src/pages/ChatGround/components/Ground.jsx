@@ -18,7 +18,11 @@ const Ground = ({
 		const x = e.clientX - rect.left;
 		const y = e.clientY - rect.top;
 
-		onMove({ x, y });
+		// Add boundary checks to prevent going off-screen
+		const boundedX = Math.min(Math.max(x, 20), rect.width - 20);
+		const boundedY = Math.min(Math.max(y, 30), rect.height - 30);
+
+		onMove({ x: boundedX, y: boundedY });
 	};
 
 	// Handle keyboard movement with fixed arrow controls
@@ -26,7 +30,7 @@ const Ground = ({
 		const handleKeyDown = (e) => {
 			if (!currentUser) return;
 
-			const STEP = 100;
+			const STEP = 20; // Smaller step size for smoother movement
 			const { x, y } = currentUser.position;
 			let newX = x;
 			let newY = y;
@@ -34,19 +38,19 @@ const Ground = ({
 			// Fixed key handling
 			switch (e.key) {
 				case "ArrowUp":
-					newY = newY - STEP;
+					newY = Math.max(30, y - STEP); // Prevent going off-screen
 					e.preventDefault();
 					break;
 				case "ArrowDown":
-					newY = newY + STEP;
+					newY = Math.min(570, y + STEP); // Assuming 600px height with some padding
 					e.preventDefault();
 					break;
 				case "ArrowLeft":
-					newX = newX - STEP;
+					newX = Math.max(20, x - STEP); // Prevent going off-screen
 					e.preventDefault();
 					break;
 				case "ArrowRight":
-					newX = newX + STEP;
+					newX = Math.min(780, x + STEP); // Assuming 800px width with some padding
 					e.preventDefault();
 					break;
 				default:
@@ -101,14 +105,28 @@ const Ground = ({
 		// Demo test message on spacebar press
 		const handleKeyPress = (e) => {
 			if (e.key === " " && currentUser) {
-				mockChatReceiver(currentUser.id, "Hello Pokémon world!");
+				// Demo sending a message from current user
+				onSendMessage(currentUser.id, "Hello Pokémon world!");
+				window.chatSystem.onMessage(currentUser.id, "Hello Pokémon world!");
 				e.preventDefault();
+
+				// Demo message from another user
+				const otherUsers = Object.values(users).filter(
+					(u) => u.id !== currentUser.id
+				);
+				if (otherUsers.length > 0) {
+					const randomUser =
+						otherUsers[Math.floor(Math.random() * otherUsers.length)];
+					setTimeout(() => {
+						window.chatSystem.onMessage(randomUser.id, "Hi there trainer!");
+					}, 1000);
+				}
 			}
 		};
 
 		window.addEventListener("keypress", handleKeyPress);
 		return () => window.removeEventListener("keypress", handleKeyPress);
-	}, [currentUser]);
+	}, [currentUser, users, onSendMessage]);
 
 	// Get Pokémon trainer sprite based on user ID
 	const getPokemonTrainer = (userId) => {
@@ -393,83 +411,5 @@ const Ground = ({
 };
 
 // Example of App component to use the Ground
-const App = () => {
-	const [users, setUsers] = useState({
-		user1: {
-			id: "user1",
-			username: "Ash",
-			color: "#FF5722",
-			position: { x: 100, y: 100 },
-		},
-		user2: {
-			id: "user2",
-			username: "Misty",
-			color: "#2196F3",
-			position: { x: 200, y: 200 },
-		},
-	});
-
-	const [currentUser, setCurrentUser] = useState({
-		id: "user1",
-		username: "Ash",
-		color: "#FF5722",
-		position: { x: 100, y: 100 },
-	});
-
-	const handleMove = (position) => {
-		// Update current user position
-		setCurrentUser((prev) => ({
-			...prev,
-			position,
-		}));
-
-		// Update in the users collection
-		setUsers((prev) => ({
-			...prev,
-			[currentUser.id]: {
-				...prev[currentUser.id],
-				position,
-			},
-		}));
-
-		// In a real app, you'd send this position to your server
-	};
-
-	const handleSendMessage = (userId, message) => {
-		// In a real app, this would send the message to other users
-		console.log(`User ${userId} says: ${message}`);
-
-		// For testing chat bubbles
-		if (window.chatSystem && window.chatSystem.onMessage) {
-			window.chatSystem.onMessage(userId, message);
-		}
-	};
-
-	return (
-		<div className="app">
-			<Ground
-				users={users}
-				currentUser={currentUser}
-				onMove={handleMove}
-				vicinityDistance={100}
-				onSendMessage={handleSendMessage}
-			/>
-			<div
-				className="controls"
-				style={{
-					marginTop: "20px",
-					padding: "10px",
-					backgroundColor: "#f0f0f0",
-					borderRadius: "8px",
-				}}
-			>
-				<h3>Controls:</h3>
-				<p>• Use Arrow Keys to move your character</p>
-				<p>• Press Space to show a test message</p>
-				<p>• Click anywhere to move directly to that spot</p>
-			</div>
-		</div>
-	);
-};
 
 export default Ground;
