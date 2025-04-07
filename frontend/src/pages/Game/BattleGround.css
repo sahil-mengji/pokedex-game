@@ -1,0 +1,674 @@
+/* Import the classic Pokémon pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Base Styles */
+body {
+  background: #111;
+  font-family: 'Press Start 2P', monospace;
+  margin: 0;
+  padding: 0;
+  image-rendering: pixelated;
+}
+
+/* Main Battle Container */
+.gba-battle-container {
+  position: relative;
+  width: 768px;
+  height: 520px;
+  margin: 20px auto;
+  border: 8px solid #424542;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px #000, 0 0 0 6px #84739c, 0 0 0 10px #000, 0 20px 20px rgba(0,0,0,0.6);
+  overflow: hidden;
+  background: #000;
+}
+
+/* Battle Background with Gradient and Texture */
+.gba-battle-background {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom, #78c850, #43a047);
+  position: relative;
+  overflow: hidden;
+}
+
+.gba-battle-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+/* Battle Start & Encounter Animations */
+.battle-start-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.battle-flash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  animation: battleFlash 0.8s ease-in-out alternate infinite;
+}
+
+@keyframes battleFlash {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.battle-start-text {
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+  letter-spacing: 1px;
+  z-index: 11;
+  animation: textPulse 1.5s infinite alternate;
+}
+
+@keyframes textPulse {
+  0% { opacity: 0.7; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Enemy & Player Platforms */
+.gba-enemy-container,
+.gba-player-container {
+  position: absolute;
+  z-index: 2;
+}
+
+.gba-enemy-container {
+  top: 30px;
+  right: 40px;
+}
+
+.gba-enemy-container::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 20px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  bottom: -10px;
+  left: -30px;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.gba-player-container {
+  bottom: 40px;
+  left: 40px;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.gba-player-container::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 30px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  bottom: -15px;
+  right: -30px;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+/* HP Box Styling */
+.gba-hp-box {
+  position: relative;
+  background: #e8e8c8;
+  border: 4px solid #506860;
+  border-radius: 12px;
+  padding: 8px 14px;
+  min-width: 180px;
+  box-shadow: inset 0 0 0 1px #fff, inset 0 0 0 2px #c0c0c0;
+  color: #333;
+  font-size: 12px;
+  animation: hpBoxAppear 0.5s ease-out forwards;
+}
+
+@keyframes hpBoxAppear {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.gba-hp-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent 50%);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.gba-pokemon-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1c1c1c;
+  text-shadow: 1px 1px 0 #e8e8c8;
+}
+
+.gba-level-text {
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  color: #1c1c1c;
+  margin-left: 8px;
+  text-shadow: 1px 1px 0 #e8e8c8;
+}
+
+/* HP Bar Layout */
+.gba-health-container {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.hp-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background: #f08030;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-right: 6px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+}
+
+.gba-health-bar {
+  position: relative;
+  width: 120px;
+  height: 8px;
+  background: #333;
+  border: 1px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 6px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.gba-health-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: width 1s steps(10, end);
+}
+
+.health-good { 
+  background: linear-gradient(to bottom, #48D232, #2ca01c); 
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.health-warning { 
+  background: linear-gradient(to bottom, #f8d030, #d8b020); 
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.health-critical { 
+  background: linear-gradient(to bottom, #f05858, #c04848);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+  animation: criticalPulse 0.8s infinite alternate;
+}
+
+@keyframes criticalPulse {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.gba-hp-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px 0 #e8e8c8;
+}
+
+/* Experience Bar */
+.exp-bar {
+  width: 100%;
+  height: 6px;
+  background: #585048;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.exp-fill {
+  height: 100%;
+  background: linear-gradient(to bottom, #00aaff, #0077cc);
+  width: 60%;
+  transition: width 2s ease-in-out;
+}
+
+/* Pokémon Sprites */
+.gba-pokemon-sprite {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.gba-pokemon-sprite img {
+  width: 130px;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.2));
+  transform-origin: bottom center;
+}
+
+.enemy-sprite img {
+  animation: enemyIdle 3s infinite alternate ease-in-out;
+}
+
+.player-sprite img {
+  animation: playerIdle 3s infinite alternate ease-in-out;
+}
+
+@keyframes enemyIdle {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+@keyframes playerIdle {
+  0% { transform: translateY(0) rotate(-1deg); }
+  100% { transform: translateY(-3px) rotate(1deg); }
+}
+
+.damage-effect {
+  animation: damageFlash 0.5s steps(2, end) 3;
+}
+
+@keyframes damageFlash {
+  0% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.3; filter: brightness(10) contrast(2); }
+  100% { opacity: 1; filter: brightness(1); }
+}
+
+/* Bottom UI - Classic Pokémon Layout */
+.gba-bottom-ui {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  border-top: 4px solid #506860;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: inset 0 4px 0 rgba(255,255,255,0.5);
+  transform: translateY(120px);
+  animation: uiSlideUp 0.5s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes uiSlideUp {
+  0% { transform: translateY(120px); }
+  100% { transform: translateY(0); }
+}
+
+/* Dialog Box (Left Panel) */
+.gba-dialog-box {
+  width: 60%;
+  height: 100%;
+  padding: 12px;
+  background: #f8f8f8;
+  border-right: 4px solid #506860;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: inset 4px 0 0 rgba(255,255,255,0.5);
+}
+
+.gba-dialog-box::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid #506860;
+  border-bottom: 3px solid #506860;
+  animation: arrowBounce 0.8s infinite alternate;
+}
+
+@keyframes arrowBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+.gba-dialog-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+  text-align: center;
+}
+
+/* Move Grid inside Dialog Box */
+.gba-move-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.gba-move-btn {
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  border: 2px solid #506860;
+  border-radius: 6px;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8), 2px 2px 0 rgba(0,0,0,0.2);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.gba-move-btn:hover {
+  background: linear-gradient(to bottom, #e8f8ff, #c0e0ff);
+  transform: translateY(-2px);
+  border-color: #7090a8;
+}
+
+.gba-move-btn.selected {
+  background: linear-gradient(to bottom, #c0e0ff, #80c0ff);
+  animation: selectPulse 1.5s infinite;
+}
+
+@keyframes selectPulse {
+  0% { box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8), 0 0 0 2px rgba(80,104,96,0.2); }
+  50% { box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8), 0 0 0 4px rgba(80,104,96,0.4); }
+  100% { box-shadow: inset 1px 1px 0 rgba(255,255,255,0.8), 0 0 0 2px rgba(80,104,96,0.2); }
+}
+
+.gba-move-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.gba-move-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-25deg);
+  transition: left 0.3s ease;
+}
+
+.gba-move-btn:hover::after {
+  left: 120%;
+  transition: left 0.7s ease;
+}
+
+.gba-move-btn.blank {
+  visibility: hidden;
+}
+
+/* Menu Box (Right Panel) */
+.gba-menu-box {
+  width: 40%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gba-move-info {
+  font-size: 11px;
+  color: #333;
+  text-align: left;
+  width: 100%;
+  background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+  border: 3px solid #506860;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.gba-move-info p {
+  margin: 4px 0;
+  line-height: 1.3;
+}
+
+.gba-move-info p strong {
+  color: #1a6aa0;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Type Badge */
+.move-type {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  margin-left: 4px;
+}
+
+/* Main Menu (if not in move select) */
+.gba-main-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-items: center;
+  padding: 8px;
+}
+
+.gba-main-menu button {
+  background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+  border: 3px solid #506860;
+  border-radius: 6px;
+  padding: 10px 8px;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+  font-family: 'Press Start 2P', monospace;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.gba-main-menu button:hover {
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  transform: translateY(-3px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.gba-main-menu button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.gba-main-menu button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-25deg);
+  transition: left 0.3s ease;
+}
+
+.gba-main-menu button:hover::after {
+  left: 120%;
+  transition: left 0.7s ease;
+}
+
+/* Restart Button */
+.gba-restart-btn {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: linear-gradient(to bottom, #f05858, #e04848);
+  border: 3px solid #506860;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Press Start 2P', monospace;
+  color: white;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 3px 6px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+
+.gba-restart-btn::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid #506860;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3);
+}
+
+.gba-restart-btn:hover {
+  background: linear-gradient(to bottom, #ff6868, #f05858);
+  transform: translateY(-3px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 0 6px 10px rgba(0,0,0,0.25);
+}
+
+.gba-restart-btn:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Battle Log */
+.gba-battle-log-container {
+  width: 100%;
+  background: #111;
+  border-top: 3px solid #333;
+}
+
+.gba-battle-log {
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  color: #3f3;
+  font-size: 11px;
+  line-height: 1.4;
+  font-family: monospace;
+  scrollbar-width: thin;
+  scrollbar-color: #3f3 #111;
+}
+
+.gba-battle-log::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gba-battle-log::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.gba-battle-log::-webkit-scrollbar-thumb {
+  background-color: #3f3;
+  border-radius: 10px;
+  border: 2px solid #111;
+}
+
+.gba-battle-log p {
+  margin: 4px 0;
+  text-shadow: 0 0 5px rgba(51,255,51,0.7);
+  position: relative;
+  padding-left: 15px;
+}
+
+.gba-battle-log p::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Loading & Error */
+.error, .loading {
+  padding: 20px;
+  text-align: center;
+  background: #f8f8f8;
+  border: 4px solid #506860;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.error {
+  color: #e04848;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+.loading {
+  color: #3890f8;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+  position: relative;
+}
+
+.loading::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 10px auto 0;
+  border-radius: 50%;
+  border: 5px solid #f0f0f0;
+  border-top-color: #3890f8;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
