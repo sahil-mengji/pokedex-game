@@ -19,6 +19,7 @@ import Header from "./components/Header/header";
 import Level1 from "./pages/Game/level1";
 import { LayoutGroup } from "framer-motion";
 import ChatGround from "./pages/ChatGround/ChatGround";
+import Home from "./home";
 
 const UserContext = createContext(null);
 export const useUser = () => useContext(UserContext);
@@ -53,14 +54,14 @@ function AnimatedRoutes({ user }) {
 	);
 }
 
-function Home() {
-	return (
-		<div className="p-8">
-			<h2 className="text-2xl font-bold mb-4">Welcome to PokéGame!</h2>
-			<p>This is the Home page. Use the navigation above to explore.</p>
-		</div>
-	);
-}
+// function Home() {
+// 	return (
+// 		<div className="p-8">
+// 			<h2 className="text-2xl font-bold mb-4">Welcome to PokéGame!</h2>
+// 			<p>This is the Home page. Use the navigation above to explore.</p>
+// 		</div>
+// 	);
+// }
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
@@ -116,7 +117,6 @@ function App() {
 			<Router>
 				<div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 					<Header darkMode={darkMode} setDarkMode={setDarkMode} />
-					<div className="h-20">hi</div>
 					<AnimatedRoutes user={user} />
 				</div>
 			</Router>
