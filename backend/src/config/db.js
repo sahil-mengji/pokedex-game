@@ -68,7 +68,6 @@ const createLoggingPool = () => {
     // Log the SQL query
     console.log("Executing query:", typeof sql === 'string' ? sql : sql.sql);
     
-    // Log parameters if they exist
     if (params) {
       console.log("Query parameters:", params);
     }
