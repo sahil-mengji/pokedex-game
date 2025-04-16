@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const Ground = ({
 	users,
@@ -149,6 +150,7 @@ const Ground = ({
 		const trainerIndex = hash % trainerTypes.length;
 		return trainerTypes[trainerIndex];
 	};
+	const navigate = useNavigate();
 
 	return (
 		<div
@@ -159,7 +161,7 @@ const Ground = ({
 				position: "relative",
 				width: "800px",
 				flexGrow: 1,
-				height: "600px",
+				height: "100%",
 				backgroundColor: "#7BC95F",
 				backgroundImage:
 					'url(\'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L20,0 L20,20 L0,20 Z" fill="%238ED269" /><path d="M50,50 L70,50 L70,70 L50,70 Z" fill="%238ED269" /></svg>\')',
@@ -358,43 +360,47 @@ const Ground = ({
 
 			{/* Pokéball decoration in the corner */}
 			<div
-				style={{
-					position: "absolute",
-					right: "15px",
-					bottom: "15px",
-					width: "30px",
-					height: "30px",
-					borderRadius: "50%",
-					background:
-						"linear-gradient(to bottom, #ff1a1a 0%, #ff1a1a 50%, #f0f0f0 50%, #f0f0f0 100%)",
-					border: "2px solid #333",
-					zIndex: 3,
-					boxShadow: "1px 1px 3px rgba(0,0,0,0.3)",
-				}}
+				className="bg-white p-4 absolute bottom-4 left-4 rounded-full flex items-center text-2xl gap-4 font-semibold hover:scale-105 transition-all hover:translate-y-[-10px] hover:translate-x-[10px] cursor-pointer animate-bounce"
+				onClick={() => navigate("/game")}
 			>
+				<p>Start Game</p>
 				<div
 					style={{
-						position: "absolute",
-						top: "50%",
-						left: "0",
-						width: "100%",
-						height: "2px",
-						backgroundColor: "#333",
-					}}
-				/>
-				<div
-					style={{
-						position: "absolute",
-						top: "50%",
-						left: "50%",
-						width: "8px",
-						height: "8px",
+						position: "relative",
+						width: "30px",
+						height: "30px",
 						borderRadius: "50%",
-						backgroundColor: "#fff",
+						background:
+							"linear-gradient(to bottom, #ff1a1a 0%, #ff1a1a 50%, #f0f0f0 50%, #f0f0f0 100%)",
 						border: "2px solid #333",
-						transform: "translate(-50%, -50%)",
+						zIndex: 3,
+						boxShadow: "1px 1px 3px rgba(0,0,0,0.3)",
 					}}
-				/>
+				>
+					<div
+						style={{
+							position: "absolute",
+							top: "50%",
+							left: "0",
+							width: "100%",
+							height: "2px",
+							backgroundColor: "#333",
+						}}
+					/>
+					<div
+						style={{
+							position: "absolute",
+							top: "50%",
+							left: "50%",
+							width: "8px",
+							height: "8px",
+							borderRadius: "50%",
+							backgroundColor: "#fff",
+							border: "2px solid #333",
+							transform: "translate(-50%, -50%)",
+						}}
+					/>
+				</div>
 			</div>
 
 			{/* CSS for animations */}

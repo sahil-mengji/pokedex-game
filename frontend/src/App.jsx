@@ -19,6 +19,7 @@ import Header from "./components/Header/header";
 import Level1 from "./pages/Game/level1";
 import { LayoutGroup } from "framer-motion";
 import ChatGround from "./pages/ChatGround/ChatGround";
+import Logs from "./pages/Logs/Logs";
 
 const UserContext = createContext(null);
 export const useUser = () => useContext(UserContext);
@@ -35,6 +36,9 @@ function AnimatedRoutes({ user }) {
 						<Route path="/pokedex/:id" element={<PokemonDetail />} />
 						<Route path="/auth" element={<AuthPage />} />
 						<Route path="/level/1" element={<Level1 />} />
+
+						<Route path="/logs" element={<Logs />} />
+
 						<Route
 							path="/game"
 							element={

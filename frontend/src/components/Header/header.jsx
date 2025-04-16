@@ -31,7 +31,7 @@ const Header = ({ darkMode, setDarkMode }) => {
 			<div className="absolute inset-0 pointer-events-none opacity-5 bg-scanlines"></div>
 
 			{/* Top bar with inset effect */}
-			<div className="flex items-center justify-between px-6 py-2 border-b-4 border-gray-400 dark:border-gray-900 relative">
+			<div className="flex items-center justify-between px-6 py-2 border-b-4 border-gray-400 dark:border-gray-900 relative ">
 				{/* Logo with embossed effect */}
 				<h1 className="text-2xl font-extrabold relative z-10">
 					<span
@@ -43,8 +43,8 @@ const Header = ({ darkMode, setDarkMode }) => {
 				</h1>
 
 				{/* Center nav with 3D button effect */}
-				<div className="mx-auto max-w-md w-full px-2">
-					<nav className="flex rounded-xl shadow-inner bg-gray-300 dark:bg-gray-900">
+				<div className="mx-auto max-w-[600px] w-full px-2 ">
+					<nav className="flex rounded-xl shadow-inner bg-gray-300 dark:bg-gray-900 w-full">
 						{navItems.map(({ name, path, icon, color }) => (
 							<div key={name} className="flex-1 p-1">
 								<NavLink

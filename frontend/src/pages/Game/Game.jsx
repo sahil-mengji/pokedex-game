@@ -42,6 +42,7 @@ const Game = () => {
 	const handleLogout = () => {
 		localStorage.removeItem("trainer");
 		localStorage.removeItem("token");
+		localStorage.removeItem("name");
 		setUser(null);
 		navigate("/auth", { replace: true });
 	};
