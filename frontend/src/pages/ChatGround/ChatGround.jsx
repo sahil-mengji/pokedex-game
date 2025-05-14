@@ -1,5 +1,12 @@
+// CLIENT SIDE (React App)
+
+// First, install the necessary packages:
+// npm create react-app client
+// cd client
+// npm install socket.io-client
+
 // src/App.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 
 import Ground from "./components/Ground";
@@ -13,24 +20,14 @@ function ChatGround() {
 	const [currentUser, setCurrentUser] = useState(null);
 	const [messages, setMessages] = useState([]);
 
-	// Connect to socket and handle join if name exists in localStorage
+	// Connect to socket when component mounts
 	useEffect(() => {
+		// Use empty URL to connect to the same host that serves the page
 		const newSocket = io("http://localhost:1000");
 
 		newSocket.on("connect", () => {
 			console.log("Connected to server");
 			setSocket(newSocket);
-
-			// Auto-join if name exists
-			const name = localStorage.getItem("name");
-			if (name) {
-				const userData = {
-					username: name,
-					position: { x: Math.random() * 800, y: Math.random() * 600 },
-					color: getRandomColor(),
-				};
-				newSocket.emit("join", userData);
-			}
 		});
 
 		newSocket.on("disconnect", () => {
@@ -43,10 +40,11 @@ function ChatGround() {
 		};
 	}, []);
 
-	// Set up socket event listeners
+	// Set up event listeners once socket is established
 	useEffect(() => {
 		if (!socket) return;
 
+		// Handle initialization data
 		socket.on("init", (data) => {
 			setUsers(data.users);
 			setCurrentUser({
@@ -56,6 +54,7 @@ function ChatGround() {
 			setConnected(true);
 		});
 
+		// Handle new user joining
 		socket.on("user_joined", (userData) => {
 			setUsers((prevUsers) => ({
 				...prevUsers,
@@ -63,6 +62,7 @@ function ChatGround() {
 			}));
 		});
 
+		// Handle user movements
 		socket.on("user_moved", (data) => {
 			setUsers((prevUsers) => {
 				if (!prevUsers[data.id]) return prevUsers;
@@ -77,6 +77,7 @@ function ChatGround() {
 			});
 		});
 
+		// Handle user leaving
 		socket.on("user_left", (userId) => {
 			setUsers((prevUsers) => {
 				const newUsers = { ...prevUsers };
@@ -85,16 +86,15 @@ function ChatGround() {
 			});
 		});
 
+		// Handle receiving messages
 		socket.on("receive_message", (message) => {
 			setMessages((prevMessages) => [...prevMessages, message]);
 		});
 	}, [socket]);
 
-	// Handle user joining via UserJoin component
+	// Handle user joining the ground
 	const handleJoin = (username) => {
 		if (!socket) return;
-
-		localStorage.setItem("name", username);
 
 		const userData = {
 			username,
@@ -105,10 +105,11 @@ function ChatGround() {
 		socket.emit("join", userData);
 	};
 
-	// Handle movement update
+	// Handle user movement
 	const handleMove = (newPosition) => {
 		if (!socket || !currentUser) return;
 
+		// Update local state
 		setUsers((prevUsers) => ({
 			...prevUsers,
 			[currentUser.id]: {
@@ -117,17 +118,18 @@ function ChatGround() {
 			},
 		}));
 
+		// Emit movement to server
 		socket.emit("move", newPosition);
 	};
 
-	// Handle chat messages
+	// Handle sending chat messages
 	const handleSendMessage = (message) => {
 		if (!socket || !currentUser || !message.trim()) return;
 
 		socket.emit("send_message", message);
 	};
 
-	// Random color generator
+	// Helper function for random color
 	const getRandomColor = () => {
 		const letters = "0123456789ABCDEF";
 		let color = "#";
@@ -138,14 +140,18 @@ function ChatGround() {
 	};
 
 	return (
-		<div className="">
+		<div className="app">
+			<h1>Digital Ground</h1>
+
 			{!connected ? (
 				<UserJoin onJoin={handleJoin} />
 			) : (
-				<div className="flex h-[calc(100vh-80px)] bg-red-300">
+				<div
+					className="main-content flex"
+					style={{ marginInline: "30px", gap: "20px" }}
+				>
 					<Ground
 						users={users}
-						onSendMessage={handleSendMessage}
 						currentUser={currentUser}
 						onMove={handleMove}
 						vicinityDistance={100}

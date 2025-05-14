@@ -1,19 +1,17 @@
 const mysql = require("mysql2");
 
-let io = null; // for broadcasting
-
 const pool = mysql.createPool({
 	host: process.env.DB_HOST || "127.0.0.1",
 	user: process.env.DB_USER || "myuser",
 	password: process.env.DB_PASSWORD || "mypassword",
 	database: process.env.DB_NAME || "pokedex",
 	port: process.env.DB_PORT || 3306,
-	connectTimeout: 10000,
+	connectTimeout: 10000, // 10 seconds timeout
 	waitForConnections: true,
 	connectionLimit: 10,
 	queueLimit: 0,
-});
-
+  });
+  
 pool.getConnection((err, connection) => {
 	if (err) {
 		console.error("Database Connection Failed:", err);
@@ -23,47 +21,71 @@ pool.getConnection((err, connection) => {
 	}
 });
 
-const createLoggingPool = (socketIOInstance) => {
-	io = socketIOInstance;
+module.exports = pool.promise();
 
-	const promisePool = pool.promise();
-	const originalQuery = promisePool.query.bind(promisePool);
+// config/db.js (or config/trainerDb.js)
+// const mysql = require("mysql2");
 
-	promisePool.query = async (...args) => {
-		const sql = args[0];
-		const params = args[1];
+// const pool = mysql.createPool({
+//   host: process.env.DB_HOST || "127.0.0.1",
+//   user: process.env.DB_USER || "myuser",
+//   password: process.env.DB_PASSWORD || "mypassword",
+//   database: process.env.DB_NAME || "pokedex", // Change to "trainer" if needed
+//   port: process.env.DB_PORT || 3306,
+//   connectTimeout: 10000, // 10 seconds timeout
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0,
+// });
 
-		const queryLog = {
-			query: typeof sql === "string" ? sql : sql.sql,
-			params,
-			timestamp: new Date().toISOString(),
-		};
+// // Optionally test connection using callback, but the exported pool will be promise-based.
+// pool.getConnection((err, connection) => {
+//   if (err) {
+//     console.error("Database Connection Failed:", err);
+//   } else {
+//     console.log("Connected to MySQL Database");
+//     connection.release();
+//   }
+// });
 
-		// Log in terminal
-		console.log("Executing query:", queryLog.query);
-		if (params) console.log("Query parameters:", params);
+// // Export the promise-enabled pool
+// module.exports = pool.promise();
 
-		// Emit via socket to frontend
-		if (io) {
-			io.emit("sql_log", queryLog);
-		}
 
-		try {
-			const result = await originalQuery(...args);
-			console.log(
-				"------------------------------------------------------------"
-			);
-			return result;
-		} catch (error) {
-			console.error("Query failed:", error);
-			if (io) {
-				io.emit("sql_log", { ...queryLog, error: error.message });
-			}
-			throw error;
-		}
-	};
+// // Create a wrapper function that logs queries
+// const createLoggingPool = () => {
+//   // Get the promise-based pool
+//   const promisePool = pool.promise();
+  
+//   // Store the original query method
+//   const originalQuery = promisePool.query.bind(promisePool);
+  
+//   // Override the query method to add logging
+//   promisePool.query = async (...args) => {
+//     const sql = args[0];
+//     const params = args[1];
+    
+//     // Log the SQL query
+//     console.log("Executing query:", typeof sql === 'string' ? sql : sql.sql);
+    
+//     // Log parameters if they exist
+//     if (params) {
+//       console.log("Query parameters:", params);
+//     }
+    
+//     // Execute the original query
+//     try {
+//       const result = await originalQuery(...args);
+//       console.log("------------------------------------------------------------");
+//       return result;
+//     } catch (error) {
+//       console.error("Query failed:", error);
+//       throw error;
+//     }
+//   };
+  
+//   return promisePool;
+// };
 
-	return promisePool;
-};
-
-module.exports = createLoggingPool;
+// // Create and export the logging pool
+// module.exports = createLoggingPool();

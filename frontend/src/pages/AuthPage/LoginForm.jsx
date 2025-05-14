@@ -26,7 +26,6 @@ const LoginForm = () => {
 			const data = await response.json();
 			if (data.success) {
 				localStorage.setItem("token", data.token);
-				localStorage.setItem("name", data.name);
 
 				// Immediately call the validate endpoint to get full user data
 				const validateResponse = await fetch(
@@ -43,7 +42,7 @@ const LoginForm = () => {
 				if (validateData.success) {
 					localStorage.setItem("trainer", JSON.stringify(validateData.user));
 					setUser(validateData.user);
-					navigate("/ground");
+					navigate("/game");
 				} else {
 					setErrorMsg(validateData.error || "Validation failed.");
 				}

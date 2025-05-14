@@ -19,7 +19,7 @@ import Header from "./components/Header/header";
 import Level1 from "./pages/Game/level1";
 import { LayoutGroup } from "framer-motion";
 import ChatGround from "./pages/ChatGround/ChatGround";
-import Logs from "./pages/Logs/Logs";
+// import Home from "./home";
 
 const UserContext = createContext(null);
 export const useUser = () => useContext(UserContext);
@@ -36,9 +36,6 @@ function AnimatedRoutes({ user }) {
 						<Route path="/pokedex/:id" element={<PokemonDetail />} />
 						<Route path="/auth" element={<AuthPage />} />
 						<Route path="/level/1" element={<Level1 />} />
-
-						<Route path="/logs" element={<Logs />} />
-
 						<Route
 							path="/game"
 							element={
@@ -120,7 +117,6 @@ function App() {
 			<Router>
 				<div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 					<Header darkMode={darkMode} setDarkMode={setDarkMode} />
-					<div className="h-20">hi</div>
 					<AnimatedRoutes user={user} />
 				</div>
 			</Router>

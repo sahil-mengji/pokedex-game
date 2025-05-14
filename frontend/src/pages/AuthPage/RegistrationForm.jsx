@@ -29,7 +29,7 @@ const RegistrationForm = () => {
 				localStorage.setItem("trainer", JSON.stringify(data.user));
 				localStorage.setItem("token", data.token);
 				setUser(data.user);
-				navigate("/ground");
+				navigate("/game");
 			} else {
 				setErrorMsg(data.error || "Registration failed.");
 			}
