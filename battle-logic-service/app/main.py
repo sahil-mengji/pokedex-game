@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from models import BattleRequest, XPUpdateRequest
+from .models import BattleRequest, XPUpdateRequest
 import random
 import uvicorn
-from level1 import router as level1_router
-from utils import (
+from .routes.level1 import router as level1_router
+from .utils import (
     get_type_effectiveness,
     augment_move_data,
     get_move_category,

@@ -3,7 +3,7 @@ import json
 
 # Load extra move effects from move_effects.json if it exists.
 try:
-    with open('move_effects.json', 'r') as file:
+    with open('../data/move_effects.json', 'r') as file:
         move_effects = json.load(file)
 except FileNotFoundError:
     print("move_effects.json not found; proceeding with empty move effects.")
