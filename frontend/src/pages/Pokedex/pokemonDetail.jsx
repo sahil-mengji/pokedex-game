@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 // Hex color codes for each Pokémon type
 const typeColorCodes = {
@@ -164,8 +165,10 @@ function PokemonDetail() {
             className="md:w-1/2 flex justify-center bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-3xl p-4 transition-transform duration-300 hover:scale-105"
             style={{ perspective: "1000px" }}
           >
-            <img
+              <motion.img
+              layoutId={`shared-image-${pokemon.pokemon_id}`}
               loading="lazy"
+
               src={pokemon.img_src}
               alt={pokemon.name}
               className="w-64 h-64 object-contain sprite-3d"

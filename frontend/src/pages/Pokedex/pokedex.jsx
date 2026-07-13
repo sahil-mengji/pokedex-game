@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const typeColorsCards = {
   normal: "from-gray-300 to-gray-400",
@@ -142,7 +143,8 @@ const Pokedex = () => {
                 </span>
 
                 {/* Pokémon Image */}
-                <img
+                <motion.img
+                 layoutId={`shared-image-${pokemon.pokemon_id}`}
                   loading="lazy"
                   src={pokemon.img_src}
                   alt={pokemon.name}
