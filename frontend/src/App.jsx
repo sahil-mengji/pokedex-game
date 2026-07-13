@@ -18,6 +18,8 @@ import AuthPage from "./pages/AuthPage/AuthPage";
 import Header from "./components/Header/header";
 import Level1 from './pages/Game/level1';
 
+import { LayoutGroup } from "framer-motion";
+// import Home from "./home";
 
 const UserContext = createContext(null);
 export const useUser = () => useContext(UserContext);
@@ -48,12 +50,12 @@ function AnimatedRoutes({ user }) {
 }
 
 function Home() {
-  return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold mb-4">Welcome to PokéGame!</h2>
-      <p>This is the Home page. Use the navigation above to explore.</p>
-    </div>
-  );
+	return (
+		<div className="p-8">
+			<h2 className="text-2xl font-bold mb-4">Welcome to PokéGame!</h2>
+			<p>This is the Home page. Use the navigation above to explore.</p>
+		</div>
+	);
 }
 
 function App() {

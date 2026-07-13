@@ -4,7 +4,7 @@ import requests
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
-from models import BattleRequest, XPUpdateRequest, Move, Stats, Pokemon
+from ..models import BattleRequest, XPUpdateRequest, Move, Stats, Pokemon
 
 router = APIRouter()
 
@@ -16,7 +16,7 @@ class BattleSimRequest(BaseModel):
 # Helper function to load Level 1 data from JSON file
 def load_level1_data():
     try:
-        with open("level1.json", "r") as f:
+        with open("../data/level1.json", "r") as f:
             data = json.load(f)
         return data
     except Exception as e:

@@ -4,12 +4,14 @@ FROM python:3.9-slim
 # Set working directory.
 WORKDIR /app
 
-# Copy and install requirements.
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Copy the current directory contents into the container at /app.
+COPY . /app
 
-# Copy the rest of the application code.
-COPY . .
+# Set the working directory to the app subdirectory.
+WORKDIR /app/app
+
+# Install any needed packages specified in requirements.txt.
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Expose port 8000.
 EXPOSE 8000
